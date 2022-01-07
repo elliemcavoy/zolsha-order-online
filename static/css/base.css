@@ -3,3 +3,13 @@
 .logo h2{
     font-family: 'Berkshire Swash';
 }
+
+
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
