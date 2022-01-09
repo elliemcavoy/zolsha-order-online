@@ -9,8 +9,17 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
+class SubCategory(models.Model):
+
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
 class Menu(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    subcategory = models.ForeignKey('SubCategory', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
