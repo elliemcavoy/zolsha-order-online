@@ -1,7 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+
+from .models import Menu
 
 # Create your views here.
 
-def menu(request):
+def all_menu(request):
     """ View to render the menu page """
-    return render(request, 'menu/menu.html')
+    menu = Menu.objects.all()
+
+    context = {
+        'menu': menu,
+    }
+    return render(request, 'menu/menu.html', context)

@@ -13,8 +13,12 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class ="row">
-        <div class="col">
+    
+     
+      <h2>Starters</h2>
+      {% for item in menu %}
+      <div class="row">
+        <div class="col-12">
     <div id="accordion" class="w-75 mx-auto">
         <div class="card">
           <div class="card-header" id="headingOne">
@@ -22,26 +26,27 @@
                   <div class="col-10">
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Collapsible Group Item #1
+                {{ item.name }}
               </button>
             </h5>
             </div>
             <div class="col-2">
                 <h5 class="mb-0 my-auto">
-                £9.99
+                £{{ item.price }}
                 </h5>
             </div>
             </div>
           </div>
-      
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              {{ item.description }}
             </div>
           </div>
         </div>
         </div>
     </div>
-    </div>
+  </div>
+      {% endfor %}
+    
 </div>
 {% endblock %}
