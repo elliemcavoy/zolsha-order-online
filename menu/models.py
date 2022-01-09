@@ -15,6 +15,7 @@ class Menu(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    has_options = models.BooleanField(default=False, null=True, blank=True)
 
     def __str__(self):
         return self.name
