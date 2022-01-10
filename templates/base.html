@@ -41,7 +41,7 @@
           <a href="{% url 'home' %}" class="logo"><h2>Zolsha</h2></a>
         </div>
         <div class="col-12 col-md-4 col-lg-4 my-auto">
-          <form method="GET" action="">
+          <form method="GET" action="{% url 'all_menu' %}">
               <div class="input-group my-auto">
                   <input class="form-control border-dark rounded-1" type="text" name="q" placeholder="Search Dishes">
                   <div class="input-group-append">

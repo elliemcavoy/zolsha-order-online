@@ -9,6 +9,7 @@ class MenuAdmin(admin.ModelAdmin):
         'category',
         'price',
         'description',
+        'subcategory',
     )
 
     ordering = ('sku',)
