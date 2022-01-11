@@ -1,0 +1,12 @@
+[
+    {
+       "pk":1,
+       "model":"menu.menu",
+       "fields":{
+          "sku":"sttr1",
+          "name":"Chicken Tikka",
+          "description":"Chicken marinated in spices and yoghurt & cooked int he tandoori oven",
+          "price":3.25,
+          "category":6,
+       }
+    },

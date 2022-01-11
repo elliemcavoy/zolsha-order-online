@@ -76,7 +76,7 @@
                         {% if o %}
                             <div class="col-12">
                                 <p><strong>Choose from:</strong></p>
-                                <select class="form-control rounded-0 w-50" name="has_options" id='id_option'>
+                                <select class="form-control rounded-0 w-50" name="item_option" id='id_item_option'>
                                     <option value="vegetable">Vegetable</option>
                                     <option value="keema">Keema</option>
                                     <option value="chicken" selected>Chicken</option>
@@ -98,7 +98,7 @@
                                         </button>
                                     </div>
                                     <input class="form-control qty_input" type="number"
-                                        name="quantity" value="1" min="1" max="99"
+                                        name="quantity" value="0" min="0" max="99"
                                         data-item_id="{{ item.id }}"
                                         id="id_qty_{{ item.id }}">
                                     <div class="input-group-append">
@@ -117,7 +117,7 @@
                             
                             <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                         </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <!--<input type="hidden" name="redirect_url" value="{{ request.path }}">-->
                         {% endwith %}
                     </div>
                 </form>

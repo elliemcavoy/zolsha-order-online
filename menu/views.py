@@ -30,3 +30,14 @@ def all_menu(request):
         'selected_categories': subcategories,
     }
     return render(request, 'menu/menu.html', context)
+
+def menu_item(request, item_id):
+    """ A view to show individual product details """
+
+    menu_item = get_object_or_404(Menu, pk=item_id)
+
+    context = {
+        'menu_item': menu_item,
+    }
+
+    return render(request, 'menu/menu.html', context)
