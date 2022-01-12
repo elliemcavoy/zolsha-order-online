@@ -17,7 +17,7 @@
         {% if bag_items %}
             <div class="table-responsive rounded">
                 {% for item in bag_items %}
-                {{ bag_items.item.name }}
+                {{ item.item.name }}
                 {% endfor %}
             </div>
         {% else %}
