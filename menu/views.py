@@ -9,6 +9,11 @@ def all_menu(request):
     """ View to render the menu page """
     menu = Menu.objects.all()
     subcategories = None
+   
+    #for item in menu:
+        #menu_item = get_object_or_404(Menu, pk=item_id)
+
+    
     
     if request.GET:
         if 'subcategory' in request.GET:
@@ -25,20 +30,10 @@ def all_menu(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             menu = menu.filter(queries)
 
+        
+
     context = {
         'menu': menu,
         'selected_categories': subcategories,
     }
-    return render(request, 'menu/menu.html', context)
-
-
-def menu_item(request, item_id):
-    """ A view to show individual product details """
-
-    menu_item = get_object_or_404(Menu, pk=item_id)
-
-    context = {
-        'menu_item': menu_item,
-    }
-
     return render(request, 'menu/menu.html', context)

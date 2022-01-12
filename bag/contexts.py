@@ -5,7 +5,7 @@ def bag_items(request):
     item_count = 0
     
     context = {
-        #bag_items
+        "bag_items":bag_items
         #total
         #item_count
     }

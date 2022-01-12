@@ -68,8 +68,9 @@
                 <div class="col-8">
               {{ item.description }}
             </div>
+            {{ item.id }}
             <div class="col-4">
-                <form class="form" action="" method="POST">
+                <form class="form" action="{% url 'add_to_bag' item.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
                         {% with item.has_options as o %}
@@ -85,6 +86,7 @@
                                 </select>
                             </div>
                         {% endif %}
+                        
                         <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>
                             <div class="form-group w-50">
@@ -117,7 +119,7 @@
                             
                             <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                         </div>
-                        <!--<input type="hidden" name="redirect_url" value="{{ request.path }}">-->
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         {% endwith %}
                     </div>
                 </form>
@@ -130,4 +132,9 @@
       {% endfor %}
     
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'menu/includes/quantity_input_script.html' %}
 {% endblock %}

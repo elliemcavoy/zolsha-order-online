@@ -15,7 +15,11 @@
 <div class="row">
     <div class="col">
         {% if bag_items %}
-            <div class="table-responsive rounded"></div>
+            <div class="table-responsive rounded">
+                {% for item in bag_items %}
+                {{ bag_items.item.name }}
+                {% endfor %}
+            </div>
         {% else %}
                     <p class="lead mb-5">No food here yet.</p>
                     <a href="{% url 'all_menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
