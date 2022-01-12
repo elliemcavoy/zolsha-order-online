@@ -537,8 +537,7 @@
       "fields":{
          "sku":"mncrs20",
          "name":"Rezzala",
-         "description":"Marinated in yoghurt & chilli cooked in a South Indian sauce.
-         Topped with fried red chilli and onions & lots of fresh coriander",
+         "description":"Marinated in yoghurt & chilli cooked in a South Indian sauce. Topped with fried red chilli and onions & lots of fresh coriander",
          "price":8.95,
          "category":2,
          "subcategory":6,
@@ -734,7 +733,7 @@
       "fields":{
          "sku":"mncrs34",
          "name":"Chicken Zolshan",
-         "descripion":"Strips of chicken, peppers and onions cooked with plenty of ginger, spring onion and tomatoes to create a rich sauce.",
+         "description":"Strips of chicken, peppers and onions cooked with plenty of ginger, spring onion and tomatoes to create a rich sauce.",
          "price":8.95,
          "category":2,
          "subcategory":7,
@@ -958,8 +957,7 @@
       "fields":{
          "sku":"mncrs50",
          "name":"Zardani",
-         "description":"Chicken cooked with a blend of light spices & almonds with a hint of sweet 
-         yoghurt & massala sauce.",
+         "description":"Chicken cooked with a blend of light spices & almonds with a hint of sweet yoghurt & massala sauce.",
          "price":7.95,
          "category":2,
          "subcategory":9,
@@ -1624,7 +1622,7 @@
          "has_options":false
 
       }
-   },
+   }
 ]
 
 

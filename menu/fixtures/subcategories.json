@@ -5,7 +5,7 @@
         "fields": {
             "name": "vegetarian",
             "friendly_name": "Vegetarian",
-            "category": 1,
+            "category": 1
 
         }
     },
@@ -15,7 +15,7 @@
         "fields": {
             "name": "traditional_grilled",
             "friendly_name": "Traditional & Grilled",
-            "category": 1,
+            "category": 1
 
         }
     },
@@ -25,7 +25,7 @@
         "fields": {
             "name": "seafood",
             "friendly_name": "Seafood",
-            "category": 1,
+            "category": 1
 
         }
     },
@@ -35,7 +35,7 @@
         "fields": {
             "name": "classics",
             "friendly_name": "Classics",
-            "category": 2,
+            "category": 2
 
         }
     },
@@ -45,7 +45,7 @@
         "fields": {
             "name": "mild_selection",
             "friendly_name": "Mild Selection",
-            "category": 2,
+            "category": 2
 
         }
     },
@@ -55,7 +55,7 @@
         "fields": {
             "name": "chefs_recommendations",
             "friendly_name": "Chefs Recommendations",
-            "category": 2,
+            "category": 2
 
         }
     },
@@ -65,7 +65,7 @@
         "fields": {
             "name": "house_specialities",
             "friendly_name": "House Specialities",
-            "category": 2,
+            "category": 2
 
         }
     },
@@ -75,7 +75,7 @@
         "fields": {
             "name": "fish_kingprawn",
             "friendly_name": "Fish & King Prawn",
-            "category": 2,
+            "category": 2
 
         }
     },
@@ -85,7 +85,7 @@
         "fields": {
             "name": "new_creations",
             "friendly_name": "New Creations",
-            "category": 2,
+            "category": 2
 
         }
     },
@@ -95,7 +95,7 @@
         "fields": {
             "name": "grilled",
             "friendly_name": "Grilled",
-            "category": 2,
+            "category": 2
 
         }
     },
@@ -105,7 +105,7 @@
         "fields": {
             "name": "rice",
             "friendly_name": "Rice",
-            "category": 3,
+            "category": 3
 
         }
     },
@@ -115,7 +115,7 @@
         "fields": {
             "name": "bread",
             "friendly_name": "Bread",
-            "category": 3,
+            "category": 3
 
         }
     },
@@ -125,7 +125,7 @@
         "fields": {
             "name": "extras",
             "friendly_name": "Extras",
-            "category": 3,
+            "category": 3
 
         }
     },
@@ -135,7 +135,7 @@
         "fields": {
             "name": "side_dish",
             "friendly_name": "Side Dishes",
-            "category": 3,
+            "category": 3
 
         }
     },
@@ -145,7 +145,7 @@
         "fields": {
             "name": "cold_desserts",
             "friendly_name": "Cold Desserts",
-            "category": 4,
+            "category": 4
 
         }
     },
@@ -155,7 +155,7 @@
         "fields": {
             "name": "hot_desserts",
             "friendly_name": "Hot Desserts",
-            "category": 4,
+            "category": 4
 
         }
     }
