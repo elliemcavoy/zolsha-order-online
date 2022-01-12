@@ -99,3 +99,64 @@
 
         }
     },
+    {
+        "pk": 11,
+        "model": "menu.subcategory",
+        "fields": {
+            "name": "rice",
+            "friendly_name": "Rice",
+            "category": 3,
+
+        }
+    },
+    {
+        "pk": 12,
+        "model": "menu.subcategory",
+        "fields": {
+            "name": "bread",
+            "friendly_name": "Bread",
+            "category": 3,
+
+        }
+    },
+    {
+        "pk": 13,
+        "model": "menu.subcategory",
+        "fields": {
+            "name": "extras",
+            "friendly_name": "Extras",
+            "category": 3,
+
+        }
+    },
+    {
+        "pk": 14,
+        "model": "menu.subcategory",
+        "fields": {
+            "name": "side_dish",
+            "friendly_name": "Side Dishes",
+            "category": 3,
+
+        }
+    },
+    {
+        "pk": 15,
+        "model": "menu.subcategory",
+        "fields": {
+            "name": "cold_desserts",
+            "friendly_name": "Cold Desserts",
+            "category": 4,
+
+        }
+    },
+    {
+        "pk": 16,
+        "model": "menu.subcategory",
+        "fields": {
+            "name": "hot_desserts",
+            "friendly_name": "Hot Desserts",
+            "category": 4,
+
+        }
+    }
+]

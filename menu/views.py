@@ -31,6 +31,7 @@ def all_menu(request):
     }
     return render(request, 'menu/menu.html', context)
 
+
 def menu_item(request, item_id):
     """ A view to show individual product details """
 

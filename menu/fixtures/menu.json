@@ -5,8 +5,1634 @@
        "fields":{
           "sku":"sttr1",
           "name":"Chicken Tikka",
-          "description":"Chicken marinated in spices and yoghurt & cooked int he tandoori oven",
+          "description":"Chicken Marinated in yoghurt and spices, cooked in a clay oven.",
           "price":3.25,
-          "category":6,
+          "category":1,
+          "subcategory":2,
+          "has_options":false
+
        }
     },
+    {
+      "pk":2,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr2",
+         "name":"Sizzler Mix for 2",
+         "description":"Chicken tikka, onion bhaji, seekh kebab & lamb chops served on a sizzler.",
+         "price":8.50,
+         "category":1,
+         "subcategory": 2,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":3,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr3",
+         "name":"Lamb Chops",
+         "description":"On the bone lamb marinated in Zolshas pioneering dressing then grilled.",
+         "price":5.50,
+         "category":1,
+         "subcategory": 2,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":4,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr4",
+         "name":"Royal Mix",
+         "description":"A mixture of chicken tikka, onion bhaji & seekh kebab, lets you try all the classic starters",
+         "price":4.50,
+         "category":1,
+         "subcategory": 2,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":5,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr5",
+         "name":"Chicken Pakora",
+         "description":"Chicken strips marinated in a spiced yoghurt and deep fried in batter",
+         "price":4.50,
+         "category":1,
+         "subcategory": 2,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":6,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr6",
+         "name":"Meat Samosa",
+         "description":"Crispy homemade pastry triangles stuffed full with spiced minced meat & soft potato",
+         "price":3.95,
+         "category":1,
+         "subcategory": 2,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":7,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr7",
+         "name":"Chicken Chatt",
+         "description":"Small pieces of chicken cooked in a medium chaat massala sauce served with a pancake.",
+         "price":4.95,
+         "category":1,
+         "subcategory": 2,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":8,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr8",
+         "name":"Shami Kebab",
+         "description":"Lightly spiced minced meat and onion, moulded into a flat kebab & grilled.",
+         "price":4.50,
+         "category":1,
+         "subcategory": 2,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":9,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr9",
+         "name":"Onion Bhaji",
+         "description":"Thinly sliced onions, covered in a spicy flour & deep fried",
+         "price":3.25,
+         "category":1,
+         "subcategory": 1,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":10,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr10",
+         "name":"Vegetable Samosa",
+         "description":"Spiced vegetable in crispy homemade pastry & fried",
+         "price":3.95,
+         "category":1,
+         "subcategory": 1,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":11,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr11",
+         "name":"Paneer Tikka",
+         "description":"Lightly marinated cheese cubes, cooked over a charcoal grill, then glazed with a sweet and spicy dressing",
+         "price":4.50,
+         "category":1,
+         "subcategory": 1,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":12,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr12",
+         "name":"Kashmiri Chatt Puree",
+         "description":"Potatoes & chickpeas in a medium dry sauce served with a pancake.",
+         "price":4.50,
+         "category":1,
+         "subcategory": 1,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":13,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr13",
+         "name":"Garlic Mushrooms",
+         "description":"Fresh mushrooms cooked in mustard oil with cream, garlic, cheese and herbs. Served with garlic bread",
+         "price":3.50,
+         "category":1,
+         "subcategory": 1,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":14,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr14",
+         "name":"Fish Pakora",
+         "description":"Pieces of spiced fish coated in batter & deep fried.",
+         "price":4.95,
+         "category":1,
+         "subcategory": 3,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":15,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr15",
+         "name":"Fish Tikka",
+         "description":"A healthy appetiser of seasoned white fish barbequed in the tandoori oven.",
+         "price":4.50,
+         "category":1,
+         "subcategory": 3,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":16,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr16",
+         "name":"King Prawn Chatt",
+         "description":"King prawns gently cooked in a dry medium sauce, with a pancake.",
+         "price":6.50,
+         "category":1,
+         "subcategory": 3,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":17,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr17",
+         "name":"Garlic King Prawn",
+         "description":"Tiger prawns with sliced garlic, herbs & mustard oil then stir fried.",
+         "price":5.95,
+         "category":1,
+         "subcategory": 3,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":18,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr18",
+         "name":"Aromatic Chingri",
+         "description":"King prawns marinated with plum chutney, garlic & cinnamon then gently cooked with onions & peppers.",
+         "price":5.95,
+         "category":1,
+         "subcategory": 3,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":19,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sttr19",
+         "name":"BBQ King Prawns",
+         "description":"Tiger prawns marinated with herbs & spices, cooked over a charcoal grill to give a smoky BBQ flavour.",
+         "price":5.95,
+         "category":1,
+         "subcategory":3,
+         "has_options": false
+
+      }
+   },
+   {
+      "pk":20,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs1",
+         "name":"Bhuna",
+         "description":"A delicious, medium dish with onion, tomatoes & spices",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":21,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs2",
+         "name":"Madras",
+         "description":"A South Indian dish, fiery & hot flavoured with lemon",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":22,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs3",
+         "name":"Dupiaza",
+         "description":"Onions seasoned with spices cooked until tender to produce a flavourful medium dish",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":23,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs4",
+         "name":"Karahi",
+         "description":"A unique blend of Zolshas spices creates a medium sauce with chunks of onion, tomatoes & chilli peppers",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":24,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs5",
+         "name":"Rogan Josh",
+         "description":"A preparation of pimento, garlic, onions & tomato",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":25,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs6",
+         "name":"Pathia",
+         "description":"A hot & sour saucy dish cooked with onions, chilli & black peppercorns",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":26,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs7",
+         "name":"Dansak",
+         "description":"Hot & Sour yet sweet - a combination of lentils & pineapple",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":27,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs8",
+         "name":"Desi Massala",
+         "description":"An Asian style saucy dish cooked with green chillies, bay leaves, cinnamon & garam massala",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":28,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs9",
+         "name":"Balti",
+         "description":"Highly spiced balti sauce cooked with fresh ingredients, mixed spices, onions & bullet chillies",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":29,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs10",
+         "name":"Vindaloo",
+         "description":"A very hot dish with lots of chillies, spices and cubes of potato",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":30,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs11",
+         "name":"Biryani",
+         "description":"Stir fried basmati rice flavoured with yakni, onions and fresh spices. Served with vegetable curry sauce.",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":31,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs12",
+         "name":"Jalfrezi",
+         "description":"Gently cooked spicy dry sauce with fresh ginger, garlic, onions, peppers and herbs",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":32,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs13",
+         "name":"Saag",
+         "description":"Spinach combined with herbs, spices & slices of fresh garlic creating a delicious dry dish",
+         "price":7.50,
+         "category":2,
+         "subcategory":4,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":33,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs14",
+         "name":"Korma",
+         "description":"A very mild and creamy dish. Chicken or lamb cooked with coconut to give it a sweet flavour.",
+         "price":7.95,
+         "category":2,
+         "subcategory":5,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":34,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs15",
+         "name":"Chicken Tikka Massala",
+         "description":"Marinated chicken in a rich massala sauce with ground almonds, coconut & cream.",
+         "price":8.50,
+         "category":2,
+         "subcategory":5,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":35,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs16",
+         "name":"Makhani",
+         "description":"Chicken tikka in a mild sauce with pistachios, cream, spices & coriander.",
+         "price":8.50,
+         "category":2,
+         "subcategory":5,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":36,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs17",
+         "name":"Zolsha Exotica",
+         "description":"Chicken in a sweet sauce of coconut, mango & pineapple. Topped with a cherry.",
+         "price":7.95,
+         "category":2,
+         "subcategory":5,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":37,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs18",
+         "name":"Kaliya Gosht",
+         "description":"A combination of tender lamb and paneer, flavoured with star aniseed, cumin & black peppercorns in a traditional spicy sauce",
+         "price":9.50,
+         "category":2,
+         "subcategory":6,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":38,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs19",
+         "name":"Mirchi Massala",
+         "description":"Marinated chicken cooked with potatoes and a unique mixture of spices, red & green chillies which gives this dish a fiery flavour. Topped with crispy potato slices.",
+         "price":9.50,
+         "category":2,
+         "subcategory":6,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":39,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs20",
+         "name":"Rezzala",
+         "description":"Marinated in yoghurt & chilli cooked in a South Indian sauce.
+         Topped with fried red chilli and onions & lots of fresh coriander",
+         "price":8.95,
+         "category":2,
+         "subcategory":6,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":40,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs21",
+         "name":"Royal Vensi",
+         "description":"Chicken tikka simmered in a cream, honey & mustard sauce topped with caramelised onions.",
+         "price":8.95,
+         "category":2,
+         "subcategory":6,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":41,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs22",
+         "name":"Nani Ka Massala",
+         "description":"Breast chicken cooked with fresh garlic, plum tomato, red chilli & massala sauce. Very popular! Our grandmas original recipe",
+         "price":9.50,
+         "category":2,
+         "subcategory":6,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":42,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs23",
+         "name":"South Indian Chicken",
+         "description":"Cooked in a specially prepared garlic sauce with fresh tomato & green chilli to give an authentic taste & texture. Elegantly crafted by our head chef.",
+         "price":8.95,
+         "category":2,
+         "subcategory":6,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":43,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs24",
+         "name":"Zolsha Balti Massala",
+         "description":"A unique & complex dish. Marinated in herbs and spices then cooked in a rich massala sauce. One of our best-selling dishes.",
+         "price":8.50,
+         "category":2,
+         "subcategory":7,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":44,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs25",
+         "name":"Minted Bhuna",
+         "description":"Cooked with methi leaves, tomato, fresh herbs, mint & spices.",
+         "price":8.50,
+         "category":2,
+         "subcategory":7,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":45,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs26",
+         "name":"Naga Tarkaari",
+         "description":"A combination of marinated chicken and minced lamb cooked with the finest Indian spices & chefs special hot chilli paste.",
+         "price":8.95,
+         "category":2,
+         "subcategory":7,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":46,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs27",
+         "name":"Garlic Chilli Chicken",
+         "description":"A famous dish from Delhi, this spicy dish is rich & full of flavour. Chicken cooked with plenty of fresh chillies then topped with tarka garlic.",
+         "price":8.50,
+         "category":2,
+         "subcategory":7,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":47,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs28",
+         "name":"Moghal Chicken",
+         "description":"Favourite of Moghal Emperors. Off the bone tandoori chicken cooked in a tasty sauce with minced lamb & a medium massala.",
+         "price":8.50,
+         "category":2,
+         "subcategory":7,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":48,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs29",
+         "name":"House Special Curry",
+         "description":"Traditional dish of Bangladesh. Highly spiced & cooked with mixed peppers, onion, coriander & olive oil.",
+         "price":8.50,
+         "category":2,
+         "subcategory":7,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":49,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs30",
+         "name":"Lacknawi Karahi",
+         "description":"Medium strength sauce cooked with a special mixture of ground spices & fresh coriander. A North East Indian inspired dish garnished with onion, peppers & a dash of cream.",
+         "price":8.95,
+         "category":2,
+         "subcategory":7,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":50,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs31",
+         "name":"Hyderabadi",
+         "description":"A rich dish cooked with tangy spices, yogurt, bay leaf, cloves & cardamom. It is full of mouth watering flavours.",
+         "price":8.50,
+         "category":2,
+         "subcategory":7,
+         "has_options": true
+
+      }
+   },
+   {
+      "pk":51,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs32",
+         "name":"Chicken Handi",
+         "description":"Diced chicken cooked in a handi pot until tender with 9 key spices, ginger slices & lots of fresh coriander.",
+         "price":7.95,
+         "category":2,
+         "subcategory":7,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":52,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs33",
+         "name":"Gosht Patta",
+         "description":"Tender lamb cooked in a medium sauce topped with roasted onions & cream then drizzled with honey.",
+         "price":9.50,
+         "category":2,
+         "subcategory":7,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":53,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs34",
+         "name":"Chicken Zolshan",
+         "descripion":"Strips of chicken, peppers and onions cooked with plenty of ginger, spring onion and tomatoes to create a rich sauce.",
+         "price":8.95,
+         "category":2,
+         "subcategory":7,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":54,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs35",
+         "name":"Tava Lahori",
+         "description":"Home-Style dish with green chilli, tomatoes and garam massala. A combination of small pieces of chicken tikka, keema and potatoes.",
+         "price":8.95,
+         "category":2,
+         "subcategory":7,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":55,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs36",
+         "name":"Zolsha Kebab Cocktail",
+         "description":"Marinated pieces of chicken, lamb, king prawn and meatballs grilled with peppers & onions then slow cooked in a medium sauce.",
+         "price":9.95,
+         "category":2,
+         "subcategory":7,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":56,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs37",
+         "name":"Chicken Chana Massala",
+         "description":"Chicken & chickpeas cooked with chillies, green pepper & chefs specially prepared sauce.",
+         "price":8.50,
+         "category":2,
+         "subcategory":7,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":57,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs38",
+         "name":"Fish Anari",
+         "description":"Succulent pieces of coley fish with flavours of pomegranate, garlic, ginger & spices, garnished with lemon.",
+         "price":9.95,
+         "category":2,
+         "subcategory":8,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":58,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs39",
+         "name":"Machli Salom",
+         "description":"Diced massala fish in a medium sauce with garlic, spring onion, green peppers, tomatoes and our own selection of spices.",
+         "price":9.95,
+         "category":2,
+         "subcategory":8,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":59,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs40",
+         "name":"Fish Lazzadar",
+         "description":"Cooked with Zolshas homemade chilli sauce, lemon zest, parsley & lime. Bursting with refreshing flavour",
+         "price":9.95,
+         "category":2,
+         "subcategory":8,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":60,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs41",
+         "name":"Salmon Piazi",
+         "description":"Gently marinated salmon served in a medium sauce with stir fried onions & peppers then drizzled with olive oil",
+         "price":9.95,
+         "category":2,
+         "subcategory":8,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":61,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs42",
+         "name":"King Prawn Kuzuri",
+         "description":"Cinnamon, massala onions & mallasis give this adventurous creamy dish an extra special spicy flavour.",
+         "price":10.95,
+         "category":2,
+         "subcategory":8,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":62,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs43",
+         "name":"Tandoori King Prawn Massala",
+         "description":"King prawns barbequed in the tandoori with a rich, creamy, coconut & almond sauce. ",
+         "price":11.50,
+         "category":2,
+         "subcategory":8,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":63,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs44",
+         "name":"Kofta Chingri",
+         "description":"Shallow fried spicy fish kofta laid on a bed of dhall massala with a hint of lemon. This delicious dish is topped with lightly spiced grilled king prawns",
+         "price":11.95,
+         "category":2,
+         "subcategory":8,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":64,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs45",
+         "name":"Jinga Paneer Palack",
+         "description":"Tandoori King prawns and spicy coated paneer nestled on top of a saag bhaji base. Served with a sweet and spicy sauce.",
+         "price":11.95,
+         "category":2,
+         "subcategory":8,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":65,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs46",
+         "name":"Garlic Chicken Korma",
+         "description":"Everyone's favourite mild dish, now with a spicy twist. Toasted garlic and onions give this creamy dish a smoky kick. ",
+         "price":8.95,
+         "category":2,
+         "subcategory":9,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":66,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs47",
+         "name":"Meat Marati",
+         "description":"This East Asian inspired dish combines ginger, chillies, lemongrass and coconut to create a spicy coating for the tender meat. ",
+         "price":9.95,
+         "category":2,
+         "subcategory":9,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":67,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs48",
+         "name":"Massaladar Murgh",
+         "description":"Gently cooked chicken smothered in a sweet and spicy sauce. One of Chef's special recipes - a must try dish. Served with toasted garlic, pepper & onions. ",
+         "price":8.95,
+         "category":2,
+         "subcategory":9,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":68,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs49",
+         "name":"Kali Mirch",
+         "description":"Chicken pieces tossed together with mustard oil and a spicy naga sauce with plenty of black pepper, lime and tomato. ",
+         "price":8.95,
+         "category":2,
+         "subcategory":9,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":69,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs50",
+         "name":"Zardani",
+         "description":"Chicken cooked with a blend of light spices & almonds with a hint of sweet 
+         yoghurt & massala sauce.",
+         "price":7.95,
+         "category":2,
+         "subcategory":9,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":70,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs51",
+         "name":"Anarasi",
+         "description":"Slow cooked lamb combined with plenty of garlic, coriander & spices topped with stir fried pineapple. ",
+         "price":8.95,
+         "category":2,
+         "subcategory":9,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":71,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs52",
+         "name":"Peri Peri Chicken",
+         "description":"On the bone chicken marinated with herbs, red wine & spices. Served with rice,salad and drizzled with peri-peri sauce. A complete meal",
+         "price":9.95,
+         "category":2,
+         "subcategory":10,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":72,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs53",
+         "name":"Chicken Shashlick",
+         "description":"Mildly spiced chicken skewers with tomatoes, capsicums & onions grilled BBQ style. ",
+         "price":9.50,
+         "category":2,
+         "subcategory":10,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":73,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs54",
+         "name":"Tandoori Mix Grill",
+         "description":"Marinated in spices & cooked in a clay oven to preserve the natural flavours. Tandoori chicken, lamb chops, chicken tikka, seekh kebab, fish & king prawns. ",
+         "price":10.95,
+         "category":2,
+         "subcategory":10,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":74,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs55",
+         "name":"King Prawn Shashlick",
+         "description":"Spiced king prawns skewered with tomatoes, capsicums and onions, grilled BBQ style. ",
+         "price":11.50,
+         "category":2,
+         "subcategory":10,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":75,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs56",
+         "name":"Fish Shashlick",
+         "description":"Spiced white fish cooked in the tandoori with tomatoes & onions then tossed in a spicy glaze. ",
+         "price":9.95,
+         "category":2,
+         "subcategory":10,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":76,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"mncrs57",
+         "name":"Tandoori Seabass",
+         "description":"Seabass fillet marinated in yoghurt, chillies, ginger & smoky paprika. Served with fried onions, peppers & fish curry sauce.",
+         "price":9.95,
+         "category":2,
+         "subcategory":10,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":77,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs1",
+         "name":"Boiled Rice",
+         "description":"Steamed plain rice ",
+         "price":2.80,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":78,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs2",
+         "name":"Pilau Rice",
+         "description":"Long grain basmati rice ",
+         "price":2.95,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":79,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs3",
+         "name":"Desi Pilau Rice",
+         "description":"Authentic flavoured rice with chillies & chickpeas ",
+         "price":3.50,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":80,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs4",
+         "name":"Zarda Pilau Rice",
+         "description":"Sweet rice with sultanas, pistachios & almonds ",
+         "price":3.50,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":81,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs5",
+         "name":"Lemon Rice",
+         "description":"With onions, lemon zest & herbs",
+         "price":3.50,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":82,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs6",
+         "name":"Egg Fried Rice",
+         "description":"With spices, egg and coriander ",
+         "price":3.50,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":83,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs7",
+         "name":"Vegetable Pilau Rice",
+         "description":"Fresh vegetables, herbs & spices ",
+         "price":3.50,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":84,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs8",
+         "name":"Special Rice",
+         "description":"Basmati rice with chicken tikka, egg & green peas ",
+         "price":3.50,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":85,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs9",
+         "name":"Mushroom Pilau Rice",
+         "description":"Mushrooms, onions, coriander & spices ",
+         "price":3.50,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":86,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs10",
+         "name":"Kashmiri Rice",
+         "description":"Basmati rice with dried fruit, coconut, onion & spices ",
+         "price":3.50,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":87,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs11",
+         "name":"Garlic Rice",
+         "description":"Fried onions, garlic, coriander & spices ",
+         "price":3.50,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":88,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs12",
+         "name":"Keema Rice",
+         "description":"Mince meat, onions, coriander & spices ",
+         "price":3.50,
+         "category":3,
+         "subcategory":11,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":89,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs13",
+         "name":"Naan Bread",
+         "description":" ",
+         "price":2.95,
+         "category":3,
+         "subcategory":12,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":90,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs14",
+         "name":"Keema Naan",
+         "description":" ",
+         "price":3.50,
+         "category":3,
+         "subcategory":12,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":91,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs15",
+         "name":"Garlic Naan",
+         "description":" ",
+         "price":3.50,
+         "category":3,
+         "subcategory":12,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":92,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs16",
+         "name":"Peshwari Naan",
+         "description":" ",
+         "price":3.50,
+         "category":3,
+         "subcategory":12,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":93,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs17",
+         "name":"Cheese Naan",
+         "description":" ",
+         "price":3.50,
+         "category":3,
+         "subcategory":12,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":94,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs18",
+         "name":"Special Naan",
+         "description":" ",
+         "price":3.50,
+         "category":3,
+         "subcategory":12,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":95,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs19",
+         "name":"Chapati",
+         "description":" ",
+         "price":1.25,
+         "category":3,
+         "subcategory":12,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":96,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs20",
+         "name":"Tandori Roti",
+         "description":" ",
+         "price":1.80,
+         "category":3,
+         "subcategory":12,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":97,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs21",
+         "name":"Paratha",
+         "description":" ",
+         "price":2.95,
+         "category":3,
+         "subcategory":12,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":98,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs22",
+         "name":"Chips",
+         "description":" ",
+         "price":2.50,
+         "category":3,
+         "subcategory":13,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":99,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs23",
+         "name":"Steak Cut Chips",
+         "description":" ",
+         "price":2.50,
+         "category":3,
+         "subcategory":13,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":100,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs24",
+         "name":"Spiced Chips",
+         "description":" ",
+         "price":2.95,
+         "category":3,
+         "subcategory":13,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":101,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs25",
+         "name":"Cheesy Chips",
+         "description":" ",
+         "price":2.95,
+         "category":3,
+         "subcategory":13,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":102,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs26",
+         "name":"Onion Rings",
+         "description":" ",
+         "price":2.80,
+         "category":3,
+         "subcategory":13,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":103,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs27",
+         "name":"Side Salad",
+         "description":" ",
+         "price":1.50,
+         "category":3,
+         "subcategory":13,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":104,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs28",
+         "name":"Bombay Aloo",
+         "description":"Spicy potatoes cooked in a dry sauce",
+         "price":4.95,
+         "category":3,
+         "subcategory":14,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":105,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs29",
+         "name":"Aloo Palak",
+         "description":"Spinach & potatoes in a medium sauce ",
+         "price":4.95,
+         "category":3,
+         "subcategory":14,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":106,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs30",
+         "name":"Paneer Palak",
+         "description":"Indian cheese & spinach cooked with garlic and spices",
+         "price":4.95,
+         "category":3,
+         "subcategory":14,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":107,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs31",
+         "name":"Saag Chana",
+         "description":"Chickpeas & spinach cooked with garlic & green chillies ",
+         "price":4.95,
+         "category":3,
+         "subcategory":14,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":108,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs32",
+         "name":"Dhall Palak",
+         "description":"Lentils & spinach cooked with garlic and spices. ",
+         "price":4.95,
+         "category":3,
+         "subcategory":14,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":109,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs33",
+         "name":"Aloo Gobi",
+         "description":"Lightly spiced potatoes cooked with steamed cauliflower ",
+         "price":4.95,
+         "category":3,
+         "subcategory":14,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":110,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs34",
+         "name":"Tarka Dhall",
+         "description":"Traditional home-style spicy lentil dish ",
+         "price":4.95,
+         "category":3,
+         "subcategory":14,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":111,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"sndrs35",
+         "name":"Dhall Massala",
+         "description":"Thick spicy dhal cooked with roast garlic & mustard oil garnished with roast onion & dried chilli ",
+         "price":4.95,
+         "category":3,
+         "subcategory":14,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":112,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"dssrt1",
+         "name":"Oreo Cookie Bash",
+         "description":"Oreo Cookie cheesecake",
+         "price":4.50,
+         "category":4,
+         "subcategory":15,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":113,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"dssrt2",
+         "name":"Coconut Supreme",
+         "description":"Coconut ice cream in a coconut shell",
+         "price":3.95,
+         "category":4,
+         "subcategory":15,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":114,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"dssrt3",
+         "name":"Sticky Toffee Pudding",
+         "description":"Sticky Toffee Pudding in toffee sauce.",
+         "price":3.95,
+         "category":4,
+         "subcategory":16,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":115,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"dssrt4",
+         "name":"Cornflake Tart",
+         "description":"Cornflake tart served with custard",
+         "price":3.95,
+         "category":4,
+         "subcategory":16,
+         "has_options":false
+
+      }
+   },
+   {
+      "pk":116,
+      "model":"menu.menu",
+      "fields":{
+         "sku":"dssrt5",
+         "name":"Molten Chocolate Cake",
+         "description":"Chocolate pudding with a melted chocolate centre.",
+         "price":4.50,
+         "category":4,
+         "subcategory":16,
+         "has_options":false
+
+      }
+   },
+]
+
+
+
+
+
+
+
+
+
+
