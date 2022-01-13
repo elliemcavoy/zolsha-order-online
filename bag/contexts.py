@@ -12,12 +12,14 @@ def bag_items(request):
     for item_id, quantity in bag.items():
         if isinstance(quantity, int):
             item = get_object_or_404(Menu, pk=item_id)
+            subtotal = quantity * item.price
             total += quantity * item.price
             item_count += quantity
             bag_items.append({
                 'item_id': item_id,
                 'quantity': quantity,
                 'item': item,
+                'subtotal': subtotal
             })
     
     context = {

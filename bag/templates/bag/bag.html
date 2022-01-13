@@ -16,10 +16,39 @@
     <div class="col">
         {% if bag_items %}
             <div class="table-responsive rounded">
+                <table class="table table-sm table-borderless">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Your Food</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
                 {% for item in bag_items %}
-                {{ item.item.name }}
+                <tr>
+                    <td>
+                        <p><strong>{{ item.item.name }}</strong></p>
+                        <p>{% if item.item.has_options %}{{ item.option }}{% else %}<span></span>{% endif %}</p>
+                    </td>
+                    <td class="py-3">
+                        <p class="my-0">${{ item.item.price }}</p>
+                    </td>
+                    <td>
+                        {{ item.quantity }}
+                    </td>
+                    <td>
+                        {{ item.subtotal }}
+                    </td>
+                </tr>
+                
+                
+                
+
                 {% endfor %}
+            </table>
             </div>
+            
         {% else %}
                     <p class="lead mb-5">No food here yet.</p>
                     <a href="{% url 'all_menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
