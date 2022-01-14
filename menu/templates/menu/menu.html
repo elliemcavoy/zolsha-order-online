@@ -15,11 +15,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col text-center mt-3">
-        {% for c in selected_categories %}
-            <a class="category-badge text-decoration-none" href="{% url 'all_menu' %}?subcategory={{ c.name }}">
-                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.name }}</span>
-            </a>
+        {% for category in selected_categories %}
+                
+                <span class="p-2"><h3>{{ category.friendly_name }}</h3></span>
+         {% endfor %}  
+         {% for category in unselected_categories %}
+                
+         <span class="p-2">{{ category.friendly_name }}</span>
         {% endfor %}
+         
+         
     </div>
 </div>
 <div class="row">

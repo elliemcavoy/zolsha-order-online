@@ -17,13 +17,13 @@
                 Main Dishes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="main-dishes-link">
-                <a href="" class="dropdown-item">Classics</a>
-                <a href="" class="dropdown-item">Mild Selection</a>
-                <a href="" class="dropdown-item">House Specialities</a>
-                <a href="" class="dropdown-item">Seafood</a>
-                <a href="" class="dropdown-item">Grilled</a>
-                <a href="" class="dropdown-item">New Creations</a>
-                <a href="" class="dropdown-item">Chef's Recommendations</a>
+                <a href="{% url 'all_menu' %}?subcategory=classics" class="dropdown-item">Classics</a>
+                <a href="{% url 'all_menu' %}?subcategory=mild_selection" class="dropdown-item">Mild Selection</a>
+                <a href="{% url 'all_menu' %}?subcategory=house_specialities" class="dropdown-item">House Specialities</a>
+                <a href="{% url 'all_menu' %}?subcategory=fish_kingprawn" class="dropdown-item">Seafood</a>
+                <a href="{% url 'all_menu' %}?subcategory=grilled" class="dropdown-item">Grilled</a>
+                <a href="{% url 'all_menu' %}?subcategory=new_creations" class="dropdown-item">New Creations</a>
+                <a href="{% url 'all_menu' %}?subcategory=chefs_recommendations" class="dropdown-item">Chef's Recommendations</a>
             </div>
         </li>
 
@@ -32,10 +32,10 @@
                 Sundries
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="sundries-link">
-                <a href="" class="dropdown-item">Side Dishes</a>
-                <a href="" class="dropdown-item">Rice</a>
-                <a href="" class="dropdown-item">Bread</a>
-                <a href="" class="dropdown-item">Extras</a>
+                <a href="{% url 'all_menu' %}?subcategory=side_dishes" class="dropdown-item">Side Dishes</a>
+                <a href="{% url 'all_menu' %}?subcategory=rice" class="dropdown-item">Rice</a>
+                <a href="{% url 'all_menu' %}?subcategory=bread" class="dropdown-item">Bread</a>
+                <a href="{% url 'all_menu' %}?subcategory=extras" class="dropdown-item">Extras</a>
                 
             </div>
         </li>
@@ -44,8 +44,8 @@
                Desserts
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="desserts-link">
-                <a href="" class="dropdown-item">Hot Desserts</a>
-                <a href="" class="dropdown-item">Cold Desserts</a>
+                <a href="{% url 'all_menu' %}?subcategory=hot_desserts" class="dropdown-item">Hot Desserts</a>
+                <a href="{% url 'all_menu' %}?subcategory=cold_desserts" class="dropdown-item">Cold Desserts</a>
             </div>
         </li>
     </ul>

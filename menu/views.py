@@ -18,6 +18,7 @@ def all_menu(request):
             subcategories = request.GET['subcategory'].split(',')
             menu = menu.filter(subcategory__name__in=subcategories)
             subcategories = SubCategory.objects.filter(name__in=subcategories)
+            unselected = SubCategory.objects.filter().exclude(name__in=subcategories)
 
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -47,6 +48,7 @@ def all_menu(request):
     context = {
         'menu': menu,
         'selected_categories': subcategories,
+        'unselected_categories': unselected,
         'current_sorting': current_sorting,
     }
     return render(request, 'menu/menu.html', context)
