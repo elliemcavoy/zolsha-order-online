@@ -1,0 +1,1 @@
+subcategory sorting issue - needed to add .split(',') to the end of the request.GET function

@@ -6,9 +6,9 @@
                 Starters
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="starters-link">
-                <a href="" class="dropdown-item">Grilled & Traditional</a>
+                <a href="{% url 'all_menu' %}?subcategory=traditional_grilled" class="dropdown-item">Grilled & Traditional</a>
                 <a href="{% url 'all_menu' %}?subcategory=vegetarian" class="dropdown-item">Vegetarian</a>
-                <a href="" class="dropdown-item">Seafood</a>
+                <a href="{% url 'all_menu' %}?subcategory=seafood" class="dropdown-item">Seafood</a>
             </div>
         </li>
 
