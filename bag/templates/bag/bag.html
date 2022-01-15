@@ -25,22 +25,22 @@
                             <th scope="col">Subtotal</th>
                         </tr>
                     </thead>
-                {% for item in bag_items %}
+                {% for i in bag_items %}
                 <tr>
                     <td>
-                        <p><strong>{{ item.item.name }}</strong></p>
-                        <p>{% if item.item.has_options %}{{ item.option }}{% else %}<span></span>{% endif %}</p>
+                        <p><strong>{{ i.item.name }}{% if i.item.has_options %}{{ i.item.option }}{% else %}<span></span>{% endif %}</strong></p>
                     </td>
                     <td class="py-3">
-                        <p class="my-0">£{{ item.item.price }}</p>
+                        <p class="my-0">£{{ i.item.price }}</p>
                     </td>
                     <td>
-                        {{ item.quantity }}
+                        {{ i.quantity }}
                     </td>
                     <td>
-                        £{{ item.subtotal }}
+                        £{{ i.subtotal }}
                     </td>
                 </tr>
+                {% endfor %}
                 <tr>
                     <td colspan="5" class="pt-5 text-right">
                         <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
@@ -52,7 +52,7 @@
                 
                 
 
-                {% endfor %}
+                
             </table>
             </div>
             
