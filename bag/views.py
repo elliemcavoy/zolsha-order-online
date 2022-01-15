@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.contrib import messages
 from menu.models import Menu
 # Create your views here.
 
@@ -19,6 +20,8 @@ def add_to_bag(request, item_id):
         bag[item_id] += quantity
     else:
         bag[item_id] = quantity
+    
+    messages.success(request,f'Added {item.name}')
 
     request.session['bag'] = bag
     print(request.session['bag'])
