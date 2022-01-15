@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'menu',
     'bag',
     'checkout',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'zolsha_ordering.urls'
+
+CRIPSY_TEMPLATE_PACKAGE = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -75,6 +78,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'bag.contexts.bag_items',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
