@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from menu.models import Menu
 
 def bag_items(request):
-    bag_items = []
+    basket_items = []
     total = 0
     item_count = 0
     bag = request.session.get('bag', {})
@@ -15,7 +15,7 @@ def bag_items(request):
             subtotal = quantity * item.price
             total += quantity * item.price
             item_count += quantity
-            bag_items.append({
+            basket_items.append({
                 'item_id': item_id,
                 'quantity': quantity,
                 'item': item,
@@ -24,11 +24,11 @@ def bag_items(request):
     delivery = 0
     grand_total = delivery + total
     context = {
-        "bag_items":bag_items,
+        "bag_items": basket_items,
         "total": total,
         "delivery": delivery,
-        "grand_total": grand_total
-        #item_count
+        "grand_total": grand_total,
+        "item_count": item_count,
     }
 
     return context

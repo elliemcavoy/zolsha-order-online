@@ -1,13 +1,13 @@
-<div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
+<div class="toast toast-design rounded-0 border-top-0" data-autohide="false">
     <div class="arrow-up arrow-success"></div>
-    <div class="w-100 toast-capper bg-success"></div>
-    <div class="toast-header bg-white text-dark">
-        <strong class="mr-auto">It's in your bag!</strong>
+    <div class="w-100 toast-capper"></div>
+    <div class="toast-header text-dark">
+        <strong class="mr-auto">Your Order</strong>
         <button type="button" class="ml-2 mb-1 close text-dark" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="toast-body bg-white">
+    <div class="toast-body">
         <div class="row">
             <div class="col">
                 {{ message }}
@@ -15,14 +15,13 @@
             </div>
         </div>
         {% if grand_total %}
-            <p class="logo-font bg-white text-black py-1">Your Bag ({{ product_count }})</p>
+            <p class="logo-font bg-white text-black py-1">Food Items ({{ item_count }})</p>
             <div class="bag-notification-wrapper">
-                {% for item in bag_items %}
+                {% for i in bag_items %}
                     <div class="row">
                         <div class="col-9">
-                            <p class="my-0"><strong>{{ item.menu.name }}</strong></p>
-                            <p class="my-0 small">Option: {% if item.menu.has_options %}{{ item.option|upper }}{% else %}N/A{% endif %}</p>
-                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                            <p class="my-0"><strong>{% if i.item.has_options %}{{ i.option }}{{ i.item.name }}{% else %}{{ i.item.name }}{% endif %}</strong></p>
+                            <p class="my-0 small text-muted">Qty: {{ i.quantity }}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -33,7 +32,7 @@
                         Total: 
                         <span class="float-right">£{{ total|floatformat:2 }}</span>
                     </p></strong>
-                    <a href="{% url 'shopping_bag' %}" class="btn btn-black btn-block rounded-0">
+                    <a href="{% url 'checkout' %}" class="btn btn-black btn-block rounded-0">
                         <span class="text-uppercase">Go To Secure Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>

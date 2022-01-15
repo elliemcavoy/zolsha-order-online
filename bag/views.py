@@ -14,7 +14,7 @@ def add_to_bag(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     option = None
     if 'item_option' in request.POST:
-         option = request.POST['item_option']
+        option = request.POST['item_option']
     bag = request.session.get('bag', {})
 
     if option:

@@ -36,10 +36,17 @@
     z-index: 99999999999;
 }
 
-.custom-toast {
+.toast-design {
     overflow: visible;
+    color:grey;
+    
+}
+
+.toast-header{
+    margin-bottom: 2px solid orange;
 }
 
 .toast-capper {
     height: 2px;
+    background-color:orange;
 }
