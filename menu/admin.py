@@ -23,6 +23,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class SubCategoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
+        'category'
     )
 
 

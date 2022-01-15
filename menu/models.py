@@ -30,6 +30,9 @@ class SubCategory(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
+    def get_category(self):
+        return self.category
+
 class Menu(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     subcategory = models.ForeignKey('SubCategory', null=True, blank=True, on_delete=models.SET_NULL)

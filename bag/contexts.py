@@ -21,10 +21,13 @@ def bag_items(request):
                 'item': item,
                 'subtotal': subtotal
             })
-    
+    delivery = 0
+    grand_total = delivery + total
     context = {
-        "bag_items":bag_items
-        #total
+        "bag_items":bag_items,
+        "total": total,
+        "delivery": delivery,
+        "grand_total": grand_total
         #item_count
     }
 
