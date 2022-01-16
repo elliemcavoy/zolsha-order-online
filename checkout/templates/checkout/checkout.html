@@ -27,7 +27,7 @@
                 {% for i in bag_items %}
                     <div class="row">
                         <div class="col-7">
-                            <p class="my-0"><strong>{{ i.item.name }}</strong></p>
+                            <p class="my-0"><strong>{{ i.item.name }}{% if i.item.has_options %}{{ i.item.option }}{% else %}<span></span>{% endif %}</strong></p>
                             
                             <p class="my-0 small text-muted">Qty: {{ i.quantity }}</p>
                         </div>
@@ -82,7 +82,7 @@
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
-							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+							<span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
 						</p>
 					</div>
                 </form>
