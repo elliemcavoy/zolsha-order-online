@@ -43,6 +43,18 @@
                 </tr>
                 {% endfor %}
                 <tr>
+                    <td>
+                        <h6>Please enter your postcode to Calculate Delivery</h6>
+                        <form class="form" method="GET" action="{% url 'calculate_delivery' %}">
+                            
+                            <input name="postcode" type="text">
+                            <button type="submit">Calculate</button>
+                        </form>
+                    </td>
+                    {{ delivery_charge.charge }}
+                </tr>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <tr>
                     <td colspan="5" class="pt-5 text-right">
                         <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
                         <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>

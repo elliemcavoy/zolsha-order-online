@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
+from django.db.models import Q
 from menu.models import Menu
+from .models import DeliveryCharges
 # Create your views here.
 
 def shopping_bag(request):
@@ -27,17 +29,44 @@ def add_to_bag(request, item_id):
                 messages.success(request, f'Added {option.title()} {item.name} to your order')
         else:
             bag[item_id] = {'item_option': {option: quantity}}
-            messages.success(request, f'Added size {option.title()} {item.name} to your order')
+            messages.success(request, f'Added {option.title()} {item.name} to your order')
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
             messages.success(request, f'Updated {item.name} quantity to {bag[item_id]}')
         else:
             bag[item_id] = quantity
-            messages.success(request, f'Added {item.name} to your bag')
+            messages.success(request, f'Added {item.name} to your order')
 
 
     request.session['bag'] = bag
     print(request.session['bag'])
     return redirect(redirect_url)
+
+
+def calculate_delivery(request):
     
+    if 'postcode' in request.GET:
+        charge = DeliveryCharges.objects.all()
+        delivery_postcode = request.GET['postcode']
+        if not delivery_postcode:
+            messages.error(request, "Please enter your postcode.")
+            return redirect(reverse('shopping_bag'))
+        queries = Q(area__icontains=delivery_postcode)
+        delivery_charge = charge.filter(queries)
+        print(delivery_charge)
+    context = {
+        "delivery_charge" : delivery_charge 
+    }
+
+    return render(request, 'bag/bag.html', context)
+
+
+
+
+    
+
+    
+
+
+
