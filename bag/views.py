@@ -18,13 +18,24 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if option:
-        
-        bag[item_id] = {'items_by_option': {option: quantity}}
-        messages.success(request, f'Added {option.title()} {item.name} to your order')
-    
+        if item_id in list(bag.keys()):
+            if option in bag[item_id]['items_by_option'].keys():
+                bag[item_id]['items_by_option'][option] += quantity
+                messages.success(request, f'Updated {option.title()} {item.name} quantity to {bag[item_id]["items_by_option"][option]}')
+            else:
+                bag[item_id]['items_by_option'][option] = quantity
+                messages.success(request, f'Added {option.title()} {item.name} to your order')
+        else:
+            bag[item_id] = {'item_option': {option: quantity}}
+            messages.success(request, f'Added size {option.title()} {item.name} to your order')
     else:
-        bag[item_id] = quantity
-        messages.success(request, f'Added {item.name} to your order')
+        if item_id in list(bag.keys()):
+            bag[item_id] += quantity
+            messages.success(request, f'Updated {item.name} quantity to {bag[item_id]}')
+        else:
+            bag[item_id] = quantity
+            messages.success(request, f'Added {item.name} to your bag')
+
 
     request.session['bag'] = bag
     print(request.session['bag'])
