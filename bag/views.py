@@ -56,7 +56,7 @@ def calculate_delivery(request):
         delivery_charge = charge.filter(queries)
         print(delivery_charge)
     context = {
-        "delivery_charge" : delivery_charge 
+        "delivery_charge" : delivery_charge, 
     }
 
     return render(request, 'bag/bag.html', context)

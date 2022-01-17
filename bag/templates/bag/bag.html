@@ -51,13 +51,20 @@
                             <button type="submit">Calculate</button>
                         </form>
                     </td>
-                    {{ delivery_charge.charge }}
+            
+                   
                 </tr>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 <tr>
                     <td colspan="5" class="pt-5 text-right">
                         <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                        <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                        {% if delivery_charge %}
+                            {% for d in delivery_charge %}
+                                <h6>Delivery: £{{ d.charge|floatformat:2 }}</h6>
+                            {% endfor %}
+                        {% else %}
+                            <h6>Delivery: £0.00</h6>
+                        {% endif %}
                         <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                     </td>
                 </tr>
