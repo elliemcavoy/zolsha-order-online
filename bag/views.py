@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Upper
 from menu.models import Menu
 from .models import DeliveryCharges
 # Create your views here.
@@ -48,13 +49,17 @@ def calculate_delivery(request):
     
     if 'postcode' in request.GET:
         charge = DeliveryCharges.objects.all()
-        delivery_postcode = request.GET['postcode']
+        postcode = request.GET['postcode']
+        delivery_postcode = postcode.upper()
+        
         if not delivery_postcode:
             messages.error(request, "Please enter your postcode.")
             return redirect(reverse('shopping_bag'))
-        queries = Q(area__icontains=delivery_postcode)
-        delivery_charge = charge.filter(queries)
-        print(delivery_charge)
+        for c in charge: 
+            if delivery_postcode.__contains__(c.area):
+                delivery_charge = c.charge
+            
+            
     context = {
         "delivery_charge" : delivery_charge, 
     }
