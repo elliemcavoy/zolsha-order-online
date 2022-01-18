@@ -7,16 +7,40 @@ from .forms import OrderForm
 import stripe
 
 def checkout(request):
-    bag = request.session.get('bag', {})
-    if not bag:
-        messages.error(request, "There's nothing in your bag at the moment")
-        return redirect(reverse('products'))
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+    if request.method == 'POST':
+        bag = request.session.get('bag', {})
 
-    order_form = OrderForm()
+        form_data = {
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'postcode': request.POST['postcode'],
+            'town_or_city': request.POST['town_or_city'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+        }
+        order_form = OrderForm(form_data)
+        if order_form.is_valid():
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_bag = json.dumps(bag)
+            order.save()
+
+
+    else:
+        bag = request.session.get('bag', {})
+        if not bag:
+            messages.error(request, "There's no food here!")
+            return redirect(reverse('all_menu'))
+
+    
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key':'pk_test_51KCw7TAAKGESx0rhHCk3rVyF6OcqU8pHM6t8gHlK8BX4RTl4eNWpOMrwheAPaKO2VlscgrDSuuVjealLBtzfcyN000pZeFyEgz',
+        'stripe_public_key': stripe_public_key,
         'client_secret_key': 'test client secret'
     }
 
