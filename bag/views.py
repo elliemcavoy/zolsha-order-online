@@ -45,26 +45,26 @@ def add_to_bag(request, item_id):
     return redirect(redirect_url)
 
 
-def calculate_delivery(request):
+#def calculate_delivery(request):
     
-    if 'postcode' in request.GET:
-        charge = DeliveryCharges.objects.all()
-        postcode = request.GET['postcode']
-        delivery_postcode = postcode.upper()
+    #if 'postcode' in request.GET:
+        #charge = DeliveryCharges.objects.all()
+        #postcode = request.GET['postcode']
+        #delivery_postcode = postcode.upper()
         
-        if not delivery_postcode:
-            messages.error(request, "Please enter your postcode.")
-            return redirect(reverse('shopping_bag'))
-        for c in charge: 
-            if delivery_postcode.__contains__(c.area):
-                delivery_charge = c.charge
+        #if not delivery_postcode:
+            #messages.error(request, "Please enter your postcode.")
+            #return redirect(reverse('shopping_bag'))
+        #for c in charge: 
+            #if delivery_postcode.__contains__(c.area):
+                #delivery_charge = c.charge
             
             
-    context = {
-        "delivery_charge" : delivery_charge, 
-    }
+    #context = {
+        #"delivery_charge" : delivery_charge, 
+    #}
 
-    return render(request, 'bag/bag.html', context)
+    #return render(request, 'bag/bag.html', context)
 
 
 

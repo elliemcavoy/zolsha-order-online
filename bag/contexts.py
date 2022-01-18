@@ -2,6 +2,8 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from menu.models import Menu
+from django.db.models.functions import Upper
+from .models import DeliveryCharges
 
 def bag_items(request):
     basket_items = []
@@ -31,15 +33,27 @@ def bag_items(request):
                     'item': item,
                     'option': option,
                 })
+    if 'postcode' in request.GET:
+        charge = DeliveryCharges.objects.all()
+        postcode = request.GET['postcode']
+        delivery_postcode = postcode.upper()
+        
+        if not delivery_postcode:
+            messages.error(request, "Please enter your postcode.")
+            return redirect(reverse('shopping_bag'))
+        for c in charge: 
+            if delivery_postcode.__contains__(c.area):
+                delivery_charge = c.charge
+    else:
+        delivery_charge=0
 
-    delivery = 0
-    grand_total = delivery + total
+    grand_total = delivery_charge + total
     context = {
         "bag_items": basket_items,
         "total": total,
-        "delivery": delivery,
         "grand_total": grand_total,
         "item_count": item_count,
+        "delivery_charge" : delivery_charge,
     }
 
     return context
