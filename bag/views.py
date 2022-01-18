@@ -29,7 +29,7 @@ def add_to_bag(request, item_id):
                 bag[item_id]['items_by_option'][option] = quantity
                 messages.success(request, f'Added {option.title()} {item.name} to your order')
         else:
-            bag[item_id] = {'item_option': {option: quantity}}
+            bag[item_id] = {'items_by_option': {option: quantity}}
             messages.success(request, f'Added {option.title()} {item.name} to your order')
     else:
         if item_id in list(bag.keys()):

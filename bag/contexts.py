@@ -10,6 +10,7 @@ def bag_items(request):
     bag = request.session.get('bag', {})
 
     for item_id, quant in bag.items():
+        print(f"BAG: {bag}")
         if isinstance(quant, int):
             item = get_object_or_404(Menu, pk=item_id)
             total += quant * item.price

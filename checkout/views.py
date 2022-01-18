@@ -36,7 +36,7 @@ def checkout(request):
             messages.error(request, "There's no food here!")
             return redirect(reverse('all_menu'))
 
-    
+    order_form=OrderForm()
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
