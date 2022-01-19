@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
+from bag.contexts import bag_items
 
 from .forms import OrderForm
 
@@ -28,21 +29,62 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
+            for item_id, quant in bag.items():
+                try:
+                    item = Menu.objects.get(id=item_id)
+                    if isinstance(quant, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            menu=item,
+                            quantity=quant,
+                        )
+                        order_line_item.save()
+                    else:
+                        for option, quantity in item_data['items_by_option'].items():
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                menu=item,
+                                quantity=quantity,
+                                item_option=option,
+                            )
+                            order_line_item.save()
+                except Product.DoesNotExist:
+                    messages.error(request, (
+                        "One of the products in your bag wasn't found in our database. "
+                        "Please call us for assistance!")
+                    )
+                    order.delete()
+                    return redirect(reverse('shopping_bag'))
 
-
+                request.session['save_info'] = 'save-info' in request.POST
+                return redirect(reverse('checkout_success', args=[order.order_number]))
+        else:
+            messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
+                
     else:
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(request, "There's no food here!")
             return redirect(reverse('all_menu'))
-
-    order_form=OrderForm()
-    template = 'checkout/checkout.html'
-    context = {
+        
+        
+        current_bag = bag_items(request)
+        total = current_bag['grand_total']
+        stripe_total = round(total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
+        print(intent)
+        order_form = OrderForm()
+        template = 'checkout/checkout.html'
+        context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret_key': 'test client secret'
-    }
+        }
 
     return render(request, template, context)
 
