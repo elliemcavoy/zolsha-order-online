@@ -34,7 +34,7 @@ def checkout(request):
                     if isinstance(quant, int):
                         order_line_item = OrderLineItem(
                             order=order,
-                            menu=item,
+                            item=item,
                             quantity=quant,
                         )
                         order_line_item.save()
@@ -42,7 +42,7 @@ def checkout(request):
                         for option, quantity in quant['items_by_option'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
-                                menu=item,
+                                item=item,
                                 quantity=quantity,
                                 item_option=option,
                             )

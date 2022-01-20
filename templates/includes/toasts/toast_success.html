@@ -20,7 +20,7 @@
                 {% for i in bag_items %}
                     <div class="row">
                         <div class="col-9">
-                            <p class="my-0"><strong>{% if i.item.has_options %}{{ i.option }}{{ i.item.name }}{% else %}{{ i.item.name }}{% endif %}</strong></p>
+                            <p class="my-0"><strong>{% if i.item.has_options %}{{ i.option|title }} {{ i.item.name }}{% else %}{{ i.item.name }}{% endif %}</strong></p>
                             <p class="my-0 small text-muted">Qty: {{ i.quantity }}</p>
                         </div>
                     </div>

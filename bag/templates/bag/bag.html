@@ -29,7 +29,7 @@
                 {% for i in bag_items %}
                 <tr>
                     <td>
-                        <p><strong>{{ i.item.name }}{% if i.item.has_options %}{{ i.item.option }}{% else %}<span></span>{% endif %}</strong></p>
+                        <p><strong>{% if i.item.has_options %}{{ i.option|title }} {{ i.item.name }}{% else %}{{ i.item.name }}{% endif %}</strong></p>
                     </td>
                     <td class="py-3">
                         <p class="my-0">£{{ i.item.price }}</p>

@@ -35,12 +35,11 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0 text-black font-weight-bold">
-                
-                                {% if i.item_option %}{{ i.menu.option }}{{ i.menu.name }}{% else %}{{ i.menu.name }}{% endif %}
+                                {% if i.item_option %}{{ i.item_option|title }} {{ i.item.name }}{% else %}{{ i.item.name }}{% endif %}
                             </p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="small mb-0">{{ i.quantity }} @ £{{ i.menu.price }} each</p>
+                            <p class="small mb-0">{{ i.quantity }} @ £{{ i.item.price }} each</p>
                         </div>
                     </div>
                     {% endfor %}
