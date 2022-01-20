@@ -2,6 +2,7 @@ import uuid
 
 from django.db import models
 from django.db.models import Sum
+from django.conf import settings
 
 from menu.models import Menu
 
@@ -29,6 +30,14 @@ class Order(models.Model):
         """
         return uuid.uuid4().hex.upper()
 
+    def update_total(self):
+        """
+        Update grand total each time a line item is added,
+        accounting for delivery costs.
+        """
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.save()
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the order number
@@ -53,7 +62,7 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.item.price * self.quantity
+        self.lineitem_total = self.menu.price * self.quantity
         super().save(*args, **kwargs)
 
         def __str__(self):

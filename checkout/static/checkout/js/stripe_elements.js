@@ -50,34 +50,25 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
-
-    $.post(url, postData).done(function () {
-        stripe.confirmCardPayment(clientSecret, {
-            payment_method: {
-                card: card,
-                
-                }
-            },
-            
-        }).then(function(result) {
-            if (result.error) {
-                var errorDiv = document.getElementById('card-errors');
-                var html = `
-                    <span class="icon" role="alert">
-                    <i class="fas fa-times"></i>
-                    </span>
-                    <span>${result.error.message}</span>`;
-                $(errorDiv).html(html);
-                card.update({ 'disabled': false});
-                $('#submit-button').attr('disabled', false);
-            } else {
-                if (result.paymentIntent.status === 'succeeded') {
-                    form.submit();
-                }
+    stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+            card: card,
+        }
+    }).then(function(result) {
+        if (result.error) {
+            var errorDiv = document.getElementById('card-errors');
+            var html = `
+                <span class="icon" role="alert">
+                <i class="fas fa-times"></i>
+                </span>
+                <span>${result.error.message}</span>`;
+            $(errorDiv).html(html);
+            card.update({ 'disabled': false});
+            $('#submit-button').attr('disabled', false);
+        } else {
+            if (result.paymentIntent.status === 'succeeded') {
+                form.submit();
             }
-        });
-    }).fail(function () {
-        // just reload the page, the error will be in django messages
-        location.reload();
-    })
+        }
+    });
 });
