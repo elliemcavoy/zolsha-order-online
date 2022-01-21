@@ -4,6 +4,10 @@
     font-family: 'Berkshire Swash';
 }
 
+header{
+    background-color:#fafafa;
+}
+
 
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
