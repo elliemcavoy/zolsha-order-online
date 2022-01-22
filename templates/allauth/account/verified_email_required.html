@@ -3,8 +3,16 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
-
-{% block content %}
+{% block page_header %}
+<div class="container page-header-container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center"></h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block inner_content %}
 <h1>{% trans "Verify Your E-mail Address" %}</h1>
 
 {% url 'account_email' as email_url %}

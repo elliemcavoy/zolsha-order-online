@@ -3,8 +3,16 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "Account" %}{% endblock %}
-
-{% block content %}
+{% block page_header %}
+<div class="container page-header-container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center"></h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block inner_content %}
     <h1>{% trans "E-mail Addresses" %}</h1>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>

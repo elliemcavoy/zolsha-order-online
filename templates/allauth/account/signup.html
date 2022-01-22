@@ -3,7 +3,15 @@
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
-
+{% block page_header %}
+<div class="container page-header-container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center"></h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
 {% block inner_content %}
 <hr>
 <h2 class="logo-font mb-4">{% trans "Sign Up" %}</h2>

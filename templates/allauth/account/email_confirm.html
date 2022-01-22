@@ -4,9 +4,17 @@
 {% load account %}
 
 {% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
+{% block page_header %}
+<div class="container page-header-container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center"></h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
 
-
-{% block content %}
+{% block inner_content %}
 <h1>{% trans "Confirm E-mail Address" %}</h1>
 
 {% if confirmation %}
