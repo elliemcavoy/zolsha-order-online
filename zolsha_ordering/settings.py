@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'checkout',
     'crispy_forms',
     'profiles',
+    'djreservation',
+    'reservations',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'djreservation.middleware.ReservationMiddleware',
 ]
 
 ROOT_URLCONF = 'zolsha_ordering.urls'
@@ -174,3 +177,8 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+DEFAULT_FROM_EMAIL = "mail@example.com"
+EMAIL_HOST = "localhost"
+EMAIL_PORT = "1025"

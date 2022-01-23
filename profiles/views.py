@@ -18,7 +18,7 @@ def profile(request):
     #if profile.orders:
         #orders = profile.orders.all()
     #else:
-    orders="No orders yet"
+    orders= profile.orders.all()
 
     template = 'profiles/profile.html'
     context = {
