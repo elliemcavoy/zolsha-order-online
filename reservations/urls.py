@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from .views import TableReservation
 from djreservation import urls as djreservation_urls
 
 urlpatterns = [
-    path('', views.reservation, name='reservation' ),
+    path('', TableReservation.as_view()),
 ] + djreservation_urls.urlpatterns
