@@ -3,5 +3,5 @@ from .views import TableReservation
 from djreservation import urls as djreservation_urls
 
 urlpatterns = [
-    path('', TableReservation.as_view()),
+    path("^reservation/create/(?<pk>\d+)$", TableReservation.as_view())
 ] + djreservation_urls.urlpatterns
