@@ -2,10 +2,12 @@
 
 .logo h2{
     font-family: 'Berkshire Swash';
+    color:rgb(255, 123, 0);
+    font-size:50px;
 }
 
 header{
-    background-color:#fafafa;
+    background-color:#e9e8e8;
 }
 
 
@@ -53,4 +55,17 @@ header{
 .toast-capper {
     height: 2px;
     background-color:orange;
+}
+
+#main-nav i{
+    color:rgb(253, 136, 27);
+    font-size:20px;
+}
+
+.input-group ::placeholder{
+    text-align: center;
+}
+
+.nav-heading{
+    color: grey;
 }

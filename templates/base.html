@@ -44,9 +44,9 @@
         <div class="col-12 col-md-4 col-lg-4 my-auto">
           <form method="GET" action="{% url 'all_menu' %}">
               <div class="input-group my-auto">
-                  <input class="form-control border-dark rounded-1" type="text" name="q" placeholder="Search Dishes">
+                  <input class="form-control rounded shadow" type="text" name="q" placeholder="Search Dishes">
                   <div class="input-group-append">
-                      <button class="form-control btn border-dark" type="submit">
+                      <button class="form-control btn btn-search" type="submit">
                           <span class="icon">
                               <i class="fas fa-search"></i>
                           </span>
@@ -55,13 +55,13 @@
               </div>
           </form>
       </div>
-        <div class="col-12 col-md-4 col-lg-4 my-auto">
+        <div class="col-12 col-md-4 col-lg-4 mt-2">
           <ul class="list-inline list-unstyled">
               <li class="list-inline-item dropdown">
                 <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="text-center">
                         <div><i class="fas fa-user fa-lg"></i></div>
-                        <p class="">My Account</p>
+                        <p class="nav-heading">My Account</p>
                     </div>
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -76,7 +76,7 @@
                 <a class="nav-link" href="{% url 'shopping_bag' %}">
                     <div class="text-center">
                         <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                        <p class="my-0">
+                        <p class="nav-heading">
                           $0.00
                         </p>
                     </div>
