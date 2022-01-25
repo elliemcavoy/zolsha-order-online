@@ -107,7 +107,7 @@
       {% for item in menu %}
       <div class="row m-2">
         <div class="col-10 m-auto">
-        <div class="card">
+        <div class="card menu-card">
           <div class="card-header">
               <div class="row">
                   <div class="col-10">
@@ -135,7 +135,7 @@
                         {% if o %}
                             <div class="col-12">
                                 <p><strong>Choose from:</strong></p>
-                                <select class="form-control rounded-0 w-50" name="item_option" id="id_item_option">
+                                <select class="form-control select-option rounded shadow w-50" name="item_option" id="id_item_option">
                                     <option value="vegetable">Vegetable</option>
                                     <option value="keema">Keema</option>
                                     <option value="chicken" selected>Chicken</option>
@@ -178,7 +178,7 @@
 
                         <div class="col-3">
                             
-                            <input type="submit" class="btn btn-add-to-bag rounded text-uppercase mt-3" value="Add to Bag">
+                            <input type="submit" class="btn btn-add-to-bag rounded shadow text-uppercase" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         {% endwith %}
