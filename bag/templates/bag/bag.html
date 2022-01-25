@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
+
+
 {% load bag_tools %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'bag/css/bag.css' %}">
+    
+{% endblock %}
+
+
 
 {% block page_header %}
 <div class="container page-header-container">
@@ -16,8 +24,25 @@
 <div class="row">
     <div class="col">
         {% if bag_items %}
+        <div class="row m-5 calc-delivery-container">
+            <div class="col-5">
+                
+                <h5 class="text-center text-uppercase">Want us to deliver???</h5>
+            </div>
+            <div class="col-6 m-auto">
+                <h6 class="text-center">Please enter your postcode to Calculate Delivery</h6>
+                <form class="form text-center" method="GET" >
+                    
+                    <input name="postcode" type="text">
+                    <button type="submit">Calculate</button>
+                </form>
+        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-10 m-auto">
             <div class="table-responsive rounded">
-                <table class="table table-sm table-borderless">
+                <table class="table table-sm rounded shadow table-bordered">
                     <thead class="text-black">
                         <tr>
                             <th scope="col">Your Food</th>
@@ -34,27 +59,15 @@
                     <td class="py-3">
                         <p class="my-0">£{{ i.item.price }}</p>
                     </td>
-                    <td>
+                    <td class="py-3">
                         {{ i.quantity }}
                     </td>
-                    <td>
+                    <td class="py-3">
                         £{{ i.item.price | calc_subtotal:i.quantity  }}
                     </td>
                 </tr>
                 {% endfor %}
-                <tr>
-                    <td>
-                        <h6>Please enter your postcode to Calculate Delivery</h6>
-                        <form class="form" method="GET" >
-                            
-                            <input name="postcode" type="text">
-                            <button type="submit">Calculate</button>
-                        </form>
-                    </td>
-            
-                   
-                </tr>
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                
                 <tr>
                     <td colspan="5" class="pt-5 text-right">
                         <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
@@ -74,13 +87,16 @@
 
                 
             </table>
+        </div>
+        </div>
+        </div>
             <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
                 <span class="text-uppercase">Secure Checkout</span>
                 <span class="icon">
                     <i class="fas fa-lock"></i>
                 </span>
             </a>
-            </div>
+           
             
         {% else %}
                     <p class="lead mb-5">No food here yet.</p>
