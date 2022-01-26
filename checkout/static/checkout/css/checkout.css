@@ -8,3 +8,29 @@
     border:solid 1px grey;
     
 }
+
+#payment-form{
+    width:50%;
+    background-color:#e9e8e8;
+    margin:10px;
+    text-align:center;
+
+}
+
+#payment-form input{
+    border:solid 1px grey;
+    margin:2px;
+    border-radius:10px;
+    text-align:center;
+    
+}
+
+.payment-btn{
+    border: solid grey 1px;
+    font-weight: 600;
+}
+
+.payment-btn i{
+    color:rgb(245, 94, 7);
+    
+}
