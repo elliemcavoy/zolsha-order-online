@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+    
+{% endblock %}
 
 {% block page_header %}
 <div class="container page-header-container">
@@ -15,41 +19,56 @@
 {% block content %}
 
         <div class="row">
-            <div class="col-12 col-lg-6 order-lg-last mb-5">
+            <div class="col-12 col-m-6 order-m-last mb-5">
                 <p class="text-muted">Order Summary ({{ item_count }})</p>
                 <div class="row">
-                    <div class="col-7 offset-2">
-                        <p class="mb-1 mt-0 small text-muted">Item</p>
-                    </div>
-                    <div class="col-3 text-right">
-                        <p class="mb-1 mt-0 small text-muted">Subtotal</p>
-                    </div>
-                </div>
+                    <div class="col-7 table-responsive">
+                        <table class="table table-sm table-bordered shadow" id="order-table">
+                            <thead class="text-black">
+                                <tr>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
                 {% for i in bag_items %}
-                    <div class="row">
-                        <div class="col-7">
+                    <tr>
+                        <td>
                             <p class="my-0"><strong>{{ i.item.name }}{% if i.item.has_options %}{{ i.item.option }}{% else %}<span></span>{% endif %}</strong></p>
-                            
+                        </td>
+                        <td>
                             <p class="my-0 small text-muted">Qty: {{ i.quantity }}</p>
-                        </div>
-                        <div class="col-3 text-right">
+                        </td>
+                        <td>
                             <p class="my-0 small text-muted">£{{ i.item.price }}</p>
-                        </div>
-                    </div>
+                        </td>
+                        <td>
+                        <p class="my-0 small text-muted">£{{ i.item.price | calc_subtotal:i.quantity  }}</p>
+                            </td>
+                    </tr>
+                    
+                            
+                       
+                    
                 {% endfor %}
                 <hr class="my-0">
-                <div class="row text-black text-right">
-                    <div class="col-7 offset-2">
-                        <p class="my-0">Order Total:</p>
-                        <p class="my-0">Delivery:</p>
-                        <p class="my-0">Grand Total:</p>
-                    </div>
-                    <div class="col-3">
-                        <p class="my-0">£{{ total | floatformat:2 }}</p>
-                        <p class="my-0">£{{ delivery | floatformat:2 }}</p>
-                        <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
-                    </div>
-                </div>
+                <tr>
+                    <td colspan="5" class="pt-5 text-right">
+                        <h6><strong>Order Total: £{{ total|floatformat:2 }}</strong></h6>
+                        {% if delivery_charge %}
+                            
+                                <h6>Delivery: £{{ delivery_charge }}</h6>
+                        
+                        {% else %}
+                            <h6>Delivery: £0.00</h6>
+                        {% endif %}
+                        <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
             </div>
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Please fill out the form below to complete your order</p>
