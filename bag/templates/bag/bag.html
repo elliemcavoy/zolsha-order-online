@@ -24,7 +24,9 @@
 <div class="row">
     <div class="col">
         {% if bag_items %}
-        <div class="row m-5 calc-delivery-container">
+        <div class="row m-4">
+            <div class="col-8 m-auto calc-delivery-container rounded shadow p-2">
+                <div class="row">
             <div class="col-5">
                 
                 <h5 class="text-center text-uppercase">Want us to deliver???</h5>
@@ -33,16 +35,19 @@
                 <h6 class="text-center">Please enter your postcode to Calculate Delivery</h6>
                 <form class="form text-center" method="GET" >
                     
-                    <input name="postcode" type="text">
-                    <button type="submit">Calculate</button>
+                    <input name="postcode" type="text" class="rounded shadow postcode-input">
+                    <button type="submit" class="btn btn-calculate"><i class="fas fa-calculator"></i></button>
                 </form>
         <input type="hidden" name="redirect_url" value="{{ request.path }}">
         </div>
         </div>
-        <div class="row">
+        </div>
+        </div>
+        <div class="row m-2">
             <div class="col-10 m-auto">
-            <div class="table-responsive rounded">
-                <table class="table table-sm rounded shadow table-bordered">
+                <h3>Here's what you have ordered...</h3>
+            <div class="table-responsive mt-4">
+                <table class="table table-sm table-bordered shadow" id="bag-table">
                     <thead class="text-black">
                         <tr>
                             <th scope="col">Your Food</th>
@@ -52,7 +57,7 @@
                         </tr>
                     </thead>
                 {% for i in bag_items %}
-                <tr>
+                <tr class="rounded">
                     <td>
                         <p><strong>{% if i.item.has_options %}{{ i.option|title }} {{ i.item.name }}{% else %}{{ i.item.name }}{% endif %}</strong></p>
                     </td>
@@ -90,12 +95,17 @@
         </div>
         </div>
         </div>
-            <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                <span class="text-uppercase">Secure Checkout</span>
-                <span class="icon">
-                    <i class="fas fa-lock"></i>
-                </span>
-            </a>
+        <div class="row">
+            <div class="col-12 mb-4 text-center">
+                <a href="{% url 'checkout' %}" class="btn checkout-btn rounded shadow btn-lg">
+                    <span class="text-uppercase">Secure Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+            
            
             
         {% else %}

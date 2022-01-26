@@ -2,3 +2,38 @@
     background-color:#e9e8e8;
     border:solid 1px grey;
 }
+
+.btn-calculate i{
+    color:rgb(245, 94, 7);
+    font-size:20px;
+}
+
+.postcode-input{
+    border:solid 1px grey;
+}
+
+#bag-table{
+    background-color:#e9e8e8;
+    border:solid 1px black;
+    
+}
+
+#bag-table th{
+    border:solid 1px grey;
+    
+}
+
+#bag-table td{
+    border:solid 1px grey;
+    
+}
+
+.checkout-btn{
+    border: solid grey 1px;
+    font-weight: 600;
+}
+
+.checkout-btn i{
+    color:rgb(245, 94, 7);
+    
+}
