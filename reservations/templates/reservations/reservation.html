@@ -1,5 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+<div class="container page-header-container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">Book a Table</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
+
+<form action="" method="POST" class="rounded">
+    {% csrf_token %}
+    <fieldset class="rounded px-3 mb-5">
+        <legend class="fieldset-label text-black px-2 w-auto">Your Details</legend>
+        {{ reservation_form.full_name | as_crispy_field }}
+        {{ reservation_form.email | as_crispy_field }}
+        {{ reservation_form.phone_number | as_crispy_field }}
+        
+    </fieldset>
 {% endblock %}

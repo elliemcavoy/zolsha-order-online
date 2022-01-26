@@ -1,18 +1,25 @@
 from django.shortcuts import render
 from djreservation.views import SimpleProductReservation
 from .models import Reservation
+from .forms import ReservationForm
 
 
-# Create your views here.
 
-class TableReservation(SimpleProductReservation):
-    base_model = Reservation     # required
-    amount_field = 'quantity'  # required
-    max_amount_field = 'max_amount' # required
-    extra_display_field = []  # not required
+def reservation(request):
 
-    def reservation(request):
+
+    reservation_form = ReservationForm()
+
+    
+    template = 'reservations/reservation.html'
+    context = {
+        'reservation_form': reservation_form,
+        
+    }
+
+    return render(request, template, context)
+
     
 
 
-        return render(request, 'reservations/reservation.html')
+   
