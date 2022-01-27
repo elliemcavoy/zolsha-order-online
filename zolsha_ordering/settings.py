@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'checkout',
     'crispy_forms',
     'profiles',
-    'djreservation',
     'reservations',
 ]
 
@@ -59,7 +58,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'djreservation.middleware.ReservationMiddleware',
 ]
 
 ROOT_URLCONF = 'zolsha_ordering.urls'
