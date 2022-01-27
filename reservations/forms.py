@@ -21,3 +21,6 @@ class ReservationForm(forms.ModelForm):
             'email': 'Email Address',
             'phone_number': 'Phone Number',
         }
+
+        self.fields['date'].widget.attrs['class'] = 'datepicker'
+        self.fields['time'].widget.attrs['class'] = 'timepicker'

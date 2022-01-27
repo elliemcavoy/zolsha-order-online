@@ -1,6 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/1.4.1/js/bootstrap-timepicker.min.js" integrity="sha512-2xXe2z/uA+2SyT/sTSt9Uq4jDKsT0lV4evd3eoE/oxKih8DSAsOF6LUb+ncafMJPAimWAXdu9W+yMXGrCVOzQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+            $(document).ready(function(){
+                $('.datepicker').datepicker({
+                     format: 'dd-mm-yyyy'}); 
+                $('.timepicker').timepicker(
+                    );
+                    
+            });
+        </script>
+{% endblock %}
+
 {% block page_header %}
 <div class="container page-header-container">
     <div class="row">
@@ -13,13 +32,25 @@
 
 {% block content %}
 
-<form action="" method="POST" class="rounded">
+<form action="{% url 'reservation' %}" method="POST" class="rounded">
     {% csrf_token %}
     <fieldset class="rounded px-3 mb-5">
         <legend class="fieldset-label text-black px-2 w-auto">Your Details</legend>
         {{ reservation_form.full_name | as_crispy_field }}
         {{ reservation_form.email | as_crispy_field }}
         {{ reservation_form.phone_number | as_crispy_field }}
-        
+        {{ reservation_form.date | as_crispy_field }}
+        {{ reservation_form.time | as_crispy_field }}
+        {{ reservation_form.covers | as_crispy_field }}
     </fieldset>
+    
+        
+        
+    <button type="submit">Submit</button>
+
+</form>
+{% endblock %}
+
+{% block postloadjs %}
+    
 {% endblock %}
