@@ -5,8 +5,8 @@ from .models import Reservation
 class ReservationAdmin(admin.ModelAdmin):
     
     list_display = ('full_name', 'email', 'phone_number',
-                  'date',
-                  'time', 'covers')
+                    'date',
+                    'time', 'covers')
 
 
 

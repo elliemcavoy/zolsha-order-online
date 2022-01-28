@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from .models import Reservation
 from .forms import ReservationForm
+from profiles.models import UserProfile
 
 def reservation(request):
 
