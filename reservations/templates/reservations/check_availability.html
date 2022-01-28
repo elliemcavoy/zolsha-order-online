@@ -39,16 +39,12 @@
 
 {% block content %}
 
-<form action="{% url 'reservation' %}" method="POST" class="rounded">
+<form action="{% url 'check_availability' %}" method="GET" class="rounded">
     {% csrf_token %}
     <fieldset class="rounded px-3 mb-5">
         <legend class="fieldset-label text-black px-2 w-auto">Your Details</legend>
-        {{ reservation_form.full_name | as_crispy_field }}
-        {{ reservation_form.email | as_crispy_field }}
-        {{ reservation_form.phone_number | as_crispy_field }}
+        {{ reservation_form.time | as_crispy_field }}
         {{ reservation_form.date | as_crispy_field }}
-        {{ reservation_form.time | as_crispy_field }}
-        {{ reservation_form.covers | as_crispy_field }}
     </fieldset>
     
         
@@ -57,22 +53,4 @@
 
 </form>
 
-
-<form action="{% url 'check_availability' %}" method="POST" class="rounded">
-    {% csrf_token %}
-    <fieldset class="rounded px-3 mb-5">
-        <legend class="fieldset-label text-black px-2 w-auto">Your Details</legend>
-        {{ reservation_form.time | as_crispy_field }}
-        {{ reservation_form.covers | as_crispy_field }}
-    </fieldset>
-    
-        
-        
-    <button type="submit">Submit</button>
-
-</form>
-{% endblock %}
-
-{% block postloadjs %}
-    
 {% endblock %}

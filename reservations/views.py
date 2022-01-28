@@ -56,4 +56,21 @@ def reservation_complete(request):
     return render(request, template, context)
 
 
+def check_availability(request):
+    if request.GET:
+        if 'date' and 'time' in request.GET:
+            existing_reservations = Reservation.objects.filter('date' and 'time')
+            if existing_reservations.count() > RESERVATION_THRESHOLD:
+                message.error(request, 'Sorry we have no tables available, please pick a different time/date.')
+            else:
+                print(success)
+        else:
+            message.error(request, 'Please select a date')
+    
+    reservation_form = ReservationForm()
+    template = 'reservations/check_availability.html'
+    context={
+        'reservation_form': reservation_form
+    }
+    return render(request, template, context)
    

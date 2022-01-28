@@ -24,3 +24,5 @@ class ReservationForm(forms.ModelForm):
 
         self.fields['date'].widget.attrs['class'] = 'datepicker'
         self.fields['time'].widget.attrs['class'] = 'timepicker'
+        self.fields['date'].widget.attrs['name'] = 'date'
+        self.fields['time'].widget.attrs['name'] = 'time'
