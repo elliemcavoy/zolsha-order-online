@@ -180,3 +180,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DEFAULT_FROM_EMAIL = "mail@example.com"
 EMAIL_HOST = "localhost"
 EMAIL_PORT = "1025"
+
+RESERVATION_THRESHOLD = 1

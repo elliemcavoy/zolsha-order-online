@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.conf import settings
 from .models import Reservation
 from .forms import ReservationForm
 from profiles.models import UserProfile
+from django.db.models import Q
 
 def reservation(request):
 
@@ -57,15 +59,28 @@ def reservation_complete(request):
 
 
 def check_availability(request):
+    
     if request.GET:
-        if 'date' and 'time' in request.GET:
-            existing_reservations = Reservation.objects.filter('date' and 'time')
-            if existing_reservations.count() > RESERVATION_THRESHOLD:
-                message.error(request, 'Sorry we have no tables available, please pick a different time/date.')
+
+        if 'date' in request.GET:
+            date = request.GET['date']
+        if 'time' in request.GET:
+            time = request.GET['time']
+
+        
+            print(date)
+            print(time)
+            datetime = Q(date__icontains=date) & Q(time__icontains=time)
+            existing_reservations = Reservation.objects.filter(datetime)
+            resnumber=existing_reservations.count()
+            print(resnumber)
+            if resnumber >= settings.RESERVATION_THRESHOLD:
+                print('no avail')
+                messages.success(request, "Sorry we have no tables available, please pick a different time/date.")
             else:
-                print(success)
+                print('success')
         else:
-            message.error(request, 'Please select a date')
+            messages.error(request, 'Please select a date')
     
     reservation_form = ReservationForm()
     template = 'reservations/check_availability.html'
