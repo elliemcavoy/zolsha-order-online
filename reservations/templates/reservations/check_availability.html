@@ -32,7 +32,7 @@
 <div class="container page-header-container">
     <div class="row">
         <div class="col">
-            <h2 class="text-center">Check Availability</h2>
+            <h2 class="text-center"></h2>
         </div>
     </div>
 </div>
@@ -49,10 +49,14 @@
 <div class="container-fluid">
 <div class="row ">
     <div class="col-8 col-md-4 p-2 mt-4 mx-auto form-container rounded text-center">
+        <div class="card res-card">
+            <div class="card-header">
+                <h3>Check Availability</h3>
+                </div>
+                <div class="card-body">
 <form action="{% url 'check_availability' %}" method="GET" class="rounded">
     {% csrf_token %}
     <fieldset class="rounded px-3 mb-5">
-        <legend class="fieldset-label text-black px-2 w-auto">Your Details</legend>
         {{ availability_form.time | as_crispy_field }}
         {{ availability_form.date | as_crispy_field }}
     </fieldset>
@@ -60,6 +64,8 @@
     <button type="submit" class="rounded shadow text-uppercase reservation-btn">Check Availability</button>
 
 </form>
+</div>
+</div>
 </div>
 </div>
 </div>
