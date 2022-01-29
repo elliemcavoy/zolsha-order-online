@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="{% static 'reservations/css/reservations.css' %}">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 
 
@@ -31,14 +32,23 @@
 <div class="container page-header-container">
     <div class="row">
         <div class="col">
-            <h2 class="text-center">Book a Table</h2>
+            <h2 class="text-center">Check Availability</h2>
         </div>
     </div>
 </div>
 {% endblock %}
 
 {% block content %}
-
+<div class="img-container h-100 w-100">
+    <div class="row h-100">
+        <div class="col reservation-img">
+            
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+<div class="row ">
+    <div class="col-8 col-md-4 p-2 mt-4 mx-auto form-container rounded text-center">
 <form action="{% url 'check_availability' %}" method="GET" class="rounded">
     {% csrf_token %}
     <fieldset class="rounded px-3 mb-5">
@@ -46,11 +56,12 @@
         {{ availability_form.time | as_crispy_field }}
         {{ availability_form.date | as_crispy_field }}
     </fieldset>
-    
         
-        
-    <button type="submit">Submit</button>
+    <button type="submit">Check Availability</button>
 
 </form>
+</div>
+</div>
+</div>
 
 {% endblock %}

@@ -21,7 +21,16 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="img-container h-100 w-100">
+    <div class="row h-100">
+        <div class="col reservation-img">
+            
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row form-container">
+        <div class="col-10 m-auto">
 <form action="{% url 'reservation' %}" method="POST" class="rounded">
     {% csrf_token %}
     <fieldset class="rounded px-3 mb-5">
@@ -39,6 +48,10 @@
     <button type="submit">Submit</button>
 
 </form>
+
+</div>
+</div>
+</div>
 
 {% endblock %}
 

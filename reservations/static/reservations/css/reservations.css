@@ -1,0 +1,16 @@
+.reservation-img{
+    background: url('/media/table.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    
+}
+
+.img-container{
+    position:fixed;
+    z-index:-1;
+}
+
+.form-container{
+    z-index:2;
+    background-color: grey;
+}
