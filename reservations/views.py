@@ -2,11 +2,17 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
 from .models import Reservation
-from .forms import ReservationForm
+from .forms import ReservationForm, AvailabilityForm
 from profiles.models import UserProfile
 from django.db.models import Q
 
 def reservation(request):
+
+    existing_data = {
+        'time': request.session.get('time'),
+        'date': request.session.get('date')
+    }
+
 
     if request.method == 'POST':
         
@@ -39,7 +45,7 @@ def reservation(request):
             except UserProfile.DoesNotExist:
                 reservation_form = ReservationForm()
         else:
-            reservation_form = ReservationForm()
+            reservation_form = ReservationForm(existing_data)
 
     template = 'reservations/reservation.html'
     context = {
@@ -64,8 +70,13 @@ def check_availability(request):
 
         if 'date' in request.GET:
             date = request.GET['date']
+            request.session['date']= date
         if 'time' in request.GET:
             time = request.GET['time']
+            request.session['time']= time
+
+        
+
 
         
             print(date)
@@ -74,18 +85,21 @@ def check_availability(request):
             existing_reservations = Reservation.objects.filter(datetime)
             resnumber=existing_reservations.count()
             print(resnumber)
+            
             if resnumber >= settings.RESERVATION_THRESHOLD:
                 print('no avail')
                 messages.success(request, "Sorry we have no tables available, please pick a different time/date.")
             else:
-                print('success')
+                return redirect(reverse('reservation'))
         else:
             messages.error(request, 'Please select a date')
+
+        
     
-    reservation_form = ReservationForm()
+    availability_form = AvailabilityForm()
     template = 'reservations/check_availability.html'
     context={
-        'reservation_form': reservation_form
+        'availability_form': availability_form
     }
     return render(request, template, context)
    

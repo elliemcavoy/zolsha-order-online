@@ -43,8 +43,8 @@
     {% csrf_token %}
     <fieldset class="rounded px-3 mb-5">
         <legend class="fieldset-label text-black px-2 w-auto">Your Details</legend>
-        {{ reservation_form.time | as_crispy_field }}
-        {{ reservation_form.date | as_crispy_field }}
+        {{ availability_form.time | as_crispy_field }}
+        {{ availability_form.date | as_crispy_field }}
     </fieldset>
     
         
