@@ -8,11 +8,6 @@ from django.db.models import Q
 
 def reservation(request):
 
-    existing_data = {
-        'time': request.session.get('time'),
-        'date': request.session.get('date')
-    }
-
 
     if request.method == 'POST':
         
@@ -45,7 +40,10 @@ def reservation(request):
             except UserProfile.DoesNotExist:
                 reservation_form = ReservationForm()
         else:
-            reservation_form = ReservationForm(existing_data)
+            reservation_form = ReservationForm(initial={
+                'time': request.session.get('time'),
+                'date': request.session.get('date')
+            })
 
     template = 'reservations/reservation.html'
     context = {

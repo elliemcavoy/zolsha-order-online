@@ -22,21 +22,16 @@ class ReservationForm(forms.ModelForm):
             'phone_number': 'Phone Number',
         }
 
-        self.fields['date'].widget.attrs['class'] = 'datepicker'
-        self.fields['time'].widget.attrs['class'] = 'timepicker'
-        self.fields['date'].widget.attrs['name'] = 'date'
-        self.fields['time'].widget.attrs['name'] = 'time'
 
 class AvailabilityForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = (
-                  'date',
+        fields = ('date',
                   'time')
 
-        def __init__(self, *args, **kwargs):
-        
-            self.fields['date'].widget.attrs['class'] = 'datepicker'
-            self.fields['time'].widget.attrs['class'] = 'timepicker'
-            self.fields['date'].widget.attrs['name'] = 'date'
-            self.fields['time'].widget.attrs['name'] = 'time'
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['date'].widget.attrs['class'] = 'datepicker'
+        self.fields['time'].widget.attrs['class'] = 'timepicker'
+        self.fields['date'].widget.attrs['name'] = 'date'
+        self.fields['time'].widget.attrs['name'] = 'time'
