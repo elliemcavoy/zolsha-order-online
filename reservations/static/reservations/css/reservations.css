@@ -12,5 +12,10 @@
 
 .form-container{
     z-index:2;
-    background-color: grey;
+    background-color:#e9e8e8;
+}
+
+.reservation-btn{
+    border: solid grey 1px;
+    font-weight: 600;
 }

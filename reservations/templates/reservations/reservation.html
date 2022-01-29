@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-
+<link rel="stylesheet" href="{% static 'reservations/css/reservations.css' %}">
 
 {% endblock %}
 
@@ -29,8 +29,8 @@
     </div>
 </div>
 <div class="container-fluid">
-    <div class="row form-container">
-        <div class="col-10 m-auto">
+    <div class="row ">
+        <div class="col-8 col-md-4 p-2 mt-4 mx-auto form-container rounded text-center">
 <form action="{% url 'reservation' %}" method="POST" class="rounded">
     {% csrf_token %}
     <fieldset class="rounded px-3 mb-5">
@@ -45,7 +45,7 @@
     
         
         
-    <button type="submit">Submit</button>
+    <button type="submit" class="rounded shadow text-uppercase reservation-btn">Submit</button>
 
 </form>
 
