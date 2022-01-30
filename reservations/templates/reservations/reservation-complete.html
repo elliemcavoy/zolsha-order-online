@@ -32,10 +32,15 @@
         <div class="col-8 col-md-4 p-2 mt-4 mx-auto form-container rounded text-center">
             <div class="card res-card">
                 <div class="card-header">
-                    <h3>Thank You </h3>
+                    <h3>Thank You {{ reservation.full_name }}, your booking is confirmed.</h3>
                     </div>
                     <div class="card-body">
-                        {{ reservation.full_name }}
+                        <h4>Reservation details:</h4>
+                        <p><strong>Date:</strong> {{ reservation.date }}<br>
+                            <strong>Time:</strong>  {{ reservation.time }}<br>
+                                <strong>Covers:</strong>  {{ reservation.covers }}
+                        </p>
+                        
 
     </div>
     </div>
