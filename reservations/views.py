@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
 from .models import Reservation
@@ -24,7 +24,7 @@ def reservation(request):
             reservation = reservation_form.save(commit=False)
             reservation.save()
             
-            return redirect(reverse('reservation_complete'))
+            return redirect(reverse('reservation_complete', args=[reservation.res_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -54,9 +54,12 @@ def reservation(request):
     return render(request, template, context)
 
 
-def reservation_complete(request):
+def reservation_complete(request, res_number):
+    res = get_object_or_404(Reservation, res_number=res_number)
+    
     template = 'reservations/reservation-complete.html'
     context={
+        "reservation": res,
         
     }
     return render(request, template, context)

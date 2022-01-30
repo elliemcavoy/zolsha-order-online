@@ -1,1 +1,48 @@
-Hello
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reservations/css/reservations.css' %}">
+
+{% endblock %}
+{% block extra_js %}
+         
+{% endblock %}
+
+{% block page_header %}
+<div class="container page-header-container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center"></h2>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="img-container h-100 w-100">
+    <div class="row h-100">
+        <div class="col reservation-img">
+            
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-8 col-md-4 p-2 mt-4 mx-auto form-container rounded text-center">
+            <div class="card res-card">
+                <div class="card-header">
+                    <h3>Thank You </h3>
+                    </div>
+                    <div class="card-body">
+                        {{ reservation.full_name }}
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+{% endblock %}
