@@ -23,7 +23,25 @@
     </div>
     <div class="col-12 col-lg-6">
         <p class="text-muted">Order History</p>
-        {{ orders }}
+    
+        {% for order in orders %}
+        <div class="card">
+            <div class="card-header">
+               Order Number: {{ order.order_number }}  
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for i in order.lineitems.all %}
+                    <li class="small">
+                        {{ item.option }}
+                        {% if i.item_option %}{{ i.item_option|title }}{% endif %} {{ i.item.name }} x{{ i.quantity }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
