@@ -11,6 +11,11 @@ header{
     
 }
 
+.page-header-container{
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight:700;
+}
+
 
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -73,4 +78,14 @@ header{
 
 .account-dropdown{
     z-index:999999;
+}
+
+.card{
+    border: solid black 2px;
+    z-index:3;
+}
+
+.card-header{
+    background-color:rgba(248, 151, 95, 0.808);
+    border-bottom: solid 1px black
 }

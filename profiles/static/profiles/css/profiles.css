@@ -1,0 +1,28 @@
+.details-form{
+    width:50%;
+    background-color:#e9e8e8;
+    padding:10px;
+    border: solid grey 1px;
+    
+
+}
+
+.update-btn{
+    border: solid grey 1px;
+    font-weight: 600;
+    margin-top:5px;
+}
+
+.reorder-btn{
+    border: solid grey 1px;
+    font-weight: 600;
+    margin-top:5px;
+}
+
+.details-form input{
+        border:solid 1px grey;
+        margin:2px;
+        border-radius:10px;
+        text-align:center;
+        
+    }

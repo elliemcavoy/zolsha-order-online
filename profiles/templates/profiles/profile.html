@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+    
+{% endblock %}
+
 {% block page_header %}
 <div class="container page-header-container">
     <div class="row">
@@ -12,46 +18,55 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-6 text-center">
         <p class="text-muted">This is where we send your food...</p>
         <p class="text-muted">Make sure it is correct!!</p>
+        <div class="details-form text-center m-auto rounded shadow">
         <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
             {% csrf_token %}
             {{ form|crispy }}
-            <button class="btn btn-black rounded-0 text-uppercase float-right">Update</button>
+            <button class="btn update-btn rounded shadow text-uppercase">Update</button>
         </form>
+        </div>
     </div>
     <div class="col-12 col-lg-6">
         <p class="text-muted">Order History</p>
     
         {% for order in orders %}
         
-        <div class="card">
+        <div class="card m-2">
             <div class="card-header">
                 <div class="row">
                     <div class="col-8">
-               Order Number: {{ order.order_number }} 
+               Order Number: {{ order.order_number|truncatechars:9 }} 
                </div>
                <div class="col-4">
-                   £{{ order.order_total }}
+                Order Total: £{{ order.order_total }}
                </div> 
                </div>
             </div>
             <div class="card-body">
+                <div class="row">
+                    <div class="col-8">
                 <ul>
                     {% for i in order.lineitems.all %}
                     <li class="small">
-                        {{ item.option }}
-                        {% if i.item_option %}{{ i.item_option|title }}{% endif %} {{ i.item.name }} x{{ i.quantity }}
+                        
+                        {{ i.quantity }} x {% if i.item_option %}{{ i.item_option|title }}{% endif %} {{ i.item.name }}
                     </li>
                 {% endfor %}
                 </ul>
-            <form class="form" action="{% url 'reorder' order.order_number %}" method="POST">
+                </div>
+                <div class="col-4">
+                    <h6 class="text-center">Enjoyed this order???</h6>
+            <form class="form text-center" action="{% url 'reorder' order.order_number %}" method="POST">
                 {% csrf_token %}
-            <input type="submit">
+            <input type="submit" value="Reorder" class="reorder-btn rounded shadow text-uppercase">
             <input type="hidden" name="redirect_url" value="{{ request.path }}">
            
         </form>
+        </div>
+        </div>
             </div>
         </div>
         
