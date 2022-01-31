@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order, OrderLineItem
+from reservations.models import Reservation
 
 def profile(request):
     """ Display the user's profile. """
@@ -16,16 +17,20 @@ def profile(request):
             messages.success(request, 'Profile updated successfully')
 
     form = UserProfileForm(instance=profile)
-    #if profile.orders:
-        #orders = profile.orders.all()
-    #else:
-    orders= profile.orders.all()
+    if profile.orders:
+        orders = profile.orders.all()
+    else:
+        orders = None
+    
+    if profile.reservation:
+        reservation = profile.reservation.all()
 
     template = 'profiles/profile.html'
     context = {
         'profile': profile,
         'form': form,
         'orders': orders,
+        'reservation': reservation,
     }
 
     return render(request, template, context)

@@ -10,7 +10,9 @@
 <div class="container page-header-container">
     <div class="row">
         <div class="col">
+            <hr>
             <h2 class="text-center">Profile</h2>
+            <hr>
         </div>
     </div>
 </div>
@@ -19,6 +21,7 @@
 {% block content %}
 <div class="row">
     <div class="col-12 col-lg-6 text-center">
+        <h5 class="text-center mb-4">Personal Details</h5>
         <p class="text-muted">This is where we send your food...</p>
         <p class="text-muted">Make sure it is correct!!</p>
         <div class="details-form text-center m-auto rounded shadow">
@@ -28,9 +31,17 @@
             <button class="btn update-btn rounded shadow text-uppercase">Update</button>
         </form>
         </div>
+
+        {% for res in reservation %}
+        <div>
+        {{ res.date }}
+        {{ res.time }}
+        {{ res.covers }}
+        </div>
+        {% endfor %}
     </div>
     <div class="col-12 col-lg-6">
-        <p class="text-muted">Order History</p>
+        <h5 class="text-center mb-4">Order History</h5>
     
         {% for order in orders %}
         

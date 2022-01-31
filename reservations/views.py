@@ -5,6 +5,7 @@ from .models import Reservation
 from .forms import ReservationForm, AvailabilityForm
 from profiles.models import UserProfile
 from django.db.models import Q
+from profiles.models import UserProfile
 
 def reservation(request):
 
@@ -56,6 +57,12 @@ def reservation(request):
 
 def reservation_complete(request, res_number):
     res = get_object_or_404(Reservation, res_number=res_number)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        res.user_profile = profile
+        res.save()
     
     template = 'reservations/reservation-complete.html'
     context={
