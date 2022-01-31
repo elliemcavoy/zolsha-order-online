@@ -8,6 +8,7 @@
 
 header{
     background-color:#e9e8e8;
+    
 }
 
 
@@ -68,4 +69,8 @@ header{
 
 .nav-heading{
     color: grey;
+}
+
+.account-dropdown{
+    z-index:999999;
 }

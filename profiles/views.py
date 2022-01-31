@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 
 from .models import UserProfile
 from .forms import UserProfileForm
+from checkout.models import Order, OrderLineItem
 
 def profile(request):
     """ Display the user's profile. """
@@ -31,18 +32,17 @@ def profile(request):
 
 
 
-def order_history(request, order_number):
+def reorder(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
+    reorder_bag = order.original_bag
+    lineitems = order.lineitems.all()
+    for line in lineitems:
+        print(line.item.id)
+    
+    redirect_url = request.POST.get('redirect_url')
 
-    messages.info(request, (
-        f'This is a past confirmation for order number {order_number}. '
-        'A confirmation email was sent on the order date.'
-    ))
+    print(reorder_bag)
+    
 
-    template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
-        'from_profile': True,
-    }
+    return redirect(redirect_url)
 
-    return render(request, template, context)
