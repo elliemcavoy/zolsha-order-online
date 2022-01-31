@@ -36,9 +36,17 @@ def reorder(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
     reorder_bag = order.original_bag
     lineitems = order.lineitems.all()
+    bag = request.session.get('bag', {})
     for line in lineitems:
-        print(line.item.id)
-    
+        item_id = line.item.id
+        quantity = line.quantity
+        option = line.item_option
+        if line.item_option:
+            bag[item_id] = {'items_by_option': {option: quantity}}
+        else:
+            bag[item_id] = quantity
+        
+    request.session['bag'] = bag
     redirect_url = request.POST.get('redirect_url')
 
     print(reorder_bag)
