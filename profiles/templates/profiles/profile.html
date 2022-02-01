@@ -92,7 +92,9 @@
              </div>
             {% endfor %}
         {% else %}
-        <p>Book Now</p>
+        <p>Fancy dining in???
+        <p>Book your table Now</p>
+        <button class="reorder-btn rounded shadow text-uppercase"><a href="{% url 'check_availability' %}">Book Now</a></button>
 
         {% endif %}
 
