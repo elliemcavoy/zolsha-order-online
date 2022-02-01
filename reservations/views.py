@@ -111,3 +111,9 @@ def check_availability(request):
     }
     return render(request, template, context)
    
+
+def cancel_reservation(request, res_number):
+    res = get_object_or_404(Reservation, res_number=res_number)
+    res.delete()
+
+    return redirect(reverse('profile'))

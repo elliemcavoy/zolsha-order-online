@@ -87,7 +87,8 @@
                 Date: {{ res.date }}<br>
                 Time: {{ res.time }}<br>
                 Covers: {{ res.covers }}<br>
-                <button href="" class="reorder-btn rounded shadow text-uppercase">Cancel</button>
+            
+                <button class="reorder-btn rounded shadow text-uppercase"><a href="{% url 'cancel_reservation' res.res_number %}">Cancel</a></button>
              </div>
             {% endfor %}
         {% else %}
