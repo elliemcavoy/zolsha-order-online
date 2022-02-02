@@ -33,7 +33,7 @@
                 {% for c in unselected_categories %} 
                     
                         <div class="col-2 text-center">
-                            <a href="">{{ c.friendly_name }}</a>
+                            <a href="{% url 'all_menu' %}?subcategory={{ c.name }}">{{ c.friendly_name }}</a>
                             </div>
                 
                 {% endfor %}
