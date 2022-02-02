@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Menu, Category, SubCategory
+from .forms import MenuForm
 
 # Create your views here.
 
@@ -20,7 +21,16 @@ def all_menu(request):
             menu = menu.filter(subcategory__name__in=subcats)
             subcategories = SubCategory.objects.filter(name__in=subcats)
             unselected = SubCategory.objects.exclude(name__in=subcats)
-            print(unselected)
+            for s in subcategories:
+                cat=s.category
+                print(cat)
+            for u in unselected:
+                cat1=u.category
+                print(cat1)
+                #if cat1 == cat:
+                    
+                    
+                
             
 
 
@@ -57,3 +67,26 @@ def all_menu(request):
         'current_sorting': current_sorting,
     }
     return render(request, 'menu/menu.html', context)
+
+
+
+def add_menu_item(request):
+    """ Add a product to the store """
+
+    if request.method == 'POST':
+        form = MenuForm(request.POST, request.FILES)
+        if form.is_valid():
+            menu = form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('restaurant_admin'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = MenuForm()
+    
+    template = 'menu/add_menu_item.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

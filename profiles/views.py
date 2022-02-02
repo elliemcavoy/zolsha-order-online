@@ -1,10 +1,12 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
-
+from django.db.models import Q
+from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order, OrderLineItem
 from reservations.models import Reservation
+import datetime
 
 def profile(request):
     """ Display the user's profile. """
@@ -59,3 +61,23 @@ def reorder(request, order_number):
 
     return redirect(redirect_url)
 
+@login_required
+def restaurant_admin(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only the restaurant can do that.')
+        return redirect(reverse('home'))
+    orders = Order.objects.all()
+    today = datetime.date.today()
+    todays_date = today.strftime("%Y-%m-%d")
+    print(todays_date)
+    filtered = Q(order_date__icontains=todays_date)
+    orders = orders.filter(filtered)
+    
+    print(orders)
+
+
+    template = 'profiles/restaurant-admin.html'
+    context = {
+         'orders': orders,
+        }
+    return render(request, template, context)
