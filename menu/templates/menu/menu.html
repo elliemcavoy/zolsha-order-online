@@ -20,78 +20,32 @@
 {% block content %}
 <div class="container-fluid">
   <div class="row">
-    <div class="col text-center mt-3">
+    <div class="col mt-3">
         {% for category in selected_categories %}
                 
-                <span class="p-2"><h3>{{ category.friendly_name }}</h3></span>
+                <span class="p-2 text-center"><h3>{{ category.friendly_name }}</h3></span>
+                <h6 class="pl-4">Check out our other {{ category.category.friendly_name|title }}</h6>
         {% endfor %} 
         </div>
     </div>
-         <div class="row">
-             <div class="col-3">Starters</div>
-             <div class="col-3">Mains</div>
-             <div class="col-3">Sundries</div>
-             <div class="col-3">Desserts</div>
-        </div>
         <div class="row">
-            <div class="col-3">
+            
                 {% for c in unselected_categories %} 
-                    {% if c.category.name == "starters" %}
                     
-                        <div class="col-12">
+                        <div class="col-2 text-center">
                             <a href="">{{ c.friendly_name }}</a>
                             </div>
-                    {% endif %}
                 
                 {% endfor %}
+            
             </div>
-                        
-            <div class="col-3">            
-                {% for c in unselected_categories %}  
-                    {% if c.category.name == "main_dishes" %}
-                    
-                        <div class="col-12">
-                            <a href="">{{ c.friendly_name }}</a>
-                            </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-                        
-            <div class="col-3">           
-                {% for c in unselected_categories %}  
-                    {% if c.category.name == "sundries" %}
-                    
-                        <div class="col-12">
-                            <a href="">{{ c.friendly_name }}</a>
-                            </div>
-                    {% endif %}
-                {% endfor %}
-            </div>       
-                   
-            <div class="col-3">
-                {% for c in unselected_categories %}  
-                    {% if c.category.name == "desserts" %}
-                    
-                        <div class="col-12">
-                            <a href="">{{ c.friendly_name }}</a>
-                            </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-                
-                    
-                
-        
-            </div>
-         
-         
-    
+
 </div>
 <div class="row">
-  <div class="product-container col-10 offset-1">
+  <div class="col-10 offset-1">
       <div class="row ">
-          <div class="col-12 col-md-4 order-md-last d-flex justify-content-center justify-content-md-end">
-              <div class="sort-select-wrapper w-50">
+          <div class="col-12 order-md-last d-flex justify-content-center justify-content-md-end">
+              <div class="sort-select-wrapper w-20">
                   <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                       <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                       <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
