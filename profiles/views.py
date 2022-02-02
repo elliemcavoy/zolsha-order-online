@@ -67,11 +67,14 @@ def restaurant_admin(request):
         messages.error(request, 'Sorry, only the restaurant can do that.')
         return redirect(reverse('home'))
     orders = Order.objects.all()
+    reservations = Reservation.objects.all()
     today = datetime.date.today()
     todays_date = today.strftime("%Y-%m-%d")
     print(todays_date)
-    filtered = Q(order_date__icontains=todays_date)
-    orders = orders.filter(filtered)
+    order_filtered = Q(order_date__icontains=todays_date)
+    res_filtered = Q(date__icontains=todays_date)
+    orders = orders.filter(order_filtered)
+    reservations = reservations.filter(res_filtered)
     
     print(orders)
 
@@ -79,5 +82,6 @@ def restaurant_admin(request):
     template = 'profiles/restaurant-admin.html'
     context = {
          'orders': orders,
+         'reservations': reservations,
         }
     return render(request, template, context)

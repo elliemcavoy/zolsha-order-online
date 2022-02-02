@@ -20,27 +20,85 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-12 col-lg-4 text-center">
+    <div class="col-12 col-lg-5 text-center">
         <p>Today's Orders</p>
-        {% for o in orders %}
-        {{ o.order_number }}
-        {% endfor %}
+        <div class="table-responsive">
+            <table class="table table-sm table-bordered shadow" id="">
+                <thead class="text-black">
+                    <tr>
+                        <th scope="col">Order Time</th>
+                        <th scope="col">Order Number</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Postcode</th>
+                        
+                    </tr>
+                </thead>
+    {% for o in orders %}
+        <tr>
+            <td>
+                <p class="my-0">{{ o.order_time }}</p>
+            </td>
+            <td>
+                <p class="my-0 small text-muted">{{ o.order_number|truncatechars:9  }}</p>
+            </td>
+            <td>
+                <p class="my-0 small text-muted">£{{ o.order_total }}</p>
+            </td>
+            <td>
+            <p class="my-0 small text-muted">{{ o.postcode|upper }}</p>
+                </td>
+        </tr>       
         
-    <div class="col-12 col-lg-4">
+    {% endfor %}
+    </table>
+    </div>
+    </div>
+    <div class="col-12 col-lg-2 text-center">
+        <h5>Menu Admin</h5>
         <a href="{% url 'add_menu_item' %}">Add Menu Item</a>
-        </div>
-               
-
-           
+        </div>  
         
+    <div class="col-12 col-lg-5 text-center">
+        <p>Today's Reservations</p>
+    {% if reservations %}
+        <div class="table-responsive">
+            <table class="table table-sm table-bordered shadow" id="">
+                <thead class="text-black">
+                    <tr>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Covers</th>
+                        
+                    </tr>
+                </thead>
+    {% for r in reservations %}
+        <tr>
+            <td>
+                <p class="my-0">{{ r.full_name }}</p>
+            </td>
+            <td>
+                <p class="my-0 small text-muted">{{ r.time  }}</p>
+            </td>
+            <td>
+                <p class="my-0 small text-muted">{{ r.covers }}</p>
+            </td>
+            
+        </tr>       
         
+    {% endfor %}
+    </table>
+    </div>
+    {% else %}
+    <p>No reservations</p>
+    {% endif %}
+    </div>
+    </div>
     
-    
-    <div class="col-12 col-lg-4 text-center">
+            
         
         
         
 
-        </div>
+        
 </div>
 {% endblock %}
