@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+    
+{% endblock %}
+
+{% block page_header %}
+<div class="container page-header-container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="text-center">Restaurant Dashboard</h2>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-4 text-center">
+        <p>Today's Orders</p>
+        {% for o in orders %}
+        {{ o.order_number }}
+        {% endfor %}
+        
+    <div class="col-12 col-lg-4">
+        <a href="{% url 'add_menu_item' %}">Add Menu Item</a>
+        </div>
+               
+
+           
+        
+        
+    
+    
+    <div class="col-12 col-lg-4 text-center">
+        
+        
+        
+
+        </div>
+</div>
+{% endblock %}
