@@ -24,7 +24,7 @@
         {% for category in selected_categories %}
                 
                 <span class="p-2 text-center"><h3>{{ category.friendly_name }}</h3></span>
-                <h6 class="pl-4">Check out our other {{ category.category.friendly_name|title }}</h6>
+                <h6 class="pl-4 text-center">Check out our other {{ category.category.friendly_name|title }}</h6>
         {% endfor %} 
         </div>
     </div>
@@ -32,7 +32,7 @@
             
                 {% for c in unselected_categories %} 
                     
-                        <div class="col-2 text-center">
+                        <div class="col-2 text-center category-container rounded shadow m-auto">
                             <a href="{% url 'all_menu' %}?subcategory={{ c.name }}">{{ c.friendly_name }}</a>
                             </div>
                 
@@ -62,16 +62,16 @@
      <div class="menu-container">
       {% for item in menu %}
       <div class="row m-2">
-        <div class="col-10 m-auto">
+        <div class="col-11 col-md-10 m-auto">
         <div class="card menu-card">
           <div class="card-header">
               <div class="row">
-                  <div class="col-10">
+                  <div class="col-12 col-md-10">
             <h5 class="mb-0">
                 {{ item.name }}
             </h5>
                   </div>
-            <div class="col-2">
+            <div class="col-12 col-md-2">
                 <h5 class="mb-0">
                 £{{ item.price }}
                 </h5>
@@ -80,7 +80,7 @@
           </div>
             <div class="card-body">
               <div class = "row">
-                <div class="col-6">
+                <div class="col-12 col-md-5">
               {{ item.description }}
             
             
@@ -100,12 +100,14 @@
                                 </select>
                             </div>
                         {% endif %}
+                        {% endwith %}
                     </div>
                 </div>
-                        <div class="col-6">
-                            <div class="row">
-                        <div class="col-8">
+                        <div class="col-12 col-md-4">
                             <p class="text-uppercase text-center"><strong>Quantity:</strong></p>
+                            <div class="row">
+                        
+                            
                             <div class="form-group m-auto w-50">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -131,13 +133,14 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-3">
+                        <div class="col-12 col-md-3">
                             
-                            <input type="submit" class="btn btn-add-to-bag rounded shadow text-uppercase" value="Add to Bag">
+                            <input type="submit" class="btn btn-add-to-bag rounded shadow text-uppercase m-auto" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                        {% endwith %}
+                        
                     </div>
                 </form>
           </div>
