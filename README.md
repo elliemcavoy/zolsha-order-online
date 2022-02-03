@@ -39,12 +39,22 @@ Please see the wireframes for this project:<br>
 
 <h2 id="target-audience">Target Audience</h2>
 <ul>
-<li> </li>
+<li>The target audience for this website has a relatively narrow scope. As this is primarily a tool for ordering a food delivery, the target audience will live within a small geographical area surrrounding the restaurant. As delivery is limited to a number of postcodes and customer will not be willing to travel too far to visit the restaurant, I have estimated that the target audience will be based within 7 miles of the restaurant.</li>
+<li>The demographic for the consumer audience will be Indian food lovers, aged over 16. </li>
+<li>There will also be a secondary audience which is the restaurant owner/employees to allow them to keep up to date with orders and bookings the restaurant has recieved. </li>
 </ul><br>
 
 <h2 id="user-stories">User Stories</h2>
 As a user of the website, the following actions and results would need to be achieved:
+<ul>
+<li>Unregistered User</li>
 <ol>
+As an unregistered user, I would like to be able to:
+<li>Browse the menu items and add items to my basket.</li>
+<li>Calculate the delivery fee by providing my postcode. </li>
+<li>Review my basket details before completing the checkout process and make any amendments should they be required. </li>
+<li></li>
+</ol>
 <li></li>
 <li></li>
 <li></li>
@@ -55,7 +65,8 @@ As a user of the website, the following actions and results would need to be ach
 <li></li>
 <li></li>
 <li></li>
-</ol><br>
+</ol>
+</ul><br>
 
 <h2 id="design"><u>Design</u></h2>
 I have kept the design of the webpages simple and easy to navigate.
