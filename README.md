@@ -48,23 +48,32 @@ Please see the wireframes for this project:<br>
 As a user of the website, the following actions and results would need to be achieved:
 <ul>
 <li>Unregistered User</li>
+<strong>As an unregistered user, I would like to be able to:</strong>
 <ol>
-As an unregistered user, I would like to be able to:
-<li>Browse the menu items and add items to my basket.</li>
+
+<li>Browse the menu items and add items to my shopping bag.</li>
+<li>Search for a specific dish or ingredient without having to browse through all menu items.</li>
+<li>See a summary of the items in my shopping bag and an order total each time I add a new item without having to visit the shopping bag each time.</li>
 <li>Calculate the delivery fee by providing my postcode. </li>
-<li>Review my basket details before completing the checkout process and make any amendments should they be required. </li>
-<li></li>
+<li>Review my shopping bag details before completing the checkout process and make any amendments should they be required. </li>
+<li>Have the option to register for an account by providing an email and creating a password & username.</li>
+<li>Check availability for a table in the restaurant on a given date and make a dining reservation. </li>
 </ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li> </li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>Registered User</li>
+<strong>As a registered user, I would like to be able to do all of the above actions (for an unregsitered user) and:</strong>
+<ol>
+<li>Save my delivery details to my profile which will then be automatically entered at the checkout.</li>
+<li>View my previous order details including the items ordered in my profile </li>
+<li>Reorder previous orders directly from the order history without having to search through the menu to find each item.</li>
+<li>View any table reservations I have made including the reservation details, such as the date & time, in my profile</li>
+<li>Have the ability to cancel any table reservations I have made directly from my profile without having to contact the restaurant directly. </li>
+</ol>
+<li>Admin/Super User</li>
+<strong>As the admin/super user, I would like to be able to:</strong>
+<ol>
+<li>Add new dishes/items to the menu. </li>
+<li>View all of the current days orders including the postcode and price.</li>
+<li>View all of the current days table reservations in details with the time and number of people shown.</li>
 </ol>
 </ul><br>
 
@@ -92,3 +101,55 @@ I have kept the design of the webpages simple and easy to navigate.
 <li></li>
 <li> </li>
 </ol><br>
+
+
+<h2 id="existing-features"><u>Existing Features</u></h2>
+<ol>
+<li>NAVIGATION</li>
+<li>VIEW MENU ITEMS</li>
+<li>SEARCH MENU ITEMS</li>
+<li>REGISTRATION</li>
+<li>LOGIN</li>
+<li>LOGOUT</li>
+<li>ADD RECIPE</li>
+<li>EDIT RECIPE</li>
+<li></li>
+<li></li>
+</ol>
+
+
+
+<h1 id="technologies"><u>Technologies Used</u></h1>
+
+<h3>Languages Used</h3>
+<ul>
+<li>HTML5</li>
+<li>CSS3 </li>
+<li>JavaScript</li>
+<li>Python3</li>
+</ul>
+<h3>Libraries Used</h3>
+<ul>
+<li>JQuery</li>
+<li><a href=" target="_blank">Bootstrap</a> - Used to provide page structure, Navbar design and form components. Also used to provide generic styling. </li>
+<li><a href="https://fontawesome.com/" target="_blank">Font Awesome</a>  - Icons for forms and styling.</li>
+<li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a> - Used to create a look in keeping with the website aim and to create uniform styling throughout.</li>
+</ul>
+<h3>Python Frameworks & Libraries</h3>
+<ul>
+<li>Flask Framework</li>
+
+<li>werkzeug.security</li>
+<li>bson</li>
+<li>Counter</li>
+<li>Random</li>
+</ul>
+<h3>Database & Deployment</h3>
+<ul>
+<li></li>
+<li>Git</li>
+<li>GitHub</li>
+<li>Heroku</li>
+</ul>
+
+</ul>
