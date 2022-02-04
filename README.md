@@ -166,9 +166,9 @@ I have kept the design of the webpages simple and easy to navigate.
 <li>W3C HTML Validator</li>
 All pages of HTML content have been checked by the HTML validator and have passed.
 <li>W3C CSS Validator</li>
-<img src="static/images/css-validator.JPG">
+<img src="">
 <li>PEP8 Compliant</li>
-<img src="static/images/pep8.JPG">
+<img src="">
 </ul>
 
 <h4>Manual Testing</h4>
@@ -195,3 +195,38 @@ Please see below a brief overview of the testing carried out. Any issues found a
 | Restaurant Dashboard (admin user) | No issues found    |
 | Add New Recipe (admin user) | No issues found    | 
 
+
+
+<h1 id="#credits">Credits</h1>
+
+<h3>Design</h3>
+<ul>
+<li>The following elements and components have been taken from Bootstrap including the Jquery (when required) to operate them successfully:</li>
+<ul>
+<li>Navbar & Side Navbar</li>
+<li>Card Component for all menu items, availability section & order history.</li>
+<li>Toast component for messages section.</li>
+<li></li>
+</ul>
+
+<li></li>
+<li>Google Fonts utilized for all font styles within the project.</li></ul>
+
+<h3>Code</h3>
+<ul>
+<li><a href= target="_blank">Django Documentation</a> </li>
+<li><a href="" target="_blank"></li>
+<li>Tutor Support assisted with </li>
+<li>Code Institute Turtorials were used for reference when creating functions.</li>
+<li>Boutique Ado Mini Project.  </li>
+<li><a href="" target="_blank"></a> </li>
+
+
+</ul>
+
+<h3>Media</h3>
+<ul>
+<li>Font Awesome used for all icons and symbols.
+</li>
+<li></li>
+<li>Image to show responsive design from <a href="http://ami.responsivedesign.is/#" target="_blank">http://ami.responsivedesign.is/#</a></li></ul>
