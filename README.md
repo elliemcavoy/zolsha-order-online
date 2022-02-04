@@ -111,13 +111,16 @@ I have kept the design of the webpages simple and easy to navigate.
 <li>NAVIGATION</li>
 <li>VIEW MENU ITEMS</li>
 <li>SEARCH MENU ITEMS</li>
+<li>FILTER MENU ITEMS BY CATEGORY</li>
+<li>SHOPPING BASKET</li>
+<li>SECURE CHECKOUT</li>
 <li>REGISTRATION</li>
 <li>LOGIN</li>
 <li>LOGOUT</li>
-<li>ADD RECIPE</li>
-<li>EDIT RECIPE</li>
-<li></li>
-<li></li>
+<li>USER PROFILE</li>
+<li>CHECK DINING AVAILABILITY</li>
+<li>COMPLETE DINING RESERVATION</li>
+<li>RESTAURANT DASHBOARD</li>
 </ol>
 
 
@@ -174,21 +177,21 @@ Please see below a brief overview of the testing carried out. Any issues found a
 
 | Page                  | Bug Detected   | Bug fixed Y/N |
 |---------------------- |----------------| --------------|
-| Main Page (user)    | ISSUE FOUND| Y
-| Main Page (user logged in)  | No issues found| 
+| Home Page (user)    | ISSUE FOUND| Y
+| Home Page (user logged in)  | No issues found| 
 | Register Page (user)  | No issues found| 
 | Log In Page (user)  | No issues found| 
-| Recipe Page (user)  | ISSUE FOUND| Y
-| Recipe Page (user logged in) | ISSUE FOUND    | Y
-| Recipe Page (admin logged in) | ISSUE FOUND     | Y
-| Individual Recipecard (user) | No issues found     | 
-| Individual Recipecard (user logged in) | No issues found     | 
+| Menu (user)  | ISSUE FOUND| Y
+| Shopping Bag (user) | No issues found     | 
+| Checkout Page (user) | No issues found     | 
+| Checkout Page (user logged in) | No issues found     | 
+| Order Success (user) | No issues found     | 
+| Check Dining Availability (user) | No issues found     | 
+| Make Dining Reservation (user) | No issues found     | 
+| Make Dining Reservation (user logged in) | No issues found     | 
 | User Profile | No issues found     | 
-| Add New Recipe | No issues found    | 
-| Update Recipe (user's own recipe) | No issues found     | 
-| Update Recipe (admin user)| No issues found     | 
-| Delete Recipe (user's own recipe) | No issues found     |
-| Delete Recipe (admin user) | No issues found     | 
-| Add to favourites | ISSUE FOUND     | Y
-| View favourites recipecard | ISSUE FOUND  | Y
+| Reorder previous orders (user logged in) | No issues found     | 
+| Cancel Dining Reservation | No issues found    |
+| Restaurant Dashboard (admin user) | No issues found    |
+| Add New Recipe (admin user) | No issues found    | 
 
