@@ -9,6 +9,7 @@
 
 .menu-container{
     background-image: url("/static/images/menu.jpg");
+    background-repeat: repeat;
 }
 
 .btn-add-to-bag{

@@ -30,6 +30,9 @@
 </ol>
 
 <h1 id="ux"><u>UX</u></h1>
+This websites primary purpose is to allow Zolsha Restaurant & Takeaway's customers to order their favourite dishes from the comfort of their own homes and to have the food either delivered or to allow them to collect the food once it is ready. The functionality is as such that the customers can provide all the relevant details to allow for the food to be delivered and make a secure payment for the order. A website search function will provide any users the ability to search for menu items by a keyword to save them time if they know what they would like to purchase. The ordering system will be available for any visitors to the site however delivery will only be available for customers within a certain distance from the restaurant. Additional functionality will be made available for user's that register on the site such as a profile that stores all previous orders and delivery information to save time for regular customers when ordering.
+The website will also have a secondary purpose which is to allow customers to make table reservations for dining in at the restaurant. The user can check availability and if a table is available a booking can be made. Again, a registered user will have the additional functionality to view all of their table reservations in their profile.
+The third and final purpose of this website will be to allow the restaurant ovwners and employees to keep up to date with orders and reservations for that day by providing them with a dashboard showing these in a easy to read format. It will also allow them to keep their menu up to date by offering them the opportunity to add new dishes to the menu.
 <br>
 
 <h2 id="wireframes">Wireframes</h2>
@@ -153,3 +156,39 @@ I have kept the design of the webpages simple and easy to navigate.
 </ul>
 
 </ul>
+
+<h1 id="testing"><u>Testing</u></h1>
+<h4>Validators</h4>
+<ul>
+<li>W3C HTML Validator</li>
+All pages of HTML content have been checked by the HTML validator and have passed.
+<li>W3C CSS Validator</li>
+<img src="static/images/css-validator.JPG">
+<li>PEP8 Compliant</li>
+<img src="static/images/pep8.JPG">
+</ul>
+
+<h4>Manual Testing</h4>
+I have carried out a lot of manual testing on different aspects of this project. Please see detailed manual testing logs <a href="testing.md"> here </a>.
+Please see below a brief overview of the testing carried out. Any issues found and fixes put in place are documented in the testing log.
+
+| Page                  | Bug Detected   | Bug fixed Y/N |
+|---------------------- |----------------| --------------|
+| Main Page (user)    | ISSUE FOUND| Y
+| Main Page (user logged in)  | No issues found| 
+| Register Page (user)  | No issues found| 
+| Log In Page (user)  | No issues found| 
+| Recipe Page (user)  | ISSUE FOUND| Y
+| Recipe Page (user logged in) | ISSUE FOUND    | Y
+| Recipe Page (admin logged in) | ISSUE FOUND     | Y
+| Individual Recipecard (user) | No issues found     | 
+| Individual Recipecard (user logged in) | No issues found     | 
+| User Profile | No issues found     | 
+| Add New Recipe | No issues found    | 
+| Update Recipe (user's own recipe) | No issues found     | 
+| Update Recipe (admin user)| No issues found     | 
+| Delete Recipe (user's own recipe) | No issues found     |
+| Delete Recipe (admin user) | No issues found     | 
+| Add to favourites | ISSUE FOUND     | Y
+| View favourites recipecard | ISSUE FOUND  | Y
+
