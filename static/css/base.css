@@ -89,3 +89,59 @@ header{
     background-color:rgba(248, 151, 95, 0.808);
     border-bottom: solid 1px black
 }
+
+.allauth-content-container{
+    background-color:#e9e8e8;
+    margin:auto;
+    padding:5px;
+    border:1px solid grey;
+
+}
+
+.allauth-content-container input{
+    border-color: grey;
+    border-radius: 15px; 
+    text-align: center;
+    width:60%;
+    margin:auto;
+    display:flex;
+    justify-content: center;
+    
+
+}
+
+.allauth-content-container label{
+    width:100%;
+    text-align: center;
+    font-weight:500;
+
+}
+
+.allauth-content-container h1{
+    text-align: center;
+}
+
+.allauth-content-container h2{
+    text-align:center;
+}
+
+.allauth-content-container p{
+    text-align: center;
+}
+
+.allauth-content-container button{
+    display:block;
+    text-align:center;
+    border: solid grey 1px;
+    margin:0px auto 10px;
+    font-weight: 600;
+
+}
+
+.secondaryAction{
+    width:100%;
+    margin:10px auto 10px;
+    display:block;
+    text-align:center;
+}
+
