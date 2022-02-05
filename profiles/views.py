@@ -52,6 +52,8 @@ def reorder(request, order_number):
             bag[item_id] = {'items_by_option': {option: quantity}}
         else:
             bag[item_id] = quantity
+
+    messages.success(request, f'Thank you for re-ordering')
         
     request.session['bag'] = bag
     redirect_url = request.POST.get('redirect_url')
