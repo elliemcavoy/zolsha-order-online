@@ -34,9 +34,11 @@ def reservation(request):
             try:
                 profile = UserProfile.objects.get(user=request.user)
                 reservation_form = ReservationForm(initial={
-                    'full_name': profile.user.get_full_name(),
+                    'full_name': profile.default_name,
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
+                    'time': request.session.get('time'),
+                    'date': request.session.get('date')
                 })
             except UserProfile.DoesNotExist:
                 reservation_form = ReservationForm()
