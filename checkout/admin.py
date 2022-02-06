@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, Offer
 
 class OrderLineItemAdminInline(admin.TabularInline):
     model = OrderLineItem
@@ -11,8 +11,12 @@ class OrderAdmin(admin.ModelAdmin):
                     'order_total', 'delivery_cost',
                     'grand_total',)
 
+class OfferAdmin(admin.ModelAdmin):
+    list_display = ('offer_code', 'discount',)
+
 
 
 
 admin.site.register(Order, OrderAdmin)
+admin.site.register(Offer, OfferAdmin)
 

@@ -70,3 +70,8 @@ class OrderLineItem(models.Model):
 
         def __str__(self):
             return f'SKU {self.item.sku} on order {self.order.order_number}'
+
+class Offer(models.Model):
+        
+    offer_code = models.CharField(max_length=10, null=False, blank=False)
+    discount = models.DecimalField(max_digits=6, decimal_places=0)

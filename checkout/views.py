@@ -6,7 +6,7 @@ from django.views.decorators.http import require_POST
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from .forms import OrderForm
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, Offer
 from menu.models import Menu
 import stripe
 import json
@@ -29,6 +29,24 @@ def cache_checkout_data(request):
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+    current_bag = bag_items(request)
+    if 'discount' in request.GET:
+        
+        order_total = current_bag['total']
+        offer = Offer.objects.all()
+        discount = request.GET['discount']
+        discount_code = discount.upper()
+        
+        for o in offer: 
+            if discount_code == o.offer_code:
+                percent = o.discount/100
+                discounted = order_total * percent
+                final_price = order_total - discounted
+                print(final_price)
+    else:
+        final_price = current_bag['total']
+                
+    
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
@@ -118,6 +136,7 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        'final_price': final_price,
     }
 
     return render(request, template, context)

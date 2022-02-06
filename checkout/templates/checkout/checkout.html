@@ -24,7 +24,7 @@
             <div class="col-12 col-md-6 order-md-2 mb-5">
                 <p class="text-muted text-center">Order Summary ({{ item_count }})</p>
                 <div class="row">
-                    <div class="col-9 table-responsive m-auto">
+                    <div class="col-10 table-responsive m-auto">
                         <table class="table table-sm table-bordered shadow" id="order-table">
                             <thead class="text-black">
                                 <tr>
@@ -56,7 +56,20 @@
                 {% endfor %}
                 <hr class="my-0">
                 <tr>
-                    <td colspan="5" class="pt-5 text-right">
+                    
+                    <td colspan="5">
+                        <div class="row">
+                            <div class="col-6">
+                        <p class="text-left">Got a discount code???</p>
+                        <form class="form text-center" method="GET" >
+                    
+                            <input name="discount" type="text" class="rounded shadow">
+                            <button type="submit" class="btn payment-btn rounded shadow mt-2">Update</button>
+                        </form>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        <div class="col-6 pt-2 text-right">
+                            {{ final_price|floatformat:2 }}
                         <h6><strong>Order Total: £{{ total|floatformat:2 }}</strong></h6>
                         {% if delivery_charge %}
                             
@@ -66,6 +79,8 @@
                             <h6>Delivery: £0.00</h6>
                         {% endif %}
                         <h5 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h5>
+                        </div>
+                    </div>
                     </td>
                 </tr>
             </table>
