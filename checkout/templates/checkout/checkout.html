@@ -70,18 +70,32 @@
                 </tr>
             </table>
             </div>
+                <div class="col-9 m-auto text-center">   
+                    <a href="{% url 'shopping_bag' %}" class="btn payment-btn rounded shadow">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="font-weight-bold">Add more food??</span>
+                    </a> 
+                </div>
+                
+            
         </div>
     </div>
+
         
-            <div class="col-12 col-md-6 order-md-1">
+    
+        
+            <div class="col-12 col-md-6 order-md-1" id="payment-form">
                 <p class="text-muted text-center">Please fill out the form below to complete your order</p>
-                <div>
-                    <div class="card w-50 m-auto">
-                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                <div class="row">
+                    <div class="col-9 details-form card mt-2 mx-auto p-0">
+                <form action="{% url 'checkout' %}" method="POST" >
                     {% csrf_token %}
+                    <div class="card-header p-0">
                     <fieldset class="rounded">
-                        <div class="card-header">
-                        <legend class="fieldset-label text-black w-auto text-center">Your Details</legend>
+                        
+                        <legend class="fieldset-label text-black w-auto text-center"><h5 class="pt-1">Your Details</h5></legend>
                         </div>
                         <div class="card-body text-center">
                         {{ order_form.full_name | as_crispy_field }}
@@ -90,10 +104,10 @@
                         </div>
                     </fieldset>
                 </div>
-                <div class="card w-50 m-auto">
+                <div class="col-9 details-form card p-0 mt-2 mx-auto">
                     <fieldset class="rounded">
-                        <div class="card-header">
-                        <legend class="fieldset-label text-black px-2 w-auto">Delivery Address</legend>
+                        <div class="card-header p-0">
+                        <legend class="fieldset-label text-black text-center w-auto"><h5 class="pt-1 pb-1">Delivery Address</h5></legend>
                         </div>
                         <div class="card-body text-center">
                         {{ order_form.street_address1 | as_crispy_field }}
@@ -102,8 +116,13 @@
                         {{ order_form.postcode | as_crispy_field }}
                         {{ order_form.delivery_details | as_crispy_field }}
                     </fieldset>
-                    <fieldset class="px-3">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                </div>
+                    <div class="col-9 details-form card p-0 mt-2 mx-auto">
+                    <div class="card-header p-0">
+                    <fieldset>
+                        <legend class="fieldset-label text-center w-auto pt-1 w-auto"><h5>Payment</h5></legend>
+                    </div>
+                    <div class="card-body">
                         <!-- A Stripe card element will go here -->
                         <div class="mb-3" id="card-element"></div>
                         <!-- Used to display form errors -->
@@ -111,14 +130,14 @@
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
                         <input type="hidden" value="" name="client_secret">
                     </fieldset>
-                    <div class="submit-button mt-5 mb-2">                 
-						<button id="submit-button" class="btn payment-btn rounded shadow">
+                        <div class="col text-center">       
+						<button id="submit-button" class="btn payment-btn mx-auto mt-2 rounded shadow">
 							<span class="font-weight-bold">Complete Order</span>
 							<span class="icon">
 								<i class="fas fa-lock"></i>
 							</span>
 						</button>
-						<p class="small text-danger my-0">
+						<p class="small text-orange text-center mx-auto mt-2">
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
@@ -126,20 +145,13 @@
 						</p>
                     </div>
                 </div>
+                </div>
+                </div>
                 </form>
             </div>
                 </div>
-                <div class="row">
-                    <div class="m-5">   
-                        <a href="{% url 'shopping_bag' %}" class="btn payment-btn rounded shadow">
-							<span class="icon">
-								<i class="fas fa-chevron-left"></i>
-							</span>
-							<span class="font-weight-bold">Add more food??</span>
-						</a> 
-                    </div>
-                    
-					</div>
+            </div>
+                
                 
             </div>
     </div>

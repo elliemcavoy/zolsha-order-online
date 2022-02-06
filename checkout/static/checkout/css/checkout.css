@@ -1,12 +1,23 @@
 
+.details-form{
+    width:80%;
+    background-color:#e9e8e8;
+    border: solid grey 1px;
+    
 
+}
 
 #payment-form input{
     border:solid 1px grey;
     margin:2px;
     border-radius:10px;
     text-align:center;
+    width:65%;
     
+}
+
+.text-orange{
+    color:rgb(245, 94, 7);
 }
 
 .payment-btn{
