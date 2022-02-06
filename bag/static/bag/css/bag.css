@@ -12,21 +12,7 @@
     border:solid 1px grey;
 }
 
-#bag-table{
-    background-color:#e9e8e8;
-    border:solid 1px black;
-    
-}
 
-#bag-table th{
-    border:solid 1px grey;
-    
-}
-
-#bag-table td{
-    border:solid 1px grey;
-    
-}
 
 .checkout-btn{
     border: solid grey 1px;

@@ -158,3 +158,22 @@ header{
     text-align:center;
 }
 
+table{
+    background-color:#e9e8e8;
+    border:solid 1px grey !important;
+    border-radius:0.25rem !important;
+    
+    
+}
+
+table th{
+    border:solid 1px grey !important;
+    
+}
+
+table td{
+    border:solid 1px grey !important;
+    
+}
+
+

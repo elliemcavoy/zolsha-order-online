@@ -24,16 +24,14 @@
 
 {% block content %}
 <div class="row">
-    <div class="col">
         {% if bag_items %}
-        <div class="row m-4">
-            <div class="col-8 m-auto calc-delivery-container rounded shadow p-2">
-                <div class="row">
-            <div class="col-5">
+            <div class="col-9 col-md-3 order-md-1 m-auto ">
+                <div class="card rounded shadow">
+                    <div class="card-header">
                 
-                <h5 class="text-center text-uppercase">Want us to deliver???</h5>
-            </div>
-            <div class="col-6 m-auto">
+                        <h5 class="text-center text-uppercase">Want us to deliver???</h5>
+                    </div>
+                 <div class="card-body">
                 <h6 class="text-center">Please enter your postcode to Calculate Delivery</h6>
                 <form class="form text-center" method="GET" >
                     
@@ -41,15 +39,14 @@
                     <button type="submit" class="btn btn-calculate"><i class="fas fa-calculator"></i></button>
                 </form>
         <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </div>
         </div>
         </div>
-        </div>
-        </div>
-        <div class="row m-2">
-            <div class="col-10 m-auto">
-                <h3>Here's what you have ordered...</h3>
+
+            <div class="col-10 col-md-7 order-md-2 m-auto">
+                <h3 class="text-center mt-2">Here's what you have ordered...</h3>
             <div class="table-responsive mt-4">
-                <table class="table table-sm table-bordered shadow" id="bag-table">
+                <table class="table table-sm shadow">
                     <thead class="text-black">
                         <tr>
                             <th scope="col">Your Food</th>
@@ -96,7 +93,7 @@
             </table>
         </div>
         </div>
-        </div>
+    </div>
         <div class="row">
             <div class="col-12 mb-4 text-center">
                 <a href="{% url 'checkout' %}" class="btn checkout-btn rounded shadow btn-lg">

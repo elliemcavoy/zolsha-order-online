@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="text-center">Shopping Bag</h2>
+            <h2 class="text-center">Checkout</h2>
             <hr>
         </div>
     </div>
@@ -21,10 +21,10 @@
 {% block content %}
 
         <div class="row">
-            <div class="col-12 col-m-6 order-m-last mb-5">
-                <p class="text-muted">Order Summary ({{ item_count }})</p>
+            <div class="col-12 col-md-6 order-md-2 mb-5">
+                <p class="text-muted text-center">Order Summary ({{ item_count }})</p>
                 <div class="row">
-                    <div class="col-7 table-responsive">
+                    <div class="col-9 table-responsive m-auto">
                         <table class="table table-sm table-bordered shadow" id="order-table">
                             <thead class="text-black">
                                 <tr>
@@ -37,16 +37,16 @@
                 {% for i in bag_items %}
                     <tr>
                         <td>
-                            <p class="my-0"><strong>{% if i.item.has_options %}{{ i.option|title }}{% endif %} {{ i.item.name }}</strong></p>
+                            <p class="my-0">{% if i.item.has_options %}{{ i.option|title }}{% endif %} {{ i.item.name }}</p>
                         </td>
                         <td>
-                            <p class="my-0 small text-muted">Qty: {{ i.quantity }}</p>
+                            <p class="my-0 small">Qty: {{ i.quantity }}</p>
                         </td>
                         <td>
-                            <p class="my-0 small text-muted">£{{ i.item.price }}</p>
+                            <p class="my-0 small">£{{ i.item.price }}</p>
                         </td>
                         <td>
-                        <p class="my-0 small text-muted">£{{ i.item.price | calc_subtotal:i.quantity  }}</p>
+                        <p class="my-0 small">£{{ i.item.price | calc_subtotal:i.quantity  }}</p>
                             </td>
                     </tr>
                     
@@ -65,27 +65,37 @@
                         {% else %}
                             <h6>Delivery: £0.00</h6>
                         {% endif %}
-                        <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                        <h5 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h5>
                     </td>
                 </tr>
             </table>
-        </div>
-        </div>
             </div>
-            <div class="col-12 col-lg-6">
-                <p class="text-muted">Please fill out the form below to complete your order</p>
+        </div>
+    </div>
+        
+            <div class="col-12 col-md-6 order-md-1">
+                <p class="text-muted text-center">Please fill out the form below to complete your order</p>
                 <div>
-                <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="rounded">
+                    <div class="card w-50 m-auto">
+                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
-                    <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label text-black px-2 w-auto">Your Details</legend>
+                    <fieldset class="rounded">
+                        <div class="card-header">
+                        <legend class="fieldset-label text-black w-auto text-center">Your Details</legend>
+                        </div>
+                        <div class="card-body text-center">
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                         {{ order_form.phone_number | as_crispy_field }}
-                        
+                        </div>
                     </fieldset>
-                    <fieldset class="rounded px-3 mb-5">
+                </div>
+                <div class="card w-50 m-auto">
+                    <fieldset class="rounded">
+                        <div class="card-header">
                         <legend class="fieldset-label text-black px-2 w-auto">Delivery Address</legend>
+                        </div>
+                        <div class="card-body text-center">
                         {{ order_form.street_address1 | as_crispy_field }}
                         {{ order_form.street_address2 | as_crispy_field }}
                         {{ order_form.town_or_city | as_crispy_field }}
@@ -115,7 +125,9 @@
 							<span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
 						</p>
                     </div>
+                </div>
                 </form>
+            </div>
                 </div>
                 <div class="row">
                     <div class="m-5">   
@@ -130,7 +142,6 @@
 					</div>
                 
             </div>
-        </div>
     </div>
     <div id="loading-overlay">
         <h1 class="text-light logo-font loading-spinner">

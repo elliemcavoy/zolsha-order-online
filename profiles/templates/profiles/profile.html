@@ -21,8 +21,11 @@
 {% block content %}
 <div class="row">
     <div class="col-12 col-lg-4 text-center">
-        <div class="details-form text-center m-auto rounded shadow">
-        <h5 class="text-center mb-4">Personal Details</h5>
+        <div class="card details-form text-center m-auto rounded shadow">
+            <div class="card-header">
+        <h5 class="text-center mb-2">Personal Details</h5>
+            </div>
+            <div class="card-body">
         <p class="text-muted">This is where we send your food...</p>
         <p class="text-muted">Make sure it is correct!!</p>
         
@@ -31,6 +34,7 @@
             {{ form|crispy }}
             <button class="btn update-btn rounded shadow text-uppercase">Update</button>
         </form>
+    </div>
         </div>
 
         
@@ -79,8 +83,11 @@
         {% endfor %}
     </div>
     <div class="col-12 col-lg-4 text-center">
-        <div class="details-form text-center m-auto rounded shadow">
-        <h5 class="text-center mb-4">Table Reservations</h5>
+        <div class="card details-form text-center m-auto rounded shadow">
+            <div class="card-header">
+        <h5 class="text-center mb-2">Table Reservations</h5>
+            </div>
+            <div class="card-body">
         {% if reservation %}
             {% for res in reservation %}
              <div class="rounded res-details shadow my-3 mx-auto">
@@ -97,7 +104,7 @@
         <button class="reorder-btn rounded shadow text-uppercase"><a href="{% url 'check_availability' %}">Book Now</a></button>
 
         {% endif %}
-
+        </div>
         </div>
         </div>
 </div>

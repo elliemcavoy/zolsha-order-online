@@ -1,21 +1,5 @@
-#order-table{
-    background-color:#e9e8e8;
-    border:solid 1px black;
-    
-}
 
-#order-table th{
-    border:solid 1px grey;
-    
-}
 
-#payment-form{
-    width:50%;
-    background-color:#e9e8e8;
-    margin:10px;
-    text-align:center;
-
-}
 
 #payment-form input{
     border:solid 1px grey;
