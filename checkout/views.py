@@ -31,14 +31,16 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     current_bag = bag_items(request)
+    warning=None
 
     if 'delivery_charge' in request.session:
         charge = request.session.get('delivery_charge')
         delivery_charge = Decimal(charge)
-        print(delivery_charge)
+        
     else: 
         delivery_charge = 0
-        print(delivery_charge)
+        warning=("Are you sure you want to collect?")
+        
 
     if 'discount' in request.GET:
         
@@ -52,12 +54,11 @@ def checkout(request):
                 percent = o.discount/100
                 discounted = order_total * percent
                 final_price = order_total - discounted
-                print(final_price)
+                
     else:
         final_price = current_bag['total']
                 
     
-
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
@@ -117,7 +118,6 @@ def checkout(request):
 
         
         total = final_price + delivery_charge
-        print(total)
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
@@ -150,6 +150,7 @@ def checkout(request):
         'final_price': final_price,
         'total': total,
         'delivery_charge':delivery_charge,
+        'warning': warning
     }
 
     return render(request, template, context)

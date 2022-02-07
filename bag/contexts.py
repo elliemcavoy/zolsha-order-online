@@ -4,12 +4,17 @@ from django.shortcuts import get_object_or_404
 from menu.models import Menu
 from django.db.models.functions import Upper
 from .models import DeliveryCharges
+from decimal import Decimal
 
 def bag_items(request):
     basket_items = []
     total = 0
     item_count = 0
-    delivery_charge = 0
+    charge = request.session.get('delivery_charge')
+    if 'delivery_charge' in request.session:
+        delivery_charge = Decimal(charge)
+    else:
+        delivery_charge = 0
     bag = request.session.get('bag', {})
 
     for item_id, quant in bag.items():

@@ -72,7 +72,9 @@
                             
                         <h6><strong>Order Total: £{{ final_price|floatformat:2 }}</strong></h6>
                         
-                            
+                        {% if delivery_charge == 0 %}
+                        {{warning}}
+                        {% endif %}
                                 <h6>Delivery: £{{ delivery_charge }}</h6>
                         
                         <h5 class="mt-4"><strong>Grand Total: £{{ total|floatformat:2 }}</strong></h5>
