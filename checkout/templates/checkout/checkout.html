@@ -69,16 +69,13 @@
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
                         <div class="col-6 pt-2 text-right">
-                            {{ final_price|floatformat:2 }}
-                        <h6><strong>Order Total: £{{ total|floatformat:2 }}</strong></h6>
-                        {% if delivery_charge %}
+                            
+                        <h6><strong>Order Total: £{{ final_price|floatformat:2 }}</strong></h6>
+                        
                             
                                 <h6>Delivery: £{{ delivery_charge }}</h6>
                         
-                        {% else %}
-                            <h6>Delivery: £0.00</h6>
-                        {% endif %}
-                        <h5 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h5>
+                        <h5 class="mt-4"><strong>Grand Total: £{{ total|floatformat:2 }}</strong></h5>
                         </div>
                     </div>
                     </td>

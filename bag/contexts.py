@@ -9,6 +9,7 @@ def bag_items(request):
     basket_items = []
     total = 0
     item_count = 0
+    delivery_charge = 0
     bag = request.session.get('bag', {})
 
     for item_id, quant in bag.items():
@@ -45,7 +46,7 @@ def bag_items(request):
             if delivery_postcode.__contains__(c.area):
                 delivery_charge = c.charge
     else:
-        delivery_charge=0
+        delivery_charge = 0
 
     grand_total = delivery_charge + total
     context = {

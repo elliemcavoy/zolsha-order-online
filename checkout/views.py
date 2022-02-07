@@ -30,6 +30,7 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     current_bag = bag_items(request)
+    delivery_charge = current_bag['delivery_charge']
     if 'discount' in request.GET:
         
         order_total = current_bag['total']
@@ -105,8 +106,9 @@ def checkout(request):
             messages.error(request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
-        current_bag = bag_items(request)
-        total = current_bag['grand_total']
+        
+        total = final_price + delivery_charge
+        print(total)
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
@@ -137,6 +139,8 @@ def checkout(request):
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
         'final_price': final_price,
+        'total': total,
+        'delivery_charge':delivery_charge,
     }
 
     return render(request, template, context)
