@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from menu.models import Menu
 from django.db.models.functions import Upper
+from django.contrib import messages
 from .models import DeliveryCharges
 from decimal import Decimal
 
@@ -49,6 +50,8 @@ def bag_items(request):
                 delivery_charge = c.charge
                 print(delivery_charge)
                 request.session['delivery_charge']= str(delivery_charge)
+            else:
+                messages.error(request, 'Sorry we do not deliver here')
 
 
 
