@@ -39,22 +39,23 @@ def bag_items(request):
         postcode = request.GET['postcode']
         delivery_postcode = postcode.upper()
         
-        if not delivery_postcode:
-            messages.error(request, "Please enter your postcode.")
-            return redirect(reverse('shopping_bag'))
         for c in charge: 
             if delivery_postcode.__contains__(c.area):
                 delivery_charge = c.charge
-    else:
-        delivery_charge = 0
+                print(delivery_charge)
+                request.session['delivery_charge']= str(delivery_charge)
+
+
 
     grand_total = delivery_charge + total
+    
     context = {
         "bag_items": basket_items,
         "total": total,
         "grand_total": grand_total,
         "item_count": item_count,
-        "delivery_charge" : delivery_charge,
+        "delivery_charge": delivery_charge
+        
     }
 
     return context

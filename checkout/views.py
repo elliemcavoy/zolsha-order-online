@@ -8,6 +8,7 @@ from profiles.forms import UserProfileForm
 from .forms import OrderForm
 from .models import Order, OrderLineItem, Offer
 from menu.models import Menu
+from decimal import Decimal
 import stripe
 import json
 
@@ -30,7 +31,15 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     current_bag = bag_items(request)
-    delivery_charge = current_bag['delivery_charge']
+
+    if 'delivery_charge' in request.session:
+        charge = request.session.get('delivery_charge')
+        delivery_charge = Decimal(charge)
+        print(delivery_charge)
+    else: 
+        delivery_charge = 0
+        print(delivery_charge)
+
     if 'discount' in request.GET:
         
         order_total = current_bag['total']

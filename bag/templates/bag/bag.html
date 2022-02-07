@@ -4,8 +4,8 @@
 
 {% load bag_tools %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'bag/css/bag.css' %}">
-    
+<link rel="stylesheet" href="{% static 'bag/css/bag.css' %}">
+
 {% endblock %}
 
 
@@ -24,37 +24,37 @@
 
 {% block content %}
 <div class="row">
-        {% if bag_items %}
-            <div class="col-9 col-md-3 order-md-1 m-auto ">
-                <div class="card rounded shadow">
-                    <div class="card-header">
-                
-                        <h5 class="text-center text-uppercase">Want us to deliver???</h5>
-                    </div>
-                 <div class="card-body">
+    {% if bag_items %}
+    <div class="col-9 col-md-3 order-md-1 m-auto ">
+        <div class="card rounded shadow">
+            <div class="card-header">
+
+                <h5 class="text-center text-uppercase">Want us to deliver???</h5>
+            </div>
+            <div class="card-body">
                 <h6 class="text-center">Please enter your postcode to Calculate Delivery</h6>
-                <form class="form text-center" method="GET" >
-                    
+                <form class="form text-center" method="GET">
+
                     <input name="postcode" type="text" class="rounded shadow postcode-input">
                     <button type="submit" class="btn btn-calculate"><i class="fas fa-calculator"></i></button>
                 </form>
-        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </div>
         </div>
-        </div>
+    </div>
 
-            <div class="col-10 col-md-7 order-md-2 m-auto">
-                <h3 class="text-center mt-2">Here's what you have ordered...</h3>
-            <div class="table-responsive mt-4">
-                <table class="table table-sm shadow">
-                    <thead class="text-black">
-                        <tr>
-                            <th scope="col">Your Food</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Subtotal</th>
-                        </tr>
-                    </thead>
+    <div class="col-10 col-md-7 order-md-2 m-auto">
+        <h3 class="text-center mt-2">Here's what you have ordered...</h3>
+        <div class="table-responsive mt-4">
+            <table class="table table-sm shadow">
+                <thead class="text-black">
+                    <tr>
+                        <th scope="col">Your Food</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Subtotal</th>
+                    </tr>
+                </thead>
                 {% for i in bag_items %}
                 <tr class="rounded">
                     <td>
@@ -71,48 +71,48 @@
                     </td>
                 </tr>
                 {% endfor %}
-                
+
                 <tr>
                     <td colspan="5" class="pt-5 text-right">
                         <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                        
-                            
-                                <h6>Delivery: £{{ delivery_charge|floatformat:2 }}</h6>
-                        
+
+
+                        <h6>Delivery: £{{ delivery_charge|floatformat:2 }}</h6>
+
                         <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                     </td>
                 </tr>
-                
-                
-                
 
-                
+
+
+
+
             </table>
         </div>
-        </div>
     </div>
-        <div class="row">
-            <div class="col-12 mb-4 text-center">
-                <a href="{% url 'checkout' %}" class="btn checkout-btn rounded shadow btn-lg">
-                    <span class="text-uppercase">Secure Checkout</span>
-                    <span class="icon">
-                        <i class="fas fa-lock"></i>
-                    </span>
-                </a>
-            </div>
-        </div>
-            
-           
-            
-        {% else %}
-                    <p class="lead mb-5">No food here yet.</p>
-                    <a href="{% url 'all_menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Hungry?</span>
-                    </a>
-        {% endif %}
+</div>
+<div class="row">
+    <div class="col-12 mb-4 text-center">
+        <a href="{% url 'checkout' %}" class="btn checkout-btn rounded shadow btn-lg">
+            <span class="text-uppercase">Secure Checkout</span>
+            <span class="icon">
+                <i class="fas fa-lock"></i>
+            </span>
+        </a>
     </div>
-    </div>
+</div>
+
+
+
+{% else %}
+<p class="lead mb-5">No food here yet.</p>
+<a href="{% url 'all_menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
+    <span class="icon">
+        <i class="fas fa-chevron-left"></i>
+    </span>
+    <span class="text-uppercase">Hungry?</span>
+</a>
+{% endif %}
+</div>
+</div>
 {% endblock %}
