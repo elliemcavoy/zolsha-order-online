@@ -105,6 +105,57 @@ I have kept the design of the webpages simple and easy to navigate.
 <li> </li>
 </ol><br>
 
+<h1 id="database"><u>Database</u></h1>
+For this website, there will be models. The tables below show the items in each of the models and the Foreign keys connecting them to each other.<br>
+
+<h3><u>Users</u></h3>
+<p>This model was installed with the help of Django AllAuth to allow users to register and then sign in to their accounts. </p>
+
+| Key                | Value          |  Data Type       |
+|--------------------|----------------|------------------|
+|username| Username decided by user| Varchar/Integer |
+|password| Password chosen by user that has been hashed| Varchar/Integer |
+|first name| Users first name | Varchar |
+|last name| Users last name | Varchar |
+|email address | Users email address | Email |
+|date joined | The date the user registered | Date/Time |
+
+<br>
+<h3><u>Menu App</u></h3><br>
+<h4><u>Category</u></h4>
+
+| Key                | Value          |  Data Type       |
+|--------------------|----------------|------------------|
+|_id | Id (automatically generated to be unique & sequential)| ID |
+|name| category name| Text |
+|friendly name| An easier to understand name that can be displayed to users| Text |
+
+<br>
+<h4><u>Subcategory</u></h4>
+
+| Key                | Value          |  Data Type       |
+|--------------------|----------------|------------------|
+|_id | Id (automatically generated to be unique & sequential)| ID |
+|name| subcategory name| Text |
+|friendly_name| An easier to understand name that can be displayed to users| Text |
+|category| Foreign Key to link each subcategory to the relevant category | Foreign Key |
+
+<br>
+<h4><u>Menu</u></h4>
+
+| Key                | Value          |  Data Type       |
+|--------------------|----------------|------------------|
+|_id | Id (automatically generated to be unique & sequential)| ID |
+|sku| Unique combination of letters and numbers to each menu item | Varchar |
+|name| The name of the menu item | Text |
+|description| A description of the menu item  | Text |
+|price| Price of each item to 2 decimal places  | Numbers - float 2 |
+|has_options| Whether the item has different options able to be selected | Boolean |
+|category| Foreign Key to link each menu item to the relevant category | Foreign Key |
+|subcategory| Foreign Key to link each menu item to the relevant subcategory | Foreign Key |
+
+<br>
+
 
 <h2 id="existing-features"><u>Existing Features</u></h2>
 <ol>

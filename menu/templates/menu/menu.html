@@ -31,7 +31,6 @@
         <div class="row">
             
                 {% for c in unselected_categories %} 
-                    
                         <div class="col-md-4 col-lg-2 col-6 text-center m-auto">
                             <a href="{% url 'all_menu' %}?subcategory={{ c.name }}"><button class="rounded shadow category-container">{{ c.friendly_name }}</button></a>
                             </div>
