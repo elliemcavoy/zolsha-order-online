@@ -211,6 +211,37 @@ For this website, there will be models. The tables below show the items in each 
 |offer_code | Offer code that customers can be given to gain a discount | Varchar |
 |discount | Percentage discount provided by the offer code | Number |
 
+<br>
+<h3><u>Reservations App</u></h3><br>
+<h4><u>Reservation</u></h4>
+| Key                | Value          |  Data Type       |
+|--------------------|----------------|------------------|
+|_id | Id (automatically generated to be unique & sequential)| ID |
+|res_number | Randomly generated reservation number unique to each booking | Varchar |
+|date | Reservation date | Date/Time |
+|time | Reservation time | Date/Time |
+|covers | Number of Guests | Number |
+|full_name | Name of lead guest | Text |
+|email | Email address for lead guest | Email |
+|phone_number | Phone number for lead guest | Number |
+|user_profile | Links reservation to User's profile if registered | Foreign Key |
+<br>
+
+<h3><u>Profiles App</u></h3><br>
+<h4><u>User Profile</u></h4>
+
+| Key                | Value          |  Data Type       |
+|--------------------|----------------|------------------|
+|user | User that was created by Django AllAuth | Foreign Key |
+|defualt_name| Preferred name for user | Text |
+|default_phone_number| Preferred phone number | Number |
+|default_street_address1| Delivery address line 1 | Varchar |
+|default_street_address2| Delivery address line 2 | Varchar |
+|default_town_or_city | Delivery town or city | Text |
+|default_postcode | Delivery postcode | Varchar |
+
+<br>
+
 
 <h2 id="existing-features"><u>Existing Features</u></h2>
 <ol>
