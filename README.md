@@ -155,6 +155,61 @@ For this website, there will be models. The tables below show the items in each 
 |subcategory| Foreign Key to link each menu item to the relevant subcategory | Foreign Key |
 
 <br>
+<h3><u>Bag App</u></h3><br>
+<h4><u>Delivery Charges</u></h4>
+
+| Key                | Value          |  Data Type       |
+|--------------------|----------------|------------------|
+|_id | Id (automatically generated to be unique & sequential)| ID |
+|area| The postcode prefix for each area| Varchar (max 4) |
+|charge| The cost of delivery to the area | Number - float 2 |
+
+
+<br>
+<h3><u>Checkout App</u></h3><br>
+<h4><u>Order</u></h4>
+
+| Key                | Value          |  Data Type       |
+|--------------------|----------------|------------------|
+|_id | Id (automatically generated to be unique & sequential)| ID |
+|order_number| Unique order number for each order | Varchar (max 32) |
+|user_profile| Foreign Key to link order to user profile | Foreign Key |
+|full_name | Customers full name | Text |
+|email | Customers email | Email |
+|phone_number | Customers phone number  | Number |
+|postcode | Customers delivery postcode  | Varchar (7) |
+|town_or_city | Customers delivery town  | Text |
+|street_address1 | Customers delivery address line 1  | Varchar |
+|street_address2 | Customers delivery address line 2  | Varchar |
+|order_date | Order date for this order  | Date/Time |
+|order_time | Order time for this order  | Date/Time |
+|delivery_details | Any additional information provided by customer for delivery driver  | Text |
+|delivery_cost | Price of delivery  | Decimal - float 2 |
+|order_total | Price of all ordered items  | Decimal - float 2 |
+|grand_total | Price of all ordered items plus delivery charge  | Decimal - float 2 |
+|original_bag | Summary of the shoppping bag  | Text |
+|stripe_pid | Stripe Payment ID  | Varchar |
+<br>
+
+<h4><u>Order Line Item</u></h4>
+
+| Key                | Value          |  Data Type       |
+|--------------------|----------------|------------------|
+|_id | Id (automatically generated to be unique & sequential)| ID |
+|order | Foreign Key to link the order line items to a specific order | Foreign Key |
+|item | Foreign Key to link this line item to the related item in the Menu model | Foreign Key |
+|item_option | If the item has options, the option selected will be stored | Text |
+|quantity | The quantity of the item that was in the shopping bag | Integer |
+|lineitem_total | The item price multiplied by the quantity | Decimal - float 2 |
+
+<br>
+<h4><u>Offer</u></h4>
+
+| Key                | Value          |  Data Type       |
+|--------------------|----------------|------------------|
+|_id | Id (automatically generated to be unique & sequential)| ID |
+|offer_code | Offer code that customers can be given to gain a discount | Varchar |
+|discount | Percentage discount provided by the offer code | Number |
 
 
 <h2 id="existing-features"><u>Existing Features</u></h2>
