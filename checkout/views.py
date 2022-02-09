@@ -1,16 +1,18 @@
+from decimal import Decimal
+import json
+import stripe
+
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.contrib import messages
 from django.conf import settings
-from bag.contexts import bag_items
 from django.views.decorators.http import require_POST
+from bag.contexts import bag_items
+
 from profiles.models import UserProfile
-from profiles.forms import UserProfileForm
+from menu.models import Menu
 from .forms import OrderForm
 from .models import Order, OrderLineItem, Offer
-from menu.models import Menu
-from decimal import Decimal
-import stripe
-import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -118,6 +120,7 @@ def checkout(request):
 
         
         total = final_price + delivery_charge
+        print(total)
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(

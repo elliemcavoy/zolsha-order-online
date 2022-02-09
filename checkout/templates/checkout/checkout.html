@@ -2,8 +2,8 @@
 {% load static %}
 {% load bag_tools %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
-    
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+
 {% endblock %}
 
 {% block page_header %}
@@ -20,21 +20,21 @@
 
 {% block content %}
 
+<div class="row">
+    <div class="col-12 col-md-6 order-md-2 mb-5">
+        <p class="text-muted text-center">Order Summary ({{ item_count }})</p>
         <div class="row">
-            <div class="col-12 col-md-6 order-md-2 mb-5">
-                <p class="text-muted text-center">Order Summary ({{ item_count }})</p>
-                <div class="row">
-                    <div class="col-10 table-responsive m-auto">
-                        <table class="table table-sm table-bordered shadow" id="order-table">
-                            <thead class="text-black">
-                                <tr>
-                                    <th scope="col">Item</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
-                                    <th scope="col">Subtotal</th>
-                                </tr>
-                            </thead>
-                {% for i in bag_items %}
+            <div class="col-10 table-responsive m-auto">
+                <table class="table table-sm table-bordered shadow" id="order-table">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    {% for i in bag_items %}
                     <tr>
                         <td>
                             <p class="my-0">{% if i.item.has_options %}{{ i.option|title }}{% endif %} {{ i.item.name }}</p>
@@ -46,98 +46,107 @@
                             <p class="my-0 small">£{{ i.item.price }}</p>
                         </td>
                         <td>
-                        <p class="my-0 small">£{{ i.item.price | calc_subtotal:i.quantity  }}</p>
-                            </td>
+                            <p class="my-0 small">£{{ i.item.price | calc_subtotal:i.quantity  }}</p>
+                        </td>
                     </tr>
-                    
-                            
-                       
-                    
-                {% endfor %}
-                <hr class="my-0">
-                <tr>
-                    
-                    <td colspan="5">
-                        <div class="row">
-                            <div class="col-6">
-                        <p class="text-left">Got a discount code???</p>
-                        <form class="form text-center" method="GET" >
-                    
-                            <input name="discount" type="text" class="rounded shadow">
-                            <button type="submit" class="btn payment-btn rounded shadow mt-2">Update</button>
-                        </form>
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            </div>
-                        <div class="col-6 pt-2 text-right">
-                            
-                        <h6><strong>Order Total: £{{ final_price|floatformat:2 }}</strong></h6>
-                        
-                                <h6>Delivery: £{{ delivery_charge }}</h6>
-                                
-                                {% if delivery_charge == 0 %}
-                                <div class="pl-5 ml-5">
-                                    <i class="fas fa-exclamation-circle"></i>  <strong>{{warning}}</strong>
+
+
+
+
+                    {% endfor %}
+                    <hr class="my-0">
+                    <tr>
+
+                        <td colspan="5">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="text-left">Got a discount code???</p>
+                                    <form class="form text-center" method="GET">
+
+                                        <input name="discount" type="text" class="rounded shadow">
+                                        <button type="submit" class="btn payment-btn rounded shadow mt-2">Update</button>
+                                    </form>
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </div>
-                                {% endif %}
-                        
-                        <h5 class="mt-4"><strong>Grand Total: £{{ total|floatformat:2 }}</strong></h5>
-                        </div>
-                    </div>
-                    </td>
-                </tr>
-            </table>
+                                <div class="col-6 pt-2 text-right">
+
+                                    <h6><strong>Order Total: £{{ final_price|floatformat:2 }}</strong></h6>
+
+                                    <h6>Delivery: £{{ delivery_charge }}</h6>
+
+                                    {% if delivery_charge == 0 %}
+                                    <div class="pl-5 ml-5">
+                                        <i class="fas fa-exclamation-circle"></i> <strong>{{warning}}</strong>
+                                    </div>
+                                    {% endif %}
+
+                                    <h5 class="mt-4"><strong>Grand Total: £{{ total|floatformat:2 }}</strong></h5>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
-                <div class="col-9 m-auto text-center">   
-                    <a href="{% url 'shopping_bag' %}" class="btn payment-btn rounded shadow">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="font-weight-bold">Add more food??</span>
-                    </a> 
-                </div>
-                
-            
+            <div class="col-9 m-auto text-center">
+                <a href="{% url 'shopping_bag' %}" class="btn payment-btn rounded shadow">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="font-weight-bold">Add more food??</span>
+                </a>
+            </div>
+
+
         </div>
     </div>
 
-        
-    
-        
-            <div class="col-12 col-md-6 order-md-1" id="payment-form">
-                <p class="text-muted text-center">Please fill out the form below to complete your order</p>
-                <div class="row">
-                    <div class="col-9 details-form card mt-2 mx-auto p-0">
-                <form action="{% url 'checkout' %}" method="POST" >
-                    {% csrf_token %}
+
+
+
+    <div class="col-12 col-md-6 order-md-1">
+        <p class="text-muted text-center">Please fill out the form below to complete your order</p>
+        <div class="row">
+
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <div class="col-9 details-form card mt-2 mx-auto p-0">
+
                     <div class="card-header p-0">
-                    <fieldset class="rounded">
-                        
-                        <legend class="fieldset-label text-black w-auto text-center"><h5 class="pt-1">Your Details</h5></legend>
-                        </div>
-                        <div class="card-body text-center">
+                        <fieldset class="rounded">
+
+                            <legend class="fieldset-label text-black w-auto text-center">
+                                <h5 class="pt-1">Your Details</h5>
+                            </legend>
+                    </div>
+                    <div class="card-body text-center">
                         {{ order_form.full_name | as_crispy_field }}
                         {{ order_form.email | as_crispy_field }}
                         {{ order_form.phone_number | as_crispy_field }}
-                        </div>
+                    </div>
                     </fieldset>
                 </div>
                 <div class="col-9 details-form card p-0 mt-2 mx-auto">
                     <fieldset class="rounded">
                         <div class="card-header p-0">
-                        <legend class="fieldset-label text-black text-center w-auto"><h5 class="pt-1 pb-1">Delivery Address</h5></legend>
+                            <legend class="fieldset-label text-black text-center w-auto">
+                                <h5 class="pt-1 pb-1">Delivery Address</h5>
+                            </legend>
                         </div>
                         <div class="card-body text-center">
-                        {{ order_form.street_address1 | as_crispy_field }}
-                        {{ order_form.street_address2 | as_crispy_field }}
-                        {{ order_form.town_or_city | as_crispy_field }}
-                        {{ order_form.postcode | as_crispy_field }}
-                        {{ order_form.delivery_details | as_crispy_field }}
+                            {{ order_form.street_address1 | as_crispy_field }}
+                            {{ order_form.street_address2 | as_crispy_field }}
+                            {{ order_form.town_or_city | as_crispy_field }}
+                            {{ order_form.postcode | as_crispy_field }}
+                            {{ order_form.delivery_details | as_crispy_field }}
+                        </div>
                     </fieldset>
                 </div>
-                    <div class="col-9 details-form card p-0 mt-2 mx-auto">
+                <div class="col-9 details-form card p-0 mt-2 mx-auto">
                     <div class="card-header p-0">
-                    <fieldset>
-                        <legend class="fieldset-label text-center w-auto pt-1 w-auto"><h5>Payment</h5></legend>
+                        <fieldset>
+                            <legend class="fieldset-label text-center w-auto pt-1 w-auto">
+                                <h5>Payment</h5>
+                            </legend>
                     </div>
                     <div class="card-body">
                         <!-- A Stripe card element will go here -->
@@ -145,45 +154,44 @@
                         <!-- Used to display form errors -->
                         <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
-                        <input type="hidden" value="" name="client_secret">
-                    </fieldset>
-                        <div class="col text-center">       
-						<button id="submit-button" class="btn payment-btn mx-auto mt-2 rounded shadow">
-							<span class="font-weight-bold">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
-							</span>
-						</button>
-						<p class="small text-orange text-center mx-auto mt-2">
-							<span class="icon">
-								<i class="fas fa-exclamation-circle"></i>
-							</span>
-							<span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
-						</p>
+                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                        </fieldset>
+                        <div class="col text-center">
+                            <button id="submit-button" class="btn payment-btn mx-auto mt-2 rounded shadow">
+                                <span class="font-weight-bold">Complete Order</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </button>
+                            <p class="small text-orange text-center mx-auto mt-2">
+                                <span class="icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </span>
+                                <span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                </div>
-                </div>
-                </form>
-            </div>
-                </div>
-            </div>
-                
-                
-            </div>
+            </form>
+        </div>
     </div>
-    <div id="loading-overlay">
-        <h1 class="text-light logo-font loading-spinner">
-            <span class="icon">
-                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-            </span>
-        </h1>
-    </div>
+
+
+
+</div>
+
+<div id="loading-overlay">
+    <h1 class="text-light logo-font loading-spinner">
+        <span class="icon">
+            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+        </span>
+    </h1>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
