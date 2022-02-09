@@ -34,13 +34,15 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     current_bag = bag_items(request)
     warning=None
+    order_total = current_bag['total']
+    delivery_cost = 0
 
     if 'delivery_charge' in request.session:
         charge = request.session.get('delivery_charge')
-        delivery_charge = Decimal(charge)
+        delivery_cost = Decimal(charge)
         
     else: 
-        delivery_charge = 0
+        delivery_cost = 0
         warning=("Are you sure you want to collect?")
         
 
@@ -55,10 +57,10 @@ def checkout(request):
             if discount_code == o.offer_code:
                 percent = o.discount/100
                 discounted = order_total * percent
-                final_price = order_total - discounted
+                order_total = order_total - discounted
                 
     else:
-        final_price = current_bag['total']
+        order_total = current_bag['total']
                 
     
     if request.method == 'POST':
@@ -79,7 +81,9 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
+            order.delivery_cost = delivery_cost
             order.save()
+            
             for item_id, quant in bag.items():
                 try:
                     item = Menu.objects.get(id=item_id)
@@ -107,7 +111,10 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            
+            print(order)
+            print(order.order_total)
+            print(order.grand_total)
+            print(order.delivery_cost)
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
@@ -119,9 +126,8 @@ def checkout(request):
             return redirect(reverse('products'))
 
         
-        total = final_price + delivery_charge
-        print(total)
-        stripe_total = round(total * 100)
+        grand_total = order_total + delivery_cost
+        stripe_total = round(grand_total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
@@ -150,9 +156,9 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
-        'final_price': final_price,
-        'total': total,
-        'delivery_charge':delivery_charge,
+        'order_total': order_total,
+        'grand_total': grand_total,
+        'delivery_cost':delivery_cost,
         'warning': warning
     }
 

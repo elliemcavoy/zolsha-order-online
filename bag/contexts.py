@@ -65,5 +65,5 @@ def bag_items(request):
         "delivery_charge": delivery_charge
         
     }
-
+    print(context)
     return context
