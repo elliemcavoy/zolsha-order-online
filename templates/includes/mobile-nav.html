@@ -27,11 +27,16 @@
             <p class="my-0">My Account</p>
         </div>
         <div class="dropdown-menu border-0" aria-labelledby="user-options">
-        <a href="" class="dropdown-item">Admin</a>  
-        <a href="" class="dropdown-item">My Profile</a>
-        <a href="" class="dropdown-item">Logout</a>   
-        <a href="" class="dropdown-item">Register</a>
-        <a href="" class="dropdown-item">Login</a>
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <a href="{% url 'restaurant_admin' %}" class="dropdown-item">Restaurant Admin</a>
+            {% endif %}
+            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            {% else %}
+            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            {% endif %}
         </div>
 </li>
 <li class="list-inline-item">
@@ -39,7 +44,11 @@
         <div class="text-center">
             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
             <p class="my-0">
-                $0.00
+                {% if grand_total %}
+                £{{ grand_total|floatformat:2 }}
+                {% else %}
+                £0.00
+                {% endif %}
             </p>
         </div>
     </a>
