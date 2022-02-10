@@ -44,14 +44,27 @@ def bag_items(request):
         charge = DeliveryCharges.objects.all()
         postcode = request.GET['postcode']
         delivery_postcode = postcode.upper()
-        
-        for c in charge: 
-            if delivery_postcode.__contains__(c.area):
-                delivery_charge = c.charge
-                print(delivery_charge)
-                request.session['delivery_charge']= str(delivery_charge)
-            else:
-                messages.error(request, 'Sorry we do not deliver here')
+        list= []
+        attempt = 1
+        while attempt <= 4:
+                for c in charge: 
+                    if delivery_postcode.__contains__(c.area):
+                        delivery_charge = c.charge
+                        dcharge = 1
+                        attempt += 1
+                        request.session['delivery_charge']= str(delivery_charge)
+                    elif delivery_postcode.__contains__(c.area) == False:  
+                        dcharge= 0 
+                        attempt += 1
+                        
+                    list.append(dcharge)
+                    
+                    if attempt == 4:
+                        final_list = sum(list)
+                        if final_list == 0:
+                            messages.error(request, 'Sorry we do not deliver here')
+            
+                    
 
 
 
