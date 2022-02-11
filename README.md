@@ -259,7 +259,12 @@ For this website, there will be models. The tables below show the items in each 
 <li>COMPLETE DINING RESERVATION</li>
 <li>RESTAURANT DASHBOARD</li>
 </ol>
+<br>
+<h2 id="new-features"><u>Features Left to Implement</u></h2>
 
+<ol>
+<li>Automatically deleting and removing past dining reservations from the database and therefore from the user profile as well.</li>
+</ol>
 
 
 <h1 id="technologies"><u>Technologies Used</u></h1>
@@ -318,10 +323,11 @@ Please see below a brief overview of the testing carried out. Any issues found a
 | Home Page (user logged in)  | No issues found| 
 | Register Page (user)  | No issues found| 
 | Log In Page (user)  | No issues found| 
-| Menu (user)  | ISSUE FOUND| Y
-| Shopping Bag (user) | No issues found     | 
-| Checkout Page (user) | No issues found     | 
-| Checkout Page (user logged in) | No issues found     | 
+| Log In Page (admin user)  | ISSUE FOUND |
+| Menu (user)  | No issues found | Y
+| Shopping Bag (user) | ISSUE FOUND    | Y
+| Checkout Page (user) | ISSUE FOUND     | Y
+| Checkout Page (user logged in) | ISSUE FOUND     | Y
 | Order Success (user) | No issues found     | 
 | Check Dining Availability (user) | No issues found     | 
 | Make Dining Reservation (user) | No issues found     | 
