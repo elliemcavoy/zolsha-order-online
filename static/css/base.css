@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
-.logo h2{
+.logo h2 {
     font-family: 'Berkshire Swash';
-    color:rgb(255, 123, 0);
-    font-size:50px;
+    color: rgb(255, 123, 0);
+    font-size: 50px;
 }
 
-header{
-    background-color:#e9e8e8;
-    
+header {
+    background-color: #e9e8e8;
+
 }
 
-.page-header-container{
+.page-header-container {
     font-family: 'Cinzel Decorative', cursive;
-    font-weight:900;
+    font-weight: 900;
 }
 
 
@@ -27,18 +27,25 @@ header{
     }
 
     .page-header-container {
-        padding-top: 200px;
+        padding-top: 185px;
     }
 }
 
-.hero-img{
+@media (max-width: 992px) {
+
+    .page-header-container {
+        padding-top: 116px;
+    }
+}
+
+.hero-img {
     background: url('/media/hero.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
 }
 
-.img-container{
-    margin:0px;
+.img-container {
+    margin: 0px;
 }
 
 .message-container {
@@ -50,134 +57,140 @@ header{
 
 .toast-design {
     overflow: visible;
-    color:grey;
-    border:solid 2px grey;
-    
+    color: grey;
+    border: solid 2px grey;
+
 }
 
 .toast-capper {
     height: 2px;
-    background-color:orange;
+    background-color: orange;
 }
 
-.toast-header{
+.toast-header {
     border-bottom: solid 2px orange;
-    text-align:center;
-    text-transform:uppercase;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.toast-header button{
-    color:orange !important;
+.toast-header button {
+    color: orange !important;
 }
 
-#main-nav i{
-    color:rgb(253, 136, 27);
-    font-size:20px;
+#main-nav i {
+    color: rgb(253, 136, 27);
+    font-size: 20px;
 }
 
-.lock-icon{
-    color:rgb(253, 136, 27);
-    font-size:20px;
+.lock-icon {
+    color: rgb(253, 136, 27);
+    font-size: 20px;
 
 }
 
-.input-group ::placeholder{
+.input-group ::placeholder {
     text-align: center;
 }
 
-.nav-heading{
+.nav-heading {
     color: grey;
 }
 
-.account-dropdown{
-    z-index:999999;
+.account-dropdown {
+    z-index: 999999;
 }
 
-.card{
+.card {
     border: solid black 2px;
-    z-index:3;
+    z-index: 3;
 }
 
-.card-header{
-    background-color:rgba(248, 151, 95, 0.808);
+.card-header {
+    background-color: rgba(248, 151, 95, 0.808);
     border-bottom: solid 1px black
 }
 
-.allauth-content-container{
-    background-color:#e9e8e8;
-    margin:auto;
-    padding:5px;
-    border:1px solid grey;
+.allauth-content-container {
+    background-color: #e9e8e8;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid grey;
 
 }
 
-.allauth-content-container input{
+.allauth-content-container input {
     border-color: grey;
-    border-radius: 15px; 
+    border-radius: 15px;
     text-align: center;
-    width:60%;
-    margin:auto;
-    display:flex;
+    width: 60%;
+    margin: auto;
+    display: flex;
     justify-content: center;
-    
+
 
 }
 
-.allauth-content-container label{
-    width:100%;
+.allauth-content-container label {
+    width: 100%;
     text-align: center;
-    font-weight:500;
+    font-weight: 500;
 
 }
 
-.allauth-content-container h1{
-    text-align: center;
-}
-
-.allauth-content-container h2{
-    text-align:center;
-}
-
-.allauth-content-container p{
+.allauth-content-container h1 {
     text-align: center;
 }
 
-.allauth-content-container button{
-    display:block;
-    text-align:center;
+.allauth-content-container h2 {
+    text-align: center;
+}
+
+.allauth-content-container p {
+    text-align: center;
+}
+
+.allauth-content-container button {
+    display: block;
+    text-align: center;
     border: solid grey 1px;
-    margin:0px auto 10px;
+    margin: 0px auto 10px;
     font-weight: 600;
 
 }
 
-.secondaryAction{
-    width:100%;
-    margin:10px auto 10px;
-    display:block;
-    text-align:center;
+.secondaryAction {
+    width: 100%;
+    margin: 10px auto 10px;
+    display: block;
+    text-align: center;
 }
 
-table{
-    background-color:#e9e8e8;
-    border:solid 1px grey !important;
-    border-radius:0.25rem !important;
-    
-    
+table {
+    background-color: #e9e8e8;
+    border: solid 1px grey !important;
+    border-radius: 0.25rem !important;
+
+
 }
 
-table th{
-    border:solid 1px grey !important;
-    
+table th {
+    border: solid 1px grey !important;
+
 }
 
-table td{
-    border:solid 1px grey !important;
-    
+table td {
+    border: solid 1px grey !important;
+
 }
 
-.text-orange{
-    color:rgb(245, 94, 7);
+.text-orange {
+    color: rgb(245, 94, 7);
 }
 
+.list-inline-item i {
+    color: rgb(253, 136, 27);
+}
 
+.list-inline-item a {
+    color: black;
+}
