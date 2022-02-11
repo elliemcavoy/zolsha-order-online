@@ -65,12 +65,12 @@
         <div class="card menu-card">
           <div class="card-header">
               <div class="row">
-                  <div class="col-12 col-md-10">
+                  <div class="col-12 col-md-10 text-center text-md-left">
             <h5 class="mb-0">
                 {{ item.name }}
             </h5>
                   </div>
-            <div class="col-12 col-md-2">
+            <div class="col-12 col-md-2 text-center">
                 <h5 class="mb-0">
                 £{{ item.price }}
                 </h5>
@@ -79,18 +79,20 @@
           </div>
             <div class="card-body">
               <div class = "row">
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-5 pt-1">
               {{ item.description }}
             
             
                 <form class="form" action="{% url 'add_to_bag' item.id %}" method="POST">
                     {% csrf_token %}
-                    <div class="form-row">
+                    <div class="form-row pt-2 text-md-left text-center">
                         {% with item.has_options as o %}
                         {% if o %}
-                            <div class="col-12">
-                                <p><strong>Choose from:</strong></p>
-                                <select class="form-control select-option rounded shadow w-50" name="item_option" id="id_item_option">
+                                <div class="col-12 col-md-5 ">
+                                <p class="pt-1"><strong>Choose from:</strong></p>
+                                </div>
+                                <div class="col-12 col-md-7">
+                                <select class="form-control select-option rounded shadow w-75 text-center m-auto" name="item_option" id="id_item_option">
                                     <option value="vegetable">Vegetable</option>
                                     <option value="keema">Keema</option>
                                     <option value="chicken" selected>Chicken</option>
@@ -98,12 +100,13 @@
                                     <option value="fish">Fish</option>
                                 </select>
                             </div>
+                            
                         {% endif %}
                         {% endwith %}
                     </div>
                 </div>
                         <div class="col-12 col-md-4">
-                            <p class="text-uppercase text-center"><strong>Quantity:</strong></p>
+                            <p class="text-uppercase text-center pt-3 pt-md-0 "><strong>Quantity:</strong></p>
                             <div class="row">
                         
                             
@@ -134,9 +137,9 @@
                         </div>
                     </div>
 
-                        <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-3 text-center">
                             
-                            <input type="submit" class="btn btn-add-to-bag rounded shadow text-uppercase m-auto" value="Add to Bag">
+                            <input type="submit" class="btn btn-add-to-bag rounded shadow text-uppercase text-center mt-3" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         
