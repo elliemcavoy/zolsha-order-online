@@ -44,13 +44,13 @@
 </div>
 <div class="container-fluid">
     <div class="row ">
-        <div class="col-8 col-md-4 p-2 mt-4 mx-auto form-container rounded text-center">
-            <div class="card res-card">
+        <div class="col-8 col-md-4 p-2 mt-4 mx-auto form-container text-center">
+            <div class="card">
                 <div class="card-header">
                     <h3>Check Availability</h3>
                 </div>
                 <div class="card-body">
-                    <form action="{% url 'check_availability' %}" method="GET" class="rounded">
+                    <form action="{% url 'check_availability' %}" method="GET">
                         {% csrf_token %}
                         <fieldset class="rounded px-3 mb-5">
                             {{ availability_form.time | as_crispy_field }}

@@ -1,35 +1,35 @@
-.details-form{
-    width:70%;
-    background-color:#e9e8e8;
-    border: solid grey 1px;
-    
+.details-form {
+    width: 70%;
+    background-color: #e9e8e8;
+
+
 
 }
 
-.res-details{
-    background-color:#fafafa;
-    padding:10px;
+.res-details {
+    background-color: #fafafa;
+    padding: 10px;
     border: solid grey 1px;
-    width:70%;
+    width: 70%;
 
 }
 
-.update-btn{
-    border: solid grey 1px;
-    font-weight: 600;
-    margin-top:5px;
-}
-
-.reorder-btn{
+.update-btn {
     border: solid grey 1px;
     font-weight: 600;
-    margin-top:5px;
+    margin-top: 5px;
 }
 
-.details-form input{
-        border:solid 1px grey;
-        margin:2px;
-        border-radius:10px;
-        text-align:center;
-        
-    }
+.reorder-btn {
+    border: solid grey 1px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.details-form input {
+    border: solid 1px grey;
+    margin: 2px;
+    border-radius: 10px;
+    text-align: center;
+
+}
