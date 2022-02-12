@@ -241,6 +241,9 @@ For this website, there will be models. The tables below show the items in each 
 |default_postcode | Delivery postcode | Varchar |
 
 <br>
+<h3>Database Design</h3>
+See below a diagram for the flow of data through the different database models in this project.<br>
+<img src="media/readme/database-schema.jpeg">
 
 
 <h2 id="existing-features"><u>Existing Features</u></h2>
@@ -264,6 +267,8 @@ For this website, there will be models. The tables below show the items in each 
 
 <ol>
 <li>Automatically deleting and removing past dining reservations from the database and therefore from the user profile as well.</li>
+<li>Create an 'address book' of the restaurants customers who have previously ordered or booked a table and only gice access to the admin user.</li>
+<li>Add additional functionality to the Restaurant Dashboard to allow the restaurant owner to contact customers by email directly from the dashboard.</li>
 </ol>
 
 
@@ -285,12 +290,13 @@ For this website, there will be models. The tables below show the items in each 
 </ul>
 <h3>Python Frameworks & Libraries</h3>
 <ul>
-<li>Flask Framework</li>
-
-<li>werkzeug.security</li>
-<li>bson</li>
-<li>Counter</li>
-<li>Random</li>
+<li>Django</li>
+<ul>
+<li>AllAuth</li>
+</ul>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 <h3>Database & Deployment</h3>
 <ul>
@@ -349,7 +355,7 @@ Please see below a brief overview of the testing carried out. Any issues found a
 <li>Navbar & Side Navbar</li>
 <li>Card Component for all menu items, availability section & order history.</li>
 <li>Toast component for messages section.</li>
-<li></li>
+<li>Date & time selectors for dining availability.</li>
 </ul>
 
 <li></li>
