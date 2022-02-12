@@ -24,20 +24,20 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if option in bag[item_id]['items_by_option'].keys():
                 bag[item_id]['items_by_option'][option] += quantity
-                messages.success(request, f'Updated {option.title()} {item.name} quantity to {bag[item_id]["items_by_option"][option]}')
+                messages.success(request, f'You updated {option.title()} {item.name} quantity to {bag[item_id]["items_by_option"][option]}')
             else:
                 bag[item_id]['items_by_option'][option] = quantity
-                messages.success(request, f'Added {option.title()} {item.name} to your order')
+                messages.success(request, f'You added {option.title()} {item.name} to your order')
         else:
             bag[item_id] = {'items_by_option': {option: quantity}}
-            messages.success(request, f'Added {option.title()} {item.name} to your order')
+            messages.success(request, f'You added {option.title()} {item.name} to your order')
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
-            messages.success(request, f'Updated {item.name} quantity to {bag[item_id]}')
+            messages.success(request, f'You updated {item.name} quantity to {bag[item_id]}')
         else:
             bag[item_id] = quantity
-            messages.success(request, f'Added {item.name} to your order')
+            messages.success(request, f'You added {item.name} to your order')
 
 
     request.session['bag'] = bag

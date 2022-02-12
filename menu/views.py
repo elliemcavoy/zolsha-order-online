@@ -82,7 +82,7 @@ def add_menu_item(request):
         form = MenuForm(request.POST, request.FILES)
         if form.is_valid():
             menu = form.save()
-            messages.success(request, 'Successfully added product!')
+            messages.info(request, 'Successfully added product!')
             return redirect(reverse('restaurant_admin'))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')

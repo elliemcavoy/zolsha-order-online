@@ -77,6 +77,22 @@ header {
     color: orange !important;
 }
 
+.toast-header i{
+    font-size:20px;
+}
+
+.error-icon i{
+    color:red;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.success-icon i{
+    color:orange;
+    padding-left:5px;
+    padding-right:5px;
+}
+
 #main-nav i {
     color: rgb(253, 136, 27);
     font-size: 20px;
