@@ -42,6 +42,29 @@ header {
     background: url('/media/hero.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
+    position:relative;
+}
+
+.order-now{
+    z-index:4;
+    position: absolute;
+    top:40%;
+    width:100%;
+    text-align:center;
+    
+
+}
+
+.order-now-btn{
+    border: solid grey 2px;
+    font-weight: 600;
+    color:rgb(245, 94, 7);
+    background-color:#e9e8e8;
+}
+
+.order-now-btn i{
+    color:rgb(245, 94, 7);
+    
 }
 
 .img-container {

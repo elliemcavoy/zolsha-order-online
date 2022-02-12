@@ -214,6 +214,7 @@ For this website, there will be models. The tables below show the items in each 
 <br>
 <h3><u>Reservations App</u></h3><br>
 <h4><u>Reservation</u></h4>
+
 | Key                | Value          |  Data Type       |
 |--------------------|----------------|------------------|
 |_id | Id (automatically generated to be unique & sequential)| ID |

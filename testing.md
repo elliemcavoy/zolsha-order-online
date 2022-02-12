@@ -130,6 +130,7 @@ Here are details of bugs that were discovered during manual testing and how they
 
 <h2>Improvements Made</h2>
 <ul>
+<li>When testing the user stories, it became apparent that although the user could select specific categories, there was no link to view all menu items. This may not be used by regular users, however if a new user just wanted to get a general overview of the menu, having this option would be beneficial. It is also good practise to have a link to all products available. Therefore this was added to the homepage.</li>
 </ul>
 
 <h2>Bugs still to be rectified</h2>
