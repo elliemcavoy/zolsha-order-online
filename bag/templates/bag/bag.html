@@ -105,14 +105,16 @@
 
 
 {% else %}
-<p class="lead mb-5">No food here yet.</p>
-<a href="{% url 'all_menu' %}" class="btn btn-outline-black rounded-0 btn-lg">
-    <span class="icon">
-        <i class="fas fa-chevron-left"></i>
-    </span>
-    <span class="text-uppercase">Hungry?</span>
-</a>
-{% endif %}
+<div class="col-12 text-center">
+    <p>Sorry, no food here yet.</p>
+    <a href="{% url 'all_menu' %}" class="btn checkout-btn rounded shadow btn-lg">
+        <span class="icon">
+            <i class="fas fa-utensils"></i>
+        </span>
+        <span class="text-uppercase">Hungry?</span>
+    </a>
 </div>
+
+{% endif %}
 </div>
 {% endblock %}
