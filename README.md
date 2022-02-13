@@ -54,7 +54,8 @@ As a user of the website, the following actions and results would need to be ach
 <strong>As an unregistered user, I would like to be able to:</strong>
 <ol>
 
-<li>Browse the menu items and add items to my shopping bag.</li>
+<li>Browse the menu items and filter by categories.</li>
+<li>Add items to my shopping bag.</li>
 <li>Search for a specific dish or ingredient without having to browse through all menu items.</li>
 <li>See a summary of the items in my shopping bag and an order total each time I add a new item without having to visit the shopping bag each time.</li>
 <li>Calculate the delivery fee by providing my postcode. </li>

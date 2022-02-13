@@ -4,26 +4,46 @@ subcategory sorting issue - needed to add .split(',') to the end of the request.
 
 <h2>Manual Testing of User Stories</h2>
 <ol>
-<li><b>Browse the menu items and add items to my shopping bag.</b></li><br>
+<li><b>Browse the menu items and filter by categories.</b></li><br>
 <img src="">
 <ul>
+<li>From the homepage, it is easy to see, on both mobile and desktop views, how to start browsing for food items. There is an 'Order Now' button displayed over the hero image which takes the user to the full menu.</li>
+<li>There is also a secondary navigation bar (which is collapsed on mobile screens) which displays all four of the categories that would make it easy for users to just browse a specific food type such as 'starters'. Upon clicking on the category, a further menu appears which gives the user an even more detailed list of subcategories to make it even easier to browse their favourites.</li>
+<li>Once a subcategory has been selected and the list of menu items filtered, further navigation buttons appear underneath the page header displaying the other subcategories in the particular category that was selected. So, for example, this will make it easy for a user to browse all of the different main courses without having to navigate through the secondary navigation bar again. This is especially important smaller screens as the navigation is hidden in a side navbar and so getting to each subcategory would be more time consuming via the main navigation as opposed to the buttons at the top of the page. </li>
+</ul><br>
+<li><b>Add items to my shopping bag.</b>
+</li><br>
+<img src="">
+<ul>
+<li>Once an item has been decided upon, it is very easy to add this to the shopping bag. For items that have different options which are: Vegetable, Chicken, Keema, Lamb & Fish, there is a dropdown menu to allow you to select one of the previously mentioned options.</li>
+<li>The quantity of the item can then be adjusted accordingly and then clicking the 'Add to Bag' button will add the quantity and option selected to the shopping bag.</li>
+<li>A summary of the current bag and a message to advise the item and quantity that was just added then appears in the top right of the screen so the user can double check that they have added the correct item.</li>
+<li>By remaining on the same page, and just showing a summary of the order rather than redirecting the user to the bag, it means shopping can continue without interuption.</li>
 
 </ul><br>
 <li><b>Search for a specific dish or ingredient without having to browse through all menu items.</b>
 </li><br>
 <img src="">
 <ul>
+<li>A search bar is clearly visible in the navbar either with the text box showing (on larger screens) or just with a search icon (on smaller screens). Clicking on the search icon, drops down a search bar where the search terms can be entered.</li>
+<li>By typing a keyword into the search bar and clicking 'Search' the menu items are filtered to match the keyword provided.</li>
+<li>Both the item name and the description are taken into account so the keyword could be present in either.</li>
 
 </ul><br>
 <li><b>See a summary of the items in my shopping bag and an order total each time I add a new item without having to visit the shopping bag each time.</b></li><br>
 <img src="">
 <ul>
+<li>As mentioned previously, once an item is added to the bag, a summary box appears in the top right hand corner which advises the quantity and the name of the item that has just been added to the bag.</li>
+<li>This summary box also displays the total number of items currently in the bag and also a list of the name, quantity and price of all items in the shopping bag.</li>
+<li>Finally, an order total is displayed and a link to take you directly to the checkout should you wish.</li>
 
 </ul><br>
 <li><b>Calculate the delivery fee by providing my postcode.</b></li><br>
 <img src="">
 <ul>
-
+<li>The calculate delivery fee section appears in the 'Shopping Bag' and makes it clear that should the user wish to have their food delivered, they will need to enter their postcode to calculate the delivery cost.</li>
+<li>Upon entering a postcode, there are two outcomes. Firstly, if the postcode is within the delivery area available, the charge associated with the postcode entered is automatically added to the 'delivery charge' section in the shopping bag and the grand total updated accordingly.</li>
+<li>If the postcode is not within the delivery area, a warning message is displayed in the top right of the screen advising that the restaurant does not deliver to that postcode and the delivery fee remains at zero.</li>
 </ul><br>
 <li><b>Review my shopping bag details before completing the checkout process and make any amendments should they be required. </b></li><br>
 <img src="">
@@ -131,9 +151,10 @@ Here are details of bugs that were discovered during manual testing and how they
 <h2>Improvements Made</h2>
 <ul>
 <li>When testing the user stories, it became apparent that although the user could select specific categories, there was no link to view all menu items. This may not be used by regular users, however if a new user just wanted to get a general overview of the menu, having this option would be beneficial. It is also good practise to have a link to all products available. Therefore this was added to the homepage.</li>
+<li> Back to top arrow</li>
 </ul>
 
 <h2>Bugs still to be rectified</h2>
 <ul>
-<li></li>
-</ul>
+<li>Search functionality does not take into account the wording in the 'options' therefore, for example, if someone searched for 'Chicken', the items with the option of 'Chicken' do not appear unless the word appears in the description as well.</li>
+<li>Calculate delivery charge is only available in the shopping bag and may be more useful either being located on the checkout page or at least having a link to take the user bag to the shopping bag to calculate this.</li>
