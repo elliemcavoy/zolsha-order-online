@@ -45,6 +45,35 @@ def add_to_bag(request, item_id):
     return redirect(redirect_url)
 
 
+def adjust_bag(request, item_id):
+    """Adjust the quantity of the specified product to the specified amount"""
+
+    item = get_object_or_404(Menu, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    option = None
+    if 'item_option' in request.POST:
+        option = request.POST['item_option']
+    bag = request.session.get('bag', {})
+
+    if option:
+        if quantity > 0:
+            bag[item_id]['items_by_option'][option] = quantity
+            messages.success(request, f'Updated {option.title()} {item.name} quantity to {bag[item_id]["items_by_option"][option]}')
+        else:
+            del bag[item_id]['items_by_option'][option]
+            if not bag[item_id]['items_by_option']:
+                bag.pop(item_id)
+            messages.success(request, f'Removed {option.title()} {item.name} from your bag')
+    else:
+        if quantity > 0:
+            bag[item_id] = quantity
+            messages.success(request, f'Updated {item.name} quantity to {bag[item_id]}')
+        else:
+            bag.pop(item_id)
+            messages.success(request, f'Removed {item.name} from your bag')
+
+    request.session['bag'] = bag
+    return redirect(reverse('shopping_bag'))
 
    
 
