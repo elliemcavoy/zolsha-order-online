@@ -9,7 +9,21 @@
     border:solid 1px grey;
 }
 
+.form-group{
+    margin-bottom:0px !important;
+}
 
+
+
+.increment-qty{
+    
+    margin-bottom:10px;
+
+}
+.decrement-qty i{
+    
+    margin-bottom:10px;
+}
 
 .checkout-btn{
     border: solid grey 1px;

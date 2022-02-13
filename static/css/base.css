@@ -157,6 +157,16 @@ header {
     background-color: #e9e8e8;
 }
 
+.btn-quantity i{
+    color:rgb(245, 94, 7);
+    
+}
+
+.qty_input{
+    border: solid grey 1px;  
+
+}
+
 .allauth-content-container {
     background-color: #e9e8e8;
     margin: auto;

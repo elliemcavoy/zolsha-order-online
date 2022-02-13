@@ -1,11 +1,4 @@
-.btn-quantity i{
-    color:rgb(245, 94, 7);
-}
 
-.qty_input{
-    border: solid grey 1px;  
-
-}
 
 .menu-container{
     background-image: url("/static/images/menu.jpg");
