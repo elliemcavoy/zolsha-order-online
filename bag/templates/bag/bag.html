@@ -93,7 +93,7 @@
                         </form>
 
                         <a class="update-link text-info"><small>Update</small></a>
-                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+                        <a class="remove-item text-danger float-right" id="remove_{{ i.item_id }}" data-item_option="{{ i.option }}"><small>Remove</small></a>
 
 
                     </td>
@@ -164,7 +164,7 @@
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var option = $(this).data('item_option');
-        var url = `/bag/remove/${itemId}/`;
+        var url = `/bag/delete/${itemId}/`;
         var data = {
             'csrfmiddlewaretoken': csrfToken,
             'item_option': option

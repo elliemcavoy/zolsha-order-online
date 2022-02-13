@@ -75,7 +75,31 @@ def adjust_bag(request, item_id):
     request.session['bag'] = bag
     return redirect(reverse('shopping_bag'))
 
-   
+def delete_from_bag(request, item_id):
+    """Remove the item from the shopping bag"""
+
+    try:
+        item = get_object_or_404(Menu, pk=item_id)
+        option = None
+        if 'item_option' in request.POST:
+            option = request.POST['item_option']
+        bag = request.session.get('bag', {})
+
+        if option:
+            del bag[item_id]['items_by_option'][option]
+            if not bag[item_id]['items_by_option']:
+                bag.pop(item_id)
+            messages.success(request, f'Removed {option.title()} {item.name} from your bag')
+        else:
+            bag.pop(item_id)
+            messages.success(request, f'Removed {item.name} from your bag')
+
+        request.session['bag'] = bag
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)
 
 
 
