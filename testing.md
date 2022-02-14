@@ -176,6 +176,7 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>Moving the id of 'payment-form' to the form meant that the javascript could now identify the form elements it needed to succesfully submit the checkout form.</li>
 </ul>
 <li>Grand Total</li>
+<ul>
 <li>The grand total, which is the order cost plus the delivery charge, was not being calculated and was being submitted as £0.00 when an order was created.</li>
 <li>This was also causing a duplication error with the orders because the webhook was searching for an order total but there was no price in the existing order and so it was creating a new order in the database. </li>
 <li>After getting assistance from Tutor Support, I was advised that it was the delivery cost that was causing the error.</li>
@@ -191,7 +192,12 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>The only valid postcodes that the restaurant delivers to are: BD20, BD21, BD22 and BD23 and so the delivery charge section of the bag contexts was getting the inputted postcode and comparing it against the four postcodes in the Delivery Charges model. If it matched on of these, the corresponding delviery charge was selected and could be added to the order total to get the grand total.</li>
 <li>However, because all of the delivery charge objects were being returned and the view was iterating through each of the objects in order to compare the postcode to each, even if the postcode was valid it would not match three out of the four postcodes in the model. </li>
 <li>As I originally had an error message set to display if the postcode did not match the postcodes in the model, the error message was displaying on the three times that the postcode didn't match those in the model even if it did match one.</li>
+<li>Please see below the original code I had written for this functionality.
+<img src="media/readme/Postcode-error.JPG"></li>
 <li>To rectify this, I added an integer if the value did match i.e. was True and a different integer if the value didn't match i.e. was False.</li>
+<li>The postcode provided is then compared to each postcode in the delivery charges model using a loop and once it has been compared to all four (attempted four times) the loop will finish. As each attempt would generate an integer for either True (1) or False (0) I added these to a list and used the sum method to calculate the total of the list. </li>
+<li>If none of the postcodes matched, the list total would be zero but if one of the postcodes matched the list total would be one.</li>
+<li>By adding the loop and list functionality, I was able to add the error message only if the list total is zero and if it is more than zero the delivery charge is altered to the correct price for the postcode entered.</li>
 </ul>
 </ol>
 
