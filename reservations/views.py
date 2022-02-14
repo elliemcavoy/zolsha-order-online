@@ -77,7 +77,6 @@ def reservation_complete(request, res_number):
 def check_availability(request):
     
     if request.GET:
-
         if 'date' in request.GET:
             date = request.GET['date']
             request.session['date']= date
@@ -88,7 +87,6 @@ def check_availability(request):
             datetime = Q(date__icontains=date) & Q(time__icontains=time)
             existing_reservations = Reservation.objects.filter(datetime)
             resnumber=existing_reservations.count()
-            print(resnumber)
             
             if resnumber >= settings.RESERVATION_THRESHOLD:
                 messages.error(request, f"Sorry we have no tables available on {date} at {time}, please pick a different time/date.")

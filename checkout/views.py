@@ -46,7 +46,6 @@ def checkout(request):
         
 
     if 'discount' in request.GET:
-        
         order_total = current_bag['total']
         offer = Offer.objects.all()
         discount = request.GET['discount']
@@ -110,10 +109,6 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            print(order)
-            print(order.order_total)
-            print(order.grand_total)
-            print(order.delivery_cost)
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \

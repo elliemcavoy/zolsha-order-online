@@ -57,10 +57,7 @@ def reorder(request, order_number):
         
     request.session['bag'] = bag
     redirect_url = request.POST.get('redirect_url')
-
-    print(reorder_bag)
     
-
     return redirect(redirect_url)
 
 @login_required
@@ -72,13 +69,10 @@ def restaurant_admin(request):
     reservations = Reservation.objects.all()
     today = datetime.date.today()
     todays_date = today.strftime("%Y-%m-%d")
-    print(todays_date)
     order_filtered = Q(order_date__icontains=todays_date)
     res_filtered = Q(date__icontains=todays_date)
     orders = orders.filter(order_filtered)
     reservations = reservations.filter(res_filtered)
-    
-    print(orders)
 
 
     template = 'profiles/restaurant-admin.html'

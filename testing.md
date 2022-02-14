@@ -1,5 +1,3 @@
-subcategory sorting issue - needed to add .split(',') to the end of the request.GET function
-
 <h1>Manual Testing</h1>
 
 <h2>Manual Testing of User Stories</h2>
@@ -215,7 +213,8 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>However, I didn't want all of the subcategories to be shown as links, only those subcategories that belonged to the same category as had been selected. For example, if the user selected one of the main course subcategories, I wanted to display only the other main course subcategories & not subcategories belonging to the starters, side dishes or desserts.</li>
 <li>The original code I had written is shown below:
 <img src="media/readme/subcategories.JPG"></li>
-<li>By adding a for loop</li></ul>
+<li>By adding a for loop, I was able to get the category name that was associated with the subcategory that was selected and then filter the subcategories by the category.
+<img src="media/readme/subcategories-final.JPG"></li></ul>
 </ol>
 
 <h2>Improvements Made</h2>
