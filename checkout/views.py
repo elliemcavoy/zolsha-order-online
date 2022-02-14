@@ -42,7 +42,6 @@ def checkout(request):
         delivery_cost = Decimal(charge)
         
     else: 
-        delivery_cost = 0
         warning=("Are you sure you want to collect?")
         
 

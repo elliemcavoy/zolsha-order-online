@@ -99,11 +99,15 @@ subcategory sorting issue - needed to add .split(',') to the end of the request.
 <li><b>View any table reservations I have made including the reservation details, such as the date & time, in my profile</b></li><br>
 <img src="">
 <ul>
+<li>Once logged in and on the 'My Profile' page, there are three sections. The final section is a display of any previous dining reservations.</li>
+<li>The date, time and number of diners that the reservation was made for are all displayed for each reservation.</li>
+<li>If the user has not made any dining reservations, there is a button which takes the user to the 'check availability' page so they can make a new reservation. </li>
 
 </ul>
 <li><b>Have the ability to cancel any table reservations I have made directly from my profile without having to contact the restaurant directly.</b></li><br>
 <img src="">
 <ul>
+<li>On the profile page, aAs well as all of the details of each reservation, there is a 'cancel' button displayed next to each reservation to allow the user to cancel the booking easily should they need to. </li>
 
 </ul>
 <li><b>Add new dishes/items to the menu. </b></li><br>
@@ -164,8 +168,31 @@ I manually tested the following to make sure they worked as designed:
 Here are details of bugs that were discovered during manual testing and how they were rectified.
 
 <ol>
-
-
+<li>Checkout Form Submission</li>
+<ul>
+<li>When submitting the checkout form, there was an error with posting the data.</li>
+<li>The form values were not being found and therefore the form could not be submitted.</li>
+<li>With the assistance of Tutor Support, we were able to identify that I had given the id used by the javascript to identify the elements in the form to the outer div rather than the form itself. </li>
+<li>Moving the id of 'payment-form' to the form meant that the javascript could now identify the form elements it needed to succesfully submit the checkout form.</li>
+</ul>
+<li>Grand Total</li>
+<li>The grand total, which is the order cost plus the delivery charge, was not being calculated and was being submitted as £0.00 when an order was created.</li>
+<li>This was also causing a duplication error with the orders because the webhook was searching for an order total but there was no price in the existing order and so it was creating a new order in the database. </li>
+<li>After getting assistance from Tutor Support, I was advised that it was the delivery cost that was causing the error.</li>
+<li>The delivery cost was not being transferred to the checkout view and therefore when the grand total was being calculated, it could not find a delivery cost and so the 'order_total + delivery_cost' functionality could not complete.</li>
+<li>This meant that the grand total was being calculated as zero.</li>
+<li>To rectify the error, I was advised to add an additional line of code to the if statement that was checking if the form was valid. If valid, I added 'order.delivery_cost = delivery_cost' to allow the order model to recognise the delivery_cost which had been defined earlier in the checkout view. </li>
+<li>As the checkout model takes the delivery_cost and the order_total to generate the grand total, it was now able to pick up both numbers and provide the correct total when submitting the order. </li>
+</li>This also seemed to rectify the duplicate orders issue with the webhook as it could now search the orders for the correct grand total and was not creating a new order everytime. </li>
+</ul>
+<li>Delivery Charge Message</li>
+<ul>
+<li>When the delivery charge was being calculated in the shopping bag, a toast error message was being displayed everytime a postcode was provided. The error message was advising 'We do not deliver here' which was meant to just display if an incorrect postcode was entered.</li>
+<li>The only valid postcodes that the restaurant delivers to are: BD20, BD21, BD22 and BD23 and so the delivery charge section of the bag contexts was getting the inputted postcode and comparing it against the four postcodes in the Delivery Charges model. If it matched on of these, the corresponding delviery charge was selected and could be added to the order total to get the grand total.</li>
+<li>However, because all of the delivery charge objects were being returned and the view was iterating through each of the objects in order to compare the postcode to each, even if the postcode was valid it would not match three out of the four postcodes in the model. </li>
+<li>As I originally had an error message set to display if the postcode did not match the postcodes in the model, the error message was displaying on the three times that the postcode didn't match those in the model even if it did match one.</li>
+<li>To rectify this, I added an integer if the value did match i.e. was True and a different integer if the value didn't match i.e. was False.</li>
+</ul>
 </ol>
 
 <h2>Improvements Made</h2>
