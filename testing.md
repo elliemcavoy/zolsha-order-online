@@ -90,7 +90,10 @@ subcategory sorting issue - needed to add .split(',') to the end of the request.
 <li><b>Reorder previous orders directly from the order history without having to search through the menu to find each item.</b></li><br>
 <img src="">
 <ul>
-<li></li>
+<li>In the order history section of the user profile, the previous orders are displayed with the item details and total price.</li>
+<li>For each of the previous orders there is a 'reorder' button. Clicking this automatically adds the order items and the quantity of each to the current shopping bag.</li>
+<li>A success message appears in the top right of the screen which also displays the current shopping basket details and total price.</li>
+<li>Should the user wish to add additional items to their order, they can then do this is the usual way.</li>
 
 </ul>
 <li><b>View any table reservations I have made including the reservation details, such as the date & time, in my profile</b></li><br>
