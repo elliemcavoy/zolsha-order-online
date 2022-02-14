@@ -105,13 +105,19 @@
 <li><b>Have the ability to cancel any table reservations I have made directly from my profile without having to contact the restaurant directly.</b></li><br>
 <img src="">
 <ul>
-<li>On the profile page, aAs well as all of the details of each reservation, there is a 'cancel' button displayed next to each reservation to allow the user to cancel the booking easily should they need to. </li>
+<li>On the profile page, as well as all of the details of each reservation, there is a 'cancel' button displayed next to each reservation to allow the user to cancel the booking easily should they need to. </li>
 
 </ul>
 <li><b>Add new dishes/items to the menu. </b></li><br>
 <img src="">
 <ul>
-
+<li>This is only available to admin users as the link to add a new item is displayed on the Restaurant Dashborad page.</li>
+<li>Upon logging in a the admin user & navigating to the Restaurant Dashboard, the 'Add Item' button is located in between the tables for todays orders & todays reservations.</li>
+<li>Clicking the button redirects the admin user to the form that is required to be completed in order to add the item.</li>
+<li>The admin user is then required to complete the following fields: Category, Subcategory, Name, SKU, Price. The Category & Subcategory fields are dropdowns to ensure the user only selects a valid category. </li>
+<li>The Description field is option as some items do not require a description.</li>
+<li>The 'Has Options' field is defaulted to 'No' however this can be changed to 'Yes' if required.</li>
+<li>As long as the fields are filled out correctly, upon submitting the form, a success message is displayed and the admin user is redirected to the Restaurant Dashboard.</li>
 </ul>
 <li><b>View all of the current days orders including the postcode and price. </b></li><br>
 <img src="">
@@ -215,6 +221,13 @@ Here are details of bugs that were discovered during manual testing and how they
 <img src="media/readme/subcategories.JPG"></li>
 <li>By adding a for loop, I was able to get the category name that was associated with the subcategory that was selected and then filter the subcategories by the category.
 <img src="media/readme/subcategories-final.JPG"></li></ul>
+<li>Reservation Date & Time</li>
+<ul>
+<li>Originally, although the 'check availability' functionality was working correctly, when it came to the actual booking form, the date & time were blank.</li>
+<li>This meant that the user could enter any date and time into the booking form without checking the availability. This meant they could bypass the reservation threshold set up to avoid too many bookings at a certain time or date. </li>
+<li>To avoid this issue, I saved the time & date that were entered into 'check availability' form as a session variable. Therefore these were then available to be automatically added to the booking form.</li>
+<li>By calling the date & time from the session, they are prepopulated into the form and the user just needs to add thieir personal details. </li>
+</ul>
 </ol>
 
 <h2>Improvements Made</h2>
@@ -224,7 +237,10 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>Upon testing the user stories, I realised that there was no way for users to amend, update or remove items from their shopping basket. Therefore I added a quantity element to the shopping bag and also a remove button. 
 </ul>
 
-<h2>Bugs still to be rectified</h2>
+<h2>Bugs/Features still to be rectified</h2>
 <ul>
-<li>Search functionality does not take into account the wording in the 'options' therefore, for example, if someone searched for 'Chicken', the items with the option of 'Chicken' do not appear unless the word appears in the description as well.</li>
-<li>Calculate delivery charge is only available in the shopping bag and may be more useful either being located on the checkout page or at least having a link to take the user bag to the shopping bag to calculate this.</li>
+<li>The search functionality does not take into account the wording in the 'options' therefore, for example, if someone searched for 'Chicken', the items with the option of 'Chicken' do not appear unless the word appears in the description as well.</li>
+<li>The calculate delivery charge is only available in the shopping bag and may be more useful either being located on the checkout page or at least having a link to take the user bag to the shopping bag to calculate this.</li>
+<li>Although the date & time are prepopulated into the booking form, they could be deleted and different details typed in manually to these form inputs. Therefore it would be ideal to make these fields fixed & unable to be edited by the user.</li>
+
+</ul>

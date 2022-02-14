@@ -253,8 +253,11 @@ See below a diagram for the flow of data through the different database models i
 <li>NAVIGATION</li>
 <li>VIEW MENU ITEMS</li>
 <li>SEARCH MENU ITEMS</li>
-<li>FILTER MENU ITEMS BY CATEGORY</li>
-<li>SHOPPING BASKET</li>
+<li>FILTER MENU ITEMS BY CATEGORY/SUBCATEGORY</li>
+<li>ADD ITEMS TO SHOPPING BASKET</li>
+<li>CALCULATE DELIVERY CHARGE</li>
+<li>EDIT & REMOVE ITEMS IN SHOPPING BASKET</li>
+<li>ADD PROMOTIONAL CODES TO GAIN DISCOUNT<li>
 <li>SECURE CHECKOUT</li>
 <li>REGISTRATION</li>
 <li>LOGIN</li>
@@ -262,15 +265,17 @@ See below a diagram for the flow of data through the different database models i
 <li>USER PROFILE</li>
 <li>CHECK DINING AVAILABILITY</li>
 <li>COMPLETE DINING RESERVATION</li>
+<li>CANCEL DINING RESERVATION</li>
 <li>RESTAURANT DASHBOARD</li>
 </ol>
 <br>
 <h2 id="new-features"><u>Features Left to Implement</u></h2>
 
 <ol>
-<li>Automatically deleting and removing past dining reservations from the database and therefore from the user profile as well.</li>
-<li>Create an 'address book' of the restaurants customers who have previously ordered or booked a table and only gice access to the admin user.</li>
+<li>Automatically delete and remove past date dining reservations from the database and therefore from the user profile as well.</li>
+<li>Create an 'address book' of the restaurants customers who have previously ordered or booked a table and only give access to the admin user.</li>
 <li>Add additional functionality to the Restaurant Dashboard to allow the restaurant owner to contact customers by email directly from the dashboard.</li>
+<li>Add an additional view to the user profile to allow the user to amend their dining reservation directly from their profile.</li>
 </ol>
 
 
@@ -327,19 +332,19 @@ Please see below a brief overview of the testing carried out. Any issues found a
 
 | Page                  | Bug Detected   | Bug fixed Y/N |
 |---------------------- |----------------| --------------|
-| Home Page (user)    | ISSUE FOUND| Y
+| Home Page (user)    | No issues found| 
 | Home Page (user logged in)  | No issues found| 
 | Register Page (user)  | No issues found| 
 | Log In Page (user)  | No issues found| 
-| Log In Page (admin user)  | ISSUE FOUND |
-| Menu (user)  | No issues found | Y
+| Log In Page (admin user)  | No issues found |
+| Menu (user)  | ISSUE FOUND | Y
 | Shopping Bag (user) | ISSUE FOUND    | Y
 | Checkout Page (user) | ISSUE FOUND     | Y
 | Checkout Page (user logged in) | ISSUE FOUND     | Y
 | Order Success (user) | No issues found     | 
 | Check Dining Availability (user) | No issues found     | 
-| Make Dining Reservation (user) | No issues found     | 
-| Make Dining Reservation (user logged in) | No issues found     | 
+| Make Dining Reservation (user) |ISSUE FOUND   | Y (but further improvements could be made)
+| Make Dining Reservation (user logged in) | ISSUE FOUND  | Y (but further improvements could be made)
 | User Profile | No issues found     | 
 | Reorder previous orders (user logged in) | No issues found     | 
 | Cancel Dining Reservation | No issues found    |
