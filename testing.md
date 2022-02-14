@@ -49,6 +49,11 @@ subcategory sorting issue - needed to add .split(',') to the end of the request.
 <img src="">
 <img src="">
 <ul>
+<li>When visiting the shopping bag, if there are items in the bag, they are shown here along with the quantity and the price.</li>
+<li>The quantity is displayed with increase and decrease buttons allowing the user to change the quantity directly from the shopping basket. Once the update has been made, the order total is automatically updated to reflect the new quantity. </li>
+<li>Once the quantity has been updated, a success message advising what has been modified appears in the top right hand corner of the screen to allow the users to doubel check they have made the correct amendment.</li>
+<li>There is also a 'remove' option for each item in the current shopping bag. Clicking on this automatically removes the item from the shopping bag and updates the order total accordingly. Again, a message is displayed to the user to advise the item that has been removed. </li>
+<li>There is also a final chance to review the order details on the checkout page before completing the payment.</li>
 
 </ul><br>
 <li><b>Have the option to register for an account by providing an email and creating a password & username.</b></li><br>
@@ -58,22 +63,34 @@ subcategory sorting issue - needed to add .split(',') to the end of the request.
 <li><b>Check availability for a table in the restaurant on a given date and make a dining reservation. </b></li><br>
 <img src="">
 <ul>
+<li>The 'Book a Table' link is displayed in the main nav so is easily accessible from any page on the site.</li>
+<li>Upon clicking on the link, the check availability page is displayed which requires an entry of a date and a time that the user would like to book for.</li>
+<li>Upon clicking the 'check availability' button, there are two possible outcomes.</li>
+<li>If there is no availability for the date and time, an error message is displayed in the top right hand corner of the screen advising to try a different date or time.</li>
+<li>If there is availability for the date and time requested, the user is redirected to the booking form to provide their details</li>
+<li>The booking form requires the users details which are pre-populated if the user is signed in and they have their details stored in their profile. The date & time are also pre-populated from the previous availability search.</li>
+<li>Upon submitting the form, a confirmation is provided on screen showing the booking details. If the user is signed in at the time of booking, the reservation will also be saved to their profile and displayed in their reservations section.</li>
 
 </ul><br>
 <li><b>Save my delivery details to my profile which will then be automatically entered at the checkout.</b></li><br>
 <img src=""><br>
 <img src="">
 <ul>
+<li>When logged in, the profile can be accessed from any page as it is displayed in a dropdown in the navbar.</li>
+<li>On the profile page, there is a form that can be used to add or update personal details. These are saved to the profile and if the user is logged in when completing an order, the address details will be pre-populated in the checkout form.</li>
 
 </ul><br>
-<li><b>View my previous order details including the items ordered in my profile</b></li><br>
-<ul>
+<li><b>View my previous order details including the items ordered in my profile.</b></li><br>
 <img src="">
+<ul>
+<li>When visiting the 'Profile' page, any previous orders that were made while logged in are displayed in the order history section.</li>
+<li>The order number, order price and the items ordered (including their quantity) are shown for each previous order.</li>
 
 </ul><br>
 <li><b>Reorder previous orders directly from the order history without having to search through the menu to find each item.</b></li><br>
 <img src="">
 <ul>
+<li></li>
 
 </ul>
 <li><b>View any table reservations I have made including the reservation details, such as the date & time, in my profile</b></li><br>
