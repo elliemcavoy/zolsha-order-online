@@ -174,7 +174,7 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>The form values were not being found and therefore the form could not be submitted.</li>
 <li>With the assistance of Tutor Support, we were able to identify that I had given the id used by the javascript to identify the elements in the form to the outer div rather than the form itself. </li>
 <li>Moving the id of 'payment-form' to the form meant that the javascript could now identify the form elements it needed to succesfully submit the checkout form.</li>
-</ul>
+</ul><br>
 <li>Grand Total</li>
 <ul>
 <li>The grand total, which is the order cost plus the delivery charge, was not being calculated and was being submitted as £0.00 when an order was created.</li>
@@ -185,7 +185,7 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>To rectify the error, I was advised to add an additional line of code to the if statement that was checking if the form was valid. If valid, I added 'order.delivery_cost = delivery_cost' to allow the order model to recognise the delivery_cost which had been defined earlier in the checkout view. </li>
 <li>As the checkout model takes the delivery_cost and the order_total to generate the grand total, it was now able to pick up both numbers and provide the correct total when submitting the order. </li>
 </li>This also seemed to rectify the duplicate orders issue with the webhook as it could now search the orders for the correct grand total and was not creating a new order everytime. </li>
-</ul>
+</ul><br>
 <li>Delivery Charge Message</li>
 <ul>
 <li>When the delivery charge was being calculated in the shopping bag, a toast error message was being displayed everytime a postcode was provided. The error message was advising 'We do not deliver here' which was meant to just display if an incorrect postcode was entered.</li>
@@ -198,7 +198,14 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>The postcode provided is then compared to each postcode in the delivery charges model using a loop and once it has been compared to all four (attempted four times) the loop will finish. As each attempt would generate an integer for either True (1) or False (0) I added these to a list and used the sum method to calculate the total of the list. </li>
 <li>If none of the postcodes matched, the list total would be zero but if one of the postcodes matched the list total would be one.</li>
 <li>By adding the loop and list functionality, I was able to add the error message only if the list total is zero and if it is more than zero the delivery charge is altered to the correct price for the postcode entered.</li>
-</ul>
+</ul><br>
+<li>Messages not showing.</li>
+<ul>
+<li>This issue was discovered quite early on in development. The toast messages we not showing when a message was triggered in a view. For example, when an item was added to the shopping bag, the order preview was not being displayed. This was the same for all types of messages.</li>
+<li>Upon inspecting the page I could see that the messages div was in the DOM but not showing to the user. Please see below:
+<img src="media/readme/Zolsha-messages-error.JPG"></li>
+<li></li>
+</ul><br>
 </ol>
 
 <h2>Improvements Made</h2>
