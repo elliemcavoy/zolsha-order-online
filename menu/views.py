@@ -14,31 +14,16 @@ def all_menu(request):
     subcategories = None
     sort = None
     direction = None
-    unselected= None
+    unselected = None
 
     if request.GET:
         if 'subcategory' in request.GET:
             subcats = request.GET['subcategory'].split(',')
-            print(subcats)
-
             menu = menu.filter(subcategory__name__in=subcats)
             subcategories = SubCategory.objects.filter(name__in=subcats)
-            print(subcategories)
             for s in subcategories:
-                category = []
-                cats=list(s.category.name.split(','))
-                
-                print(cats)
-            
+                cats = list(s.category.name.split(','))
                 unselected = SubCategory.objects.filter(category__name__in=cats).exclude(name__in=subcats)
-                
-                print(unselected)
-                    
-                    
-                
-            
-
-
 
         if 'sort' in request.GET:
             sortkey = request.GET['sort']

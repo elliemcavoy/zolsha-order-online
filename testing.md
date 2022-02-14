@@ -204,8 +204,18 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>This issue was discovered quite early on in development. The toast messages we not showing when a message was triggered in a view. For example, when an item was added to the shopping bag, the order preview was not being displayed. This was the same for all types of messages.</li>
 <li>Upon inspecting the page I could see that the messages div was in the DOM but not showing to the user. Please see below:
 <img src="media/readme/Zolsha-messages-error.JPG"></li>
-<li></li>
+<li>After confirming that the z-index for the messages div was correct and nothing was blocking the div, I looked into the jquery being used to show the toasts.</li>
+<li>It appeared that when I was adding the date/time pickers for the table reservation section, I had added an incorrect CDN for the jquery required for the toasts. </li>
+<li>By checking Bootstrap I was able to ensure the correct CDN link was added and the toasts were then shown when a message was displayed.</li>
 </ul><br>
+<li>Subcategories Filtering</li>
+<ul>
+<li>I encountered a few issues with this section of the code. The first issue I had was that the results of the filtering were not being displayed i.e. when clicking on a subcategory, the results were not being filtered. However after speaking to Tutor Support I was advised that the issue was being caused by a missing .split(',') after getting the subcategory from the request.GET. Adding this allowed the results to be displayed as a list so they could be used to filter with.</li>
+<li>The second issue I faced with this section was that I wanted to filter the subcategories to show the selected category but then also display the other subcategories as links so the user could access these other subcategories easily.</li>
+<li>However, I didn't want all of the subcategories to be shown as links, only those subcategories that belonged to the same category as had been selected. For example, if the user selected one of the main course subcategories, I wanted to display only the other main course subcategories & not subcategories belonging to the starters, side dishes or desserts.</li>
+<li>The original code I had written is shown below:
+<img src="media/readme/subcategories.JPG"></li>
+<li>By adding a for loop</li></ul>
 </ol>
 
 <h2>Improvements Made</h2>
