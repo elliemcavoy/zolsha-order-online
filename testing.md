@@ -234,6 +234,12 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>To avoid this issue, I saved the time & date that were entered into 'check availability' form as a session variable. Therefore these were then available to be automatically added to the booking form.</li>
 <li>By calling the date & time from the session, they are prepopulated into the form and the user just needs to add thieir personal details. </li>
 </ul>
+<li>Invalid Discount Code</li>
+<ul>
+<li>Testing of this section discovered that when a correct discount code was entered, the discount was applied and the functionality worked correctly. However if an incorrect or invalid discount code was entered, there was no error message displayed to advise the user of this. Instead the page just reloaded and the price remained the same. </li>
+<li>To rectify this and make it easier for the user to understand what has gone wrong, I added an else statement to the discount code functionality.</li>
+<li>The else statement provided a message to be displayed to the user in a toast which advises them that the discount code is invalid.</li>
+</ul>
 </ol>
 
 <h2>Improvements Made</h2>

@@ -56,6 +56,8 @@ def checkout(request):
                 percent = o.discount/100
                 discounted = order_total * percent
                 order_total = order_total - discounted
+            else:
+                messages.error(request, 'Sorry, that is not a valid discount code.')
                 
     else:
         order_total = current_bag['total']
