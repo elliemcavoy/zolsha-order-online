@@ -42,29 +42,29 @@ header {
     background: url('/media/hero.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    position:relative;
+    position: relative;
 }
 
-.order-now{
-    z-index:4;
+.order-now {
+    z-index: 4;
     position: absolute;
-    top:40%;
-    width:100%;
-    text-align:center;
-    
+    top: 40%;
+    width: 100%;
+    text-align: center;
+
 
 }
 
-.order-now-btn{
+.order-now-btn {
     border: solid grey 2px;
     font-weight: 600;
-    color:rgb(245, 94, 7);
-    background-color:#e9e8e8;
+    color: rgb(245, 94, 7);
+    background-color: #e9e8e8;
 }
 
-.order-now-btn i{
-    color:rgb(245, 94, 7);
-    
+.order-now-btn i {
+    color: rgb(245, 94, 7);
+
 }
 
 .img-container {
@@ -100,20 +100,20 @@ header {
     color: orange !important;
 }
 
-.toast-header i{
-    font-size:20px;
+.toast-header i {
+    font-size: 20px;
 }
 
-.error-icon i{
-    color:red;
-    padding-left:5px;
-    padding-right:5px;
+.error-icon i {
+    color: red;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-.success-icon i{
-    color:orange;
-    padding-left:5px;
-    padding-right:5px;
+.success-icon i {
+    color: orange;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #main-nav i {
@@ -139,38 +139,58 @@ header {
     z-index: 999999;
 }
 
+form {
+    width: 70%;
+    background-color: #e9e8e8;
+
+}
+
+form input {
+    border: solid 1px grey;
+    margin: 2px;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.select {
+    border: solid 1px grey;
+    margin: 2px;
+    border-radius: 10px;
+    text-align: center;
+}
+
 .card {
 
     z-index: 3;
 }
 
 .card-header {
-
-    background-image: linear-gradient(to bottom, rgb(255, 123, 0), rgb(252, 148, 52), rgb(250, 161, 77), rgb(252, 172, 98), rgb(250, 161, 77), rgb(252, 148, 52), rgb(255, 123, 0));
-    border-bottom: solid 2px rgb(255, 123, 0);
-    border-top: solid 2px rgb(255, 123, 0);
-    color: rgb(94, 93, 93);
+    background-image: linear-gradient(to bottom, rgb(44, 43, 43), rgb(68, 68, 68), rgb(77, 76, 76), rgb(80, 80, 80), rgb(77, 76, 76), rgb(68, 68, 68), rgb(44, 43, 43));
+    border-bottom: solid 2px rgb(44, 43, 43);
+    border-top: solid 2px rgb(44, 43, 43);
+    color: rgb(255, 123, 0);
 }
 
 .card-body {
-    border-top: 1px solid rgb(255, 123, 0);
+    border-top: 1px solid rgb(44, 43, 43);
     background-color: #e9e8e8;
 }
 
-.btn-quantity i{
-    color:rgb(245, 94, 7);
-    
+.btn-quantity i {
+    color: rgb(245, 94, 7);
+
 }
 
-.qty_input{
-    border: solid grey 1px;  
+.qty_input {
+    border: solid grey 1px;
 
 }
 
 input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button{
+input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    margin:0;
+    margin: 0;
 }
 
 .allauth-content-container {

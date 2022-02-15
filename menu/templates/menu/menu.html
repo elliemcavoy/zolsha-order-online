@@ -3,7 +3,9 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">
+    
 {% endblock %}
+
 
 {% block page_header %}
 <div class="container page-header-container">
@@ -193,5 +195,12 @@
             window.location.replace(currentUrl);
         }
     })
+</script>
+<script type="text/javascript">
+    $('option').mouseenter(function(){
+        $('option').css("background-color", "yellow");
+        }, function(){
+        $('option').css("background-color", "pink");
+});
 </script>
 {% endblock %}

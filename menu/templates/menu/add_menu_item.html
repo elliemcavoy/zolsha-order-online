@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">
+<link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">
 {% endblock %}
 
 {% block page_header %}
@@ -17,13 +17,17 @@
 </div>
 {% endblock %}
 {% block content %}
-<form method="POST" action="{% url 'add_menu_item' %}" class="form mb-2">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <div class="text-right">
-        <a class="btn btn-outline-black rounded-0" href="">Cancel</a>
-        <button class="btn btn-black rounded-0" type="submit">Add Item to Menu</button>
+<div class="row">
+    <div class="col-12 text-center">
+        <form method="POST" action="{% url 'add_menu_item' %}" class="form m-auto">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="text-center mt-3">
+                <a class="btn btn-add-to-bag rounded shadow" href="{% url 'restaurant_admin' %}">Cancel</a>
+                <button class="btn btn-add-to-bag rounded shadow" type="submit">Add Item to Menu</button>
+            </div>
+        </form>
     </div>
-</form>
+</div>
 
 {% endblock %}
