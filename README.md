@@ -37,8 +37,8 @@ The third and final purpose of this website will be to allow the restaurant ovwn
 
 <h2 id="wireframes">Wireframes</h2>
 Please see the wireframes for this project:<br>
-<a href="" target="_blank">Desktop</a><br>
-<a href="" target="_blank">Mobile</a><br>
+<a href="media/readme/desktop-wireframe.png" target="_blank">Desktop</a><br>
+<a href="media/readme/mobile-wireframe.png" target="_blank">Mobile</a><br>
 
 <h2 id="target-audience">Target Audience</h2>
 <ul>
