@@ -257,7 +257,7 @@ See below a diagram for the flow of data through the different database models i
 <li>ADD ITEMS TO SHOPPING BASKET</li>
 <li>CALCULATE DELIVERY CHARGE</li>
 <li>EDIT & REMOVE ITEMS IN SHOPPING BASKET</li>
-<li>ADD PROMOTIONAL CODES TO GAIN DISCOUNT<li>
+<li>ADD PROMOTIONAL CODES TO GAIN DISCOUNT</li>
 <li>SECURE CHECKOUT</li>
 <li>REGISTRATION</li>
 <li>LOGIN</li>

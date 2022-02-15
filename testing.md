@@ -122,12 +122,17 @@
 <li><b>View all of the current days orders including the postcode and price. </b></li><br>
 <img src="">
 <ul>
+<li>After logging in as the admin user & visiting the Restaurant Dashboard, if there are any orders that have been placed on the current date they are displayed in a table on this page.</li>
+<li>The table displays the order time, order number, price & postcode for each order. </li>
+<li>If there are no orders that have been made on the current date, there is just a message advising the user that there are no orders yet. </li>
 
 </ul>
 <li><b>View all of the current days table reservations in details with the time and number of people shown. </b></li><br>
 <img src="">
 <ul>
-
+<li>After logging in as the admin user & visiting the Restaurant Dashboard, if there are any reservations for dining in on the current date they are displayed in a table on this page.</li>
+<li>The table shows the customer name, the time of the reservation & the number of people.</li>
+<li>If there are no table reservation for the current date, there is a message advising the user that there are no reservations for today.</li>
 </ul>
 </ol>
 
@@ -138,11 +143,12 @@ I have used Lighthouse to gain a performance score for this site. Please see bel
 <h2>Manual Testing of key aspects of the website</h2>
 I manually tested the following to make sure they worked as designed:
 
-<h3>Navbar & Collapsible Navbar</h3>
+<h3>Main Navbar & Secondary Navbar</h3>
 <ul>
-<li>The largescreen navbar contains the logo and then the page links visible to the right hand side.</li>
-<li>When on a smaller screen, the navbar links are moved into the collapsible navbar to the left hand side or the logo.</li>
-<li>The full logo is always visible but the font size reduces as the screen size does to ensure this is possible.</li>
+<li>The largescreen navbar contains the logo, the search bar for searching for certain menu items, the link to book a table, the link to access account links & the shopping bag link displaying the current total. All of the nav links have an icon & a description of their function.</li>
+<li>When on a smaller screen, the logo is placed on top of the navigation links. The search bar has been moved into a dropdown that is only visible when the search icon is clicked. The link descriptions have also been shortened to ensure they are visible & not to long to cause problems with spacing.  </li>
+<li>The secondary navbar displays the menu categories & allows users to filter the menu. On largescreens the secondary navbar in located underneath the main nav and is a full width row. The main categories are displayed & are links to the subcategories associated with each category. Upon clicking on each category, a further navigation dropdown appears with the subcategory links listed.</li>
+<li>On smaller screens, the secondary nav has been moved into a sidenav which is accessed by the collapsible nav link. The link to this is located next to the logo on smaller screens. Upon clicking this, a dropdown menu of all the category links appears. Further dropdown menus appear displaying the subcategories when each category is clicked on. Only one st of subcategories is displayed at a time to avoid the nav overflowing the screen size.</li>
 <img src="">
 <img src="">
 </ul>
@@ -242,5 +248,6 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>The search functionality does not take into account the wording in the 'options' therefore, for example, if someone searched for 'Chicken', the items with the option of 'Chicken' do not appear unless the word appears in the description as well.</li>
 <li>The calculate delivery charge is only available in the shopping bag and may be more useful either being located on the checkout page or at least having a link to take the user bag to the shopping bag to calculate this.</li>
 <li>Although the date & time are prepopulated into the booking form, they could be deleted and different details typed in manually to these form inputs. Therefore it would be ideal to make these fields fixed & unable to be edited by the user.</li>
+<li>Currently when a postcode is entered into the 'Calculate Delivery' input, it is just used to provide the delivery charge. The postcode is not then saved into the checkout form & so users could enter a postcode they know has a lower delivery charge and then enter their actual postcode at the checkout. I would like to implement some defensive design to ensure that if a postcode is provided to calculate delivery, it is then added to the checkout form & is not able to be removed.</li>
 
 </ul>
