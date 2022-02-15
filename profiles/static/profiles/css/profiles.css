@@ -6,6 +6,12 @@
 
 }
 
+.logo-img {
+    background-image: url('/media/logo-background.JPG');
+    background-size: 150px ;
+    background-repeat: repeat;
+}
+
 .res-details {
     background-color: #fafafa;
     padding: 10px;

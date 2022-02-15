@@ -9,6 +9,27 @@
     border: solid grey 1px;
     font-weight: 600;
 }
+.btn-up{
+    border: solid grey 1px;
+    background-color:grey;
+    width:100%;
+}
+
+.btn-to-top {
+    height: 42px;
+    width: 42px;
+    
+    bottom: 10px;
+    left: 10px;
+    z-index:5;
+    position:fixed;
+    padding:0px;
+}
+
+.btn-up i{
+    color: rgb(253, 136, 27);
+    font-weight:700;
+}
 
 .menu-card{
     border: solid black 2px;
