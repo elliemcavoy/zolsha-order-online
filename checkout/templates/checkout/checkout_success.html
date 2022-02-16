@@ -5,46 +5,61 @@
 <div class="container page-header-container">
     <div class="row">
         <div class="col">
-            <h2 class="text-center">Your Order's In!!!</h2>
+            <hr>
+            <h2 class="text-center">Your Order's In</h2>
+            <hr>
         </div>
     </div>
 </div>
 {% endblock %}
 
 {% block content %}
-<div>
 
     <div class="row">
-        <div class="col-12">
-            <h3>Thank you {{ order.full_name }} for your order.</h3>
+        <div class="col-12 text-center mb-2">
+            <h4>{{ order.full_name }}, Thank you for your order.</h4><br>
+            <h5>Your order number is:<br> {{ order.order_number }}</h5>
             
         </div>
     </div>
     <div class="row">
-        <div class="col-8">
-            <h3>We will deliver your order to:</h3>
-            {{ order.street_address1 }}
-            {{ order.postcode }}
-            
+        <div class="col-11 col-md-4 m-auto pt-3 ">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h6>We will deliver your order to:</h6>
+                </div>
+                <div class="card-body text-center">
+                    {{ order.street_address1 }}<br>
+                    {{ order.town_or_city }}<br>
+                    {{ order.postcode }}
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-8">
-            <h3>Here's what you have ordered:</h3>
-                {% for i in order.lineitems.all %}
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <p class="small mb-0 text-black font-weight-bold">
-                                {% if i.item_option %}{{ i.item_option|title }} {{ i.item.name }}{% else %}{{ i.item.name }}{% endif %}
-                            </p>
-                        </div>
-                        <div class="col-12 col-md-8 text-md-right">
-                            <p class="small mb-0">{{ i.quantity }} @ £{{ i.item.price }} each</p>
+        <div class="col-11 col-md-5 m-auto pt-3">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h6>Here's what you have ordered:</h6>
+                </div>
+                <div class="card-body">
+                        {% for i in order.lineitems.all %}
+                            <div class="row">
+                                <div class="col-7">
+                                    <p class="small mb-0 text-black font-weight-bold">
+                                        {% if i.item_option %}{{ i.item_option|title }} {{ i.item.name }}{% else %}{{ i.item.name }}{% endif %}
+                                    </p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="small mb-0">{{ i.quantity }} @ £{{ i.item.price }} each</p>
+                                </div>
+                            </div>
+                    {% endfor %}
+                    <div class="row pt-2">
+                        <div class="col-12 text-right">
+                            Amount Paid: £{{ order.grand_total }}
                         </div>
                     </div>
-                    {% endfor %}
-        </div>
+                </div>
     </div>
-</div>
-{{ order.order_number }}
+
+
 {% endblock %}
