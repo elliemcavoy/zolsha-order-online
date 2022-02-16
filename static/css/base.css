@@ -162,8 +162,13 @@ form input {
     text-align: center;
 }
 
-.card {
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(250, 104, 19, 0.5) !important;
+}
 
+
+.card {
+    border: solid 2px black;
     z-index: 3;
 }
 
