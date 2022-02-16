@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from .models import Order, OrderLineItem
 from menu.models import Menu
 
@@ -11,6 +13,24 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
+
+
+    def _send_confirmation_email(self, order):
+        """Send the user a confirmation email"""
+        customer_email = order.email
+        subject = render_to_string(
+            'checkout/confirmation_email/conf_email_subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'checkout/confirmation_email/conf_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [customer_email]
+        ) 
 
     def handle_event(self, event):
         """

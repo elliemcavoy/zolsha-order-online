@@ -40,7 +40,7 @@
 
     </div>
 
-    <div class="col-12 col-lg-4 mb-4">
+    <div class="col-9 col-sm-8 col-lg-4 mb-4 mx-auto">
         <h5 class="text-center mb-4">Order History</h5>
 
         {% for order in orders %}
@@ -58,7 +58,7 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-7">
                         <ul>
                             {% for i in order.lineitems.all %}
                             <li class="small">
@@ -68,7 +68,7 @@
                             {% endfor %}
                         </ul>
                     </div>
-                    <div class="col-4">
+                    <div class="col-5">
                         <h6 class="text-center">Enjoyed this order???</h6>
                         <form class="form text-center" action="{% url 'reorder' order.order_number %}" method="POST">
                             {% csrf_token %}

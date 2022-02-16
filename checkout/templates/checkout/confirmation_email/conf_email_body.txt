@@ -1,0 +1,12 @@
+{{ order.full_name }}, we are cooking your order!
+
+Your order number is {{ order.order_number }}.
+
+We aim to deliver within 60 minutes or have your food ready to collect within 30 minutes from the time your order was placed ({{ order.order_time }}).
+
+
+If you need to make any changes to your order please call us on 01535 636999 or for any other queries drop us an email at {{ contact_email }} .
+
+We hope you enjoy your food!
+
+Zolsha
