@@ -107,7 +107,7 @@ I have kept the design of the webpages simple and easy to navigate.
 </ol><br>
 
 <h1 id="database"><u>Database</u></h1>
-For this website, there will be models. The tables below show the items in each of the models and the Foreign keys connecting them to each other.<br>
+For this website, there will be a schema of interconnecting models. The tables below show the items in each of the models and the Foreign keys connecting them to each other.<br>
 
 <h3><u>Users</u></h3>
 <p>This model was installed with the help of Django AllAuth to allow users to register and then sign in to their accounts. </p>

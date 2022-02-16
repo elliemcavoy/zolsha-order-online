@@ -106,10 +106,10 @@
     <div class="col-12 col-md-6 order-md-1">
         <p class="text-muted text-center">Please fill out the form below to complete your order</p>
         <div class="row">
+            <div class="col-9 details-form card mt-2 mx-auto p-0">
+                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                    {% csrf_token %}
 
-            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-                {% csrf_token %}
-                <div class="col-9 details-form card mt-2 mx-auto p-0">
 
                     <div class="card-header p-0">
                         <fieldset class="rounded">
@@ -124,55 +124,56 @@
                         {{ order_form.phone_number | as_crispy_field }}
                     </div>
                     </fieldset>
-                </div>
-                <div class="col-9 details-form card p-0 mt-2 mx-auto">
-                    <fieldset class="rounded">
-                        <div class="card-header p-0">
-                            <legend class="fieldset-label text-black text-center w-auto">
-                                <h5 class="pt-1 pb-1">Delivery Address</h5>
-                            </legend>
-                        </div>
-                        <div class="card-body text-center">
-                            {{ order_form.street_address1 | as_crispy_field }}
-                            {{ order_form.street_address2 | as_crispy_field }}
-                            {{ order_form.town_or_city | as_crispy_field }}
-                            {{ order_form.postcode | as_crispy_field }}
-                            {{ order_form.delivery_details | as_crispy_field }}
-                        </div>
-                    </fieldset>
-                </div>
-                <div class="col-9 details-form card p-0 mt-2 mx-auto">
+            </div>
+            <div class="col-9 details-form card p-0 mt-2 mx-auto">
+                <fieldset class="rounded">
                     <div class="card-header p-0">
-                        <fieldset>
-                            <legend class="fieldset-label text-center w-auto pt-1 w-auto">
-                                <h5>Payment</h5>
-                            </legend>
+                        <legend class="fieldset-label text-black text-center w-auto">
+                            <h5 class="pt-1 pb-1">Delivery Address</h5>
+                        </legend>
                     </div>
-                    <div class="card-body">
-                        <!-- A Stripe card element will go here -->
-                        <div class="mb-3" id="card-element"></div>
-                        <!-- Used to display form errors -->
-                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                        <!-- Pass the client secret to the view so we can get the payment intent id -->
-                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                        </fieldset>
-                        <div class="col text-center">
-                            <button id="submit-button" class="btn payment-btn mx-auto mt-2 rounded shadow">
-                                <span class="font-weight-bold">Complete Order</span>
-                                <span class="icon">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </button>
-                            <p class="small text-orange text-center mx-auto mt-2">
-                                <span class="icon">
-                                    <i class="fas fa-exclamation-circle"></i>
-                                </span>
-                                <span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
-                            </p>
-                        </div>
+                    <div class="card-body text-center">
+                        {{ order_form.street_address1 | as_crispy_field }}
+                        {{ order_form.street_address2 | as_crispy_field }}
+                        {{ order_form.town_or_city | as_crispy_field }}
+                        {{ order_form.postcode | as_crispy_field }}
+                        {{ order_form.delivery_details | as_crispy_field }}
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-9 details-form card p-0 mt-2 mx-auto">
+                <div class="card-header p-0">
+                    <fieldset>
+                        <legend class="fieldset-label text-center w-auto pt-1 w-auto">
+                            <h5>Payment</h5>
+                        </legend>
+                </div>
+                <div class="card-body">
+                    <!-- A Stripe card element will go here -->
+                    <div class="mb-3" id="card-element"></div>
+                    <!-- Used to display form errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <!-- Pass the client secret to the view so we can get the payment intent id -->
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                    </fieldset>
+                    <div class="col text-center">
+                        <button id="submit-button" class="btn payment-btn mx-auto mt-2 rounded shadow">
+                            <span class="font-weight-bold">Complete Order</span>
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </button>
+                        <p class="small text-orange text-center mx-auto mt-2">
+                            <span class="icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </span>
+                            <span>Your card will be charged <strong>£{{ grand_total|floatformat:2 }}</strong></span>
+                        </p>
                     </div>
                 </div>
-            </form>
+
+                </form>
+            </div>
         </div>
     </div>
 

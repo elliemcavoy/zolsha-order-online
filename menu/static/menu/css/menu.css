@@ -1,56 +1,58 @@
-
-
-.menu-container{
+.menu-container {
     background-image: url("/static/images/menu.jpg");
     background-repeat: repeat;
 }
 
-.btn-add-to-bag{
+.btn-add-to-bag {
     border: solid grey 1px;
     font-weight: 600;
 }
-.btn-up{
+
+.btn-up {
     border: solid grey 1px;
-    background-color:grey;
-    width:100%;
+    background-color: grey;
+    width: 100%;
 }
 
 .btn-to-top {
     height: 42px;
     width: 42px;
-    
+
     bottom: 10px;
     left: 10px;
-    z-index:5;
-    position:fixed;
-    padding:0px;
+    z-index: 5;
+    position: fixed;
+    padding: 0px;
 }
 
-.btn-up i{
+.btn-up i {
     color: rgb(253, 136, 27);
-    font-weight:700;
+    font-weight: 700;
 }
 
 
-.menu-card{
+.menu-card {
     border: solid black 2px;
 }
 
-.card-header{
-    background-color:rgba(248, 151, 95, 0.808);
-    border-bottom: solid 1px black
-}
-
-.select-option{
+.select-option {
     border: solid grey 1px;
     font-weight: 600;
 }
 
+select option:hover {
+    background: grey !important;
+}
 
-.category-container{
-    border:solid 1px grey;
-    width:90%;
-    font-size:12px;
-    margin:3px;
-    
+option:hover {
+    background: grey;
+}
+
+
+.category-container {
+    border: solid 1px grey;
+    width: 90%;
+    font-size: 12px;
+    margin: 3px;
+
 }

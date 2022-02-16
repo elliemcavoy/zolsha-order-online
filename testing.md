@@ -154,20 +154,38 @@ I manually tested the following to make sure they worked as designed:
 </ul>
 
 <h3>Messages</h3>
+Messages are displayed when a success or error message is needed to be displayed to the user in an eye-catching way. I have used the toast feature from Bootstrap to accomplish this. The toasts are located in the top right hand corner of the page and will appear when a message is required to be displayed. The toasts will display until the user closes the toast using the 'X' button. 
+Messages are used for the following:
+<br>
+Success Messages
 <ul>
-<li>Messages are displayed when a message is needed to be displayed to the user in an eye-catching way.</li>
-<li>Messages are used for the following:
-<ul></ul>
-</li>
-<li>I have tested each function and the messages are displayed correctly.</li>
+<li>User successfully signed in</li>
+<li>User successfully signed out</li>
+<li>Item added to bag</li>
+<li>Item quantity updated in shopping bag</li>
+<li>Item removed from shopping bag</li>
+<li>New item added to menu</li>
+<li>Reorder completed from user profile</li>
 </ul>
+Error Messages
+<ul>
+<li>Invalid postcode entered</li>
+<li>Invalid discount code</li>
+<li>No availability for dining reservation</li>
+</ul>
+
+I have tested each function and the messages are displayed correctly for each with the success or error design.
+
 
 <h3>Responsive Design</h3>
 <ul>
 <li>I have tested each page on all screen sizes to ensure the design is consistent no matter what device it is being viewed on.</li>
 <li>The navbar, as mentioned above, will adapt depending on the screen size to include a collapsible navbar on smaller screens.</li>
-<li>The cards used to display the recipes & the favourite recipes are designed to take up 4 columns on a medium & large sized screen. They then change to display across 6 columns on a small screen and then across all 12 columns on an extra small screen such as a smartphone. This means that they are easy to read no matter what size screen they are viewed on.</li>
-<li>The forms used for the registration, log in, add and edit recipe are responsive and fit onto each screen size.</li>
+<li>Cards are used for the menu items and for all of the main form elements to keep the design consistent.</li>
+<li>The card for the menu items take up 11 columns on smaller screens and 10 on medium & larger screen. Both are aligned to the center of the screen. This means the styling is the same no matter what screen size and the details are easy to read. With the menu items card on larger & medium screens, the description, quantity input & 'add to bag' button are all displayed inline within a row so the user can view all of the details from left to right. However on smaller screens, the items all occupy 12 columns each and so are displayed on top of each other to make sure the items are still visible & not cropped or missing. This is also a more mobile friendly way of displaying the card body details and takes a similar layout to other mobile/tablet food ordering systems.</li>
+<li>The cards used to contain the forms are again responsive and will increase to fill the screen on smaller screen and then fit into a smaller number of columns of medium & larger screens depending on the other items on the page. For example, on the Profile page, on a smaller screen the details form, order history & reservations all take up 12 columns and so fit neatly on top of each other. This means that the contents are still easily readable. On medium & larger screens, the three items all fit into one row, occupying the 12 columns between them so that all aspects are visible as soon as the user accesses the profile page.</li>
+<li>All forms inputs are centre aligned so that when the screen size is changed, they are still easily visible and not compressed.</li>
+<li>I have tested all pages of the site on each size of screen to ensure that the elements are spaced nicely on each. I have not found any pages where there is an issue with the elements or where any aspect is missing or unreadable.</li>
 
 <img src="">
 <img src="">
@@ -245,8 +263,8 @@ Here are details of bugs that were discovered during manual testing and how they
 <h2>Improvements Made</h2>
 <ul>
 <li>When testing the user stories, it became apparent that although the user could select specific categories, there was no link to view all menu items. This may not be used by regular users, however if a new user just wanted to get a general overview of the menu, having this option would be beneficial. It is also good practise to have a link to all products available. Therefore this was added to the homepage.</li>
-<li> Back to top arrow</li>
-<li>Upon testing the user stories, I realised that there was no way for users to amend, update or remove items from their shopping basket. Therefore I added a quantity element to the shopping bag and also a remove button. 
+<li>Again, when testing the user stories, it was obvious that in order to get back to the top of the list of menu items, the user would have to scroll right back up or reselect the subcategory from the navbar. To make it easier for users, I added a back to top button on the menu items page.</li>
+<li>Upon testing the user stories, I realised that there was no way for users to amend, update or remove items from their shopping basket. Therefore I added a quantity input element to the shopping bag and also a remove button. 
 </ul>
 
 <h2>Bugs/Features still to be rectified</h2>
