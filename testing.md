@@ -3,10 +3,13 @@
 <h2>Manual Testing of User Stories</h2>
 <ol>
 <li><b>Browse the menu items and filter by categories.</b></li><br>
-<img src="">
+
 <ul>
-<li>From the homepage, it is easy to see, on both mobile and desktop views, how to start browsing for food items. There is an 'Order Now' button displayed over the hero image which takes the user to the full menu.</li>
-<li>There is also a secondary navigation bar (which is collapsed on mobile screens) which displays all four of the categories that would make it easy for users to just browse a specific food type such as 'starters'. Upon clicking on the category, a further menu appears which gives the user an even more detailed list of subcategories to make it even easier to browse their favourites.</li>
+<li>From the homepage, it is easy to see, on both mobile and desktop views, how to start browsing for food items. There is an 'Order Now' button displayed over the hero image which takes the user to the full menu.
+<img src="media/readme/us-0.JPG" class="m-auto bordered">
+<img src="media/readme/us-1.JPG" class="m-auto bordered"></li>
+<li>There is also a secondary navigation bar (which is collapsed on mobile screens) which displays all four of the categories that would make it easy for users to just browse a specific food type such as 'starters'. Upon clicking on the category, a further menu appears which gives the user an even more detailed list of subcategories to make it even easier to browse their favourites.
+<img src="media/readme/us-2.JPG" class="m-auto bordered"></li>
 <li>Once a subcategory has been selected and the list of menu items filtered, further navigation buttons appear underneath the page header displaying the other subcategories in the particular category that was selected. So, for example, this will make it easy for a user to browse all of the different main courses without having to navigate through the secondary navigation bar again. This is especially important smaller screens as the navigation is hidden in a side navbar and so getting to each subcategory would be more time consuming via the main navigation as opposed to the buttons at the top of the page. </li>
 </ul><br>
 <li><b>Add items to my shopping bag.</b>

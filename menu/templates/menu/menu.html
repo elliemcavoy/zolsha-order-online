@@ -32,11 +32,11 @@
             {% endfor %}
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
 
         {% for c in unselected_categories %}
         <div class="col-md-4 col-lg-2 col-6 text-center m-auto">
-            <a href="{% url 'all_menu' %}?subcategory={{ c.name }}"><button class="rounded shadow category-container">{{ c.friendly_name }}</button></a>
+            <a href="{% url 'all_menu' %}?subcategory={{ c.name }}"><button class="rounded buttons category-container">{{ c.friendly_name }}</button></a>
         </div>
 
         {% endfor %}
@@ -96,7 +96,7 @@
                                         <p class="pt-1"><strong>Choose from:</strong></p>
                                     </div>
                                     <div class="col-12 col-md-7">
-                                        <select class="form-control select-option rounded shadow w-75 text-center m-auto" name="item_option" id="id_item_option">
+                                        <select class="form-control select-option rounded w-75 text-center m-auto" name="item_option" id="id_item_option">
                                             <option value="vegetable">Vegetable</option>
                                             <option value="keema">Keema</option>
                                             <option value="chicken" selected>Chicken</option>
@@ -123,7 +123,7 @@
                                                 </span>
                                             </button>
                                         </div>
-                                        <input class="form-control qty_input rounded shadow text-center" type="number" name="quantity" value="0" min="0" max="20" data-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
+                                        <input class="form-control qty_input rounded text-center" type="number" name="quantity" value="0" min="0" max="20" data-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-quantity rounded-0" data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
                                                 <span class="icon">
@@ -138,7 +138,7 @@
 
                         <div class="col-12 col-md-3 text-center">
 
-                            <input type="submit" class="btn btn-add-to-bag rounded shadow text-uppercase text-center mt-3" value="Add to Bag">
+                            <input type="submit" class="buttons rounded text-center mt-3" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
 
@@ -155,7 +155,7 @@
 </div>
 </div>
 <div class="btn btn-to-top">
-    <a class="btn-up d-flex h-100 rounded shadow">
+    <a class="btn-up d-flex h-100 rounded">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
 </div>
