@@ -6,11 +6,12 @@
 
 <ul>
 <li>From the homepage, it is easy to see, on both mobile and desktop views, how to start browsing for food items. There is an 'Order Now' button displayed over the hero image which takes the user to the full menu.
-<img src="media/readme/us-0.JPG" class="m-auto bordered">
-<img src="media/readme/us-1.JPG" class="m-auto bordered"></li>
+<img src="media/readme/us-0.JPG" class="m-auto"><br>
+<img src="media/readme/us-1.JPG" class="m-auto"></li>
 <li>There is also a secondary navigation bar (which is collapsed on mobile screens) which displays all four of the categories that would make it easy for users to just browse a specific food type such as 'starters'. Upon clicking on the category, a further menu appears which gives the user an even more detailed list of subcategories to make it even easier to browse their favourites.
-<img src="media/readme/us-2.JPG" class="m-auto bordered"></li>
-<li>Once a subcategory has been selected and the list of menu items filtered, further navigation buttons appear underneath the page header displaying the other subcategories in the particular category that was selected. So, for example, this will make it easy for a user to browse all of the different main courses without having to navigate through the secondary navigation bar again. This is especially important smaller screens as the navigation is hidden in a side navbar and so getting to each subcategory would be more time consuming via the main navigation as opposed to the buttons at the top of the page. </li>
+<img src="media/readme/us-2.JPG" class="m-auto"></li>
+<li>Once a subcategory has been selected and the list of menu items filtered, further navigation buttons appear underneath the page header displaying the other subcategories in the particular category that was selected. So, for example, this will make it easy for a user to browse all of the different main courses without having to navigate through the secondary navigation bar again. This is especially important smaller screens as the navigation is hidden in a side navbar and so getting to each subcategory would be more time consuming via the main navigation as opposed to the buttons at the top of the page.
+ <img src="media/readme/us-3.JPG" class="m-auto"></li>
 </ul><br>
 <li><b>Add items to my shopping bag.</b>
 </li><br>
@@ -18,64 +19,72 @@
 <ul>
 <li>Once an item has been decided upon, it is very easy to add this to the shopping bag. For items that have different options which are: Vegetable, Chicken, Keema, Lamb & Fish, there is a dropdown menu to allow you to select one of the previously mentioned options.</li>
 <li>The quantity of the item can then be adjusted accordingly and then clicking the 'Add to Bag' button will add the quantity and option selected to the shopping bag.</li>
+<img src="media/readme/us-4.JPG" class="m-auto"><br></li>
 <li>A summary of the current bag and a message to advise the item and quantity that was just added then appears in the top right of the screen so the user can double check that they have added the correct item.</li>
+<img src="media/readme/us-5.JPG" class="m-auto"><br></li>
 <li>By remaining on the same page, and just showing a summary of the order rather than redirecting the user to the bag, it means shopping can continue without interuption.</li>
 
 </ul><br>
 <li><b>Search for a specific dish or ingredient without having to browse through all menu items.</b>
 </li><br>
-<img src="">
+
 <ul>
-<li>A search bar is clearly visible in the navbar either with the text box showing (on larger screens) or just with a search icon (on smaller screens). Clicking on the search icon, drops down a search bar where the search terms can be entered.</li>
+<li>A search bar is clearly visible in the navbar either with the text box showing (on larger screens) or just with a search icon (on smaller screens). Clicking on the search icon, drops down a search bar where the search terms can be entered.
+<img src="media/readme/us-6.JPG" class="m-auto"><br>
+<img src="media/readme/us-7.JPG" class="m-auto"><br></li>
 <li>By typing a keyword into the search bar and clicking 'Search' the menu items are filtered to match the keyword provided.</li>
 <li>Both the item name and the description are taken into account so the keyword could be present in either.</li>
 
 </ul><br>
 <li><b>See a summary of the items in my shopping bag and an order total each time I add a new item without having to visit the shopping bag each time.</b></li><br>
-<img src="">
 <ul>
 <li>As mentioned previously, once an item is added to the bag, a summary box appears in the top right hand corner which advises the quantity and the name of the item that has just been added to the bag.</li>
 <li>This summary box also displays the total number of items currently in the bag and also a list of the name, quantity and price of all items in the shopping bag.</li>
-<li>Finally, an order total is displayed and a link to take you directly to the checkout should you wish.</li>
+<li>Finally, an order total is displayed and a link to take you directly to the checkout should you wish.
+<img src="media/readme/us-8.JPG" class="m-auto"><br></li>
 
 </ul><br>
 <li><b>Calculate the delivery fee by providing my postcode.</b></li><br>
-<img src="">
 <ul>
 <li>The calculate delivery fee section appears in the 'Shopping Bag' and makes it clear that should the user wish to have their food delivered, they will need to enter their postcode to calculate the delivery cost.</li>
-<li>Upon entering a postcode, there are two outcomes. Firstly, if the postcode is within the delivery area available, the charge associated with the postcode entered is automatically added to the 'delivery charge' section in the shopping bag and the grand total updated accordingly.</li>
-<li>If the postcode is not within the delivery area, a warning message is displayed in the top right of the screen advising that the restaurant does not deliver to that postcode and the delivery fee remains at zero.</li>
+<li>Upon entering a postcode, there are two outcomes. Firstly, if the postcode is within the delivery area available, the charge associated with the postcode entered is automatically added to the 'delivery charge' section in the shopping bag and the grand total updated accordingly.
+<img src="media/readme/us-9.JPG" class="m-auto"><br></li>
+<li>If the postcode is not within the delivery area, a warning message is displayed in the top right of the screen advising that the restaurant does not deliver to that postcode and the delivery fee remains at zero.
+<img src="media/readme/us-10.JPG" class="m-auto"><br></li>
 </ul><br>
 <li><b>Review my shopping bag details before completing the checkout process and make any amendments should they be required. </b></li><br>
-<img src="">
-<img src="">
 <ul>
-<li>When visiting the shopping bag, if there are items in the bag, they are shown here along with the quantity and the price.</li>
-<li>The quantity is displayed with increase and decrease buttons allowing the user to change the quantity directly from the shopping basket. Once the update has been made, the order total is automatically updated to reflect the new quantity. </li>
-<li>Once the quantity has been updated, a success message advising what has been modified appears in the top right hand corner of the screen to allow the users to doubel check they have made the correct amendment.</li>
+<li>When visiting the shopping bag, if there are items in the bag, they are shown here along with the quantity and the price.
+<img src="media/readme/us-11.JPG" class="m-auto"><br></li>
+<li>The quantity is displayed with increase and decrease buttons allowing the user to change the quantity directly from the shopping basket. Once the update has been made, the order total is automatically updated to reflect the new quantity.
+<img src="media/readme/us-12.JPG" class="m-auto"><br> </li>
+<li>Once the quantity has been updated, a success message advising what has been modified appears in the top right hand corner of the screen to allow the users to doubel check they have made the correct amendment.
+<img src="media/readme/us-13.JPG" class="m-auto"><br></li>
 <li>There is also a 'remove' option for each item in the current shopping bag. Clicking on this automatically removes the item from the shopping bag and updates the order total accordingly. Again, a message is displayed to the user to advise the item that has been removed. </li>
 <li>There is also a final chance to review the order details on the checkout page before completing the payment.</li>
 
 </ul><br>
 <li><b>Have the option to register for an account by providing an email and creating a password & username.</b></li><br>
-<img src="">
+<img src="media/readme/us-14.JPG" class="m-auto"><br>
 <ul>
 </ul><br>
 <li><b>Check availability for a table in the restaurant on a given date and make a dining reservation. </b></li><br>
-<img src="">
 <ul>
 <li>The 'Book a Table' link is displayed in the main nav so is easily accessible from any page on the site.</li>
-<li>Upon clicking on the link, the check availability page is displayed which requires an entry of a date and a time that the user would like to book for.</li>
+<li>Upon clicking on the link, the check availability page is displayed which requires an entry of a date and a time that the user would like to book for.
+<img src="media/readme/us-15.JPG" class="m-auto"><br></li>
 <li>Upon clicking the 'check availability' button, there are two possible outcomes.</li>
-<li>If there is no availability for the date and time, an error message is displayed in the top right hand corner of the screen advising to try a different date or time.</li>
+<li>If there is no availability for the date and time, an error message is displayed in the top right hand corner of the screen advising to try a different date or time.
+<img src="media/readme/us-17.JPG" class="m-auto"><br></li>
 <li>If there is availability for the date and time requested, the user is redirected to the booking form to provide their details</li>
-<li>The booking form requires the users details which are pre-populated if the user is signed in and they have their details stored in their profile. The date & time are also pre-populated from the previous availability search.</li>
-<li>Upon submitting the form, a confirmation is provided on screen showing the booking details. If the user is signed in at the time of booking, the reservation will also be saved to their profile and displayed in their reservations section.</li>
+<li>The booking form requires the users details which are pre-populated if the user is signed in and they have their details stored in their profile. The date & time are also pre-populated from the previous availability search.
+<img src="media/readme/us-16.JPG" class="m-auto"><br></li>
+<li>Upon submitting the form, a confirmation is provided on screen showing the booking details. If the user is signed in at the time of booking, the reservation will also be saved to their profile and displayed in their reservations section.
+<img src="media/readme/us-18.JPG" class="m-auto"><br>
+</li>
 
 </ul><br>
 <li><b>Save my delivery details to my profile which will then be automatically entered at the checkout.</b></li><br>
-<img src=""><br>
-<img src="">
 <ul>
 <li>When logged in, the profile can be accessed from any page as it is displayed in a dropdown in the navbar.</li>
 <li>On the profile page, there is a form that can be used to add or update personal details. These are saved to the profile and if the user is logged in when completing an order, the address details will be pre-populated in the checkout form.</li>
