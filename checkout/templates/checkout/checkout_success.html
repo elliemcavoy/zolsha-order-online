@@ -15,51 +15,51 @@
 
 {% block content %}
 
-    <div class="row">
-        <div class="col-12 text-center mb-2">
-            <h4>{{ order.full_name }}, Thank you for your order.</h4><br>
-            <h5>Your order number is:<br> {{ order.order_number }}</h5>
-            
+<div class="row">
+    <div class="col-12 text-center mb-2">
+        <h4>{{ order.full_name }}, Thank you for your order.</h4><br>
+        <h5>Your order number is:<br> {{ order.order_number }}</h5>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-11 col-md-4 m-auto pt-3 ">
+        <div class="card shadow">
+            <div class="card-header text-center">
+                <h6>We will deliver your order to:</h6>
+            </div>
+            <div class="card-body text-center">
+                {{ order.street_address1 }}<br>
+                {{ order.town_or_city }}<br>
+                {{ order.postcode }}
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-11 col-md-4 m-auto pt-3 ">
-            <div class="card">
-                <div class="card-header text-center">
-                    <h6>We will deliver your order to:</h6>
+    <div class="col-11 col-md-5 m-auto pt-3">
+        <div class="card shadow">
+            <div class="card-header text-center">
+                <h6>Here's what you have ordered:</h6>
+            </div>
+            <div class="card-body">
+                {% for i in order.lineitems.all %}
+                <div class="row">
+                    <div class="col-7">
+                        <p class="small mb-0 text-black font-weight-bold">
+                            {% if i.item_option %}{{ i.item_option|title }} {{ i.item.name }}{% else %}{{ i.item.name }}{% endif %}
+                        </p>
+                    </div>
+                    <div class="col-5 text-right">
+                        <p class="small mb-0">{{ i.quantity }} @ £{{ i.item.price }} each</p>
+                    </div>
                 </div>
-                <div class="card-body text-center">
-                    {{ order.street_address1 }}<br>
-                    {{ order.town_or_city }}<br>
-                    {{ order.postcode }}
+                {% endfor %}
+                <div class="row pt-4">
+                    <div class="col-12 text-right font-weight-bold">
+                        Amount Paid: £{{ order.grand_total }}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-11 col-md-5 m-auto pt-3">
-            <div class="card">
-                <div class="card-header text-center">
-                    <h6>Here's what you have ordered:</h6>
-                </div>
-                <div class="card-body">
-                        {% for i in order.lineitems.all %}
-                            <div class="row">
-                                <div class="col-7">
-                                    <p class="small mb-0 text-black font-weight-bold">
-                                        {% if i.item_option %}{{ i.item_option|title }} {{ i.item.name }}{% else %}{{ i.item.name }}{% endif %}
-                                    </p>
-                                </div>
-                                <div class="col-5 text-right">
-                                    <p class="small mb-0">{{ i.quantity }} @ £{{ i.item.price }} each</p>
-                                </div>
-                            </div>
-                    {% endfor %}
-                    <div class="row pt-4">
-                        <div class="col-12 text-right font-weight-bold">
-                            Amount Paid: £{{ order.grand_total }}
-                        </div>
-                    </div>
-                </div>
-    </div>
 
 
-{% endblock %}
+        {% endblock %}

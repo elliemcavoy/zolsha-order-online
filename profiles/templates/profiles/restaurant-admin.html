@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
-    
+<link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+
 {% endblock %}
 
 {% block page_header %}
@@ -20,7 +20,7 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-12 col-lg-5 text-center">
+    <div class="col-12 col-lg-5 text-center pt-2">
         <h4>Today's Orders</h4>
         {% if orders %}
         <div class="table-responsive p-2">
@@ -31,81 +31,81 @@
                         <th scope="col">Order Number</th>
                         <th scope="col">Price</th>
                         <th scope="col">Postcode</th>
-                        
+
                     </tr>
                 </thead>
-    {% for o in orders %}
-        <tr>
-            <td>
-                <p class="my-0">{{ o.order_time }}</p>
-            </td>
-            <td>
-                <p class="my-0 small text-muted">{{ o.order_number|truncatechars:9  }}</p>
-            </td>
-            <td>
-                <p class="my-0 small text-muted">£{{ o.order_total }}</p>
-            </td>
-            <td>
-            <p class="my-0 small text-muted">{{ o.postcode|upper }}</p>
-                </td>
-        </tr>       
-        
-    {% endfor %}
-    </table>
-    </div>
-    {% else %}
-    <h5 class="text-orange">No order's yet!</h5>
-    {% endif %}
+                {% for o in orders %}
+                <tr>
+                    <td>
+                        <p class="my-0">{{ o.order_time }}</p>
+                    </td>
+                    <td>
+                        <p class="my-0 small text-muted">{{ o.order_number|truncatechars:9  }}</p>
+                    </td>
+                    <td>
+                        <p class="my-0 small text-muted">£{{ o.order_total }}</p>
+                    </td>
+                    <td>
+                        <p class="my-0 small text-muted">{{ o.postcode|upper }}</p>
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+        {% else %}
+        <h5 class="text-orange pt-3">No order's yet!</h5>
+        {% endif %}
     </div>
     <div class="col-12 col-lg-2 text-center pt-2 pb-4">
         <h4>Menu Admin</h4>
-        <button class="btn update-btn rounded shadow text-uppercase">
+        <button class="buttons rounded mt-3">
             <a href="{% url 'add_menu_item' %}">Add Menu Item</a>
         </button>
-        
-        </div>  
-        
-    <div class="col-12 col-lg-5 text-center">
+
+    </div>
+
+    <div class="col-12 col-lg-5 text-center pt-2">
         <h4>Today's Reservations</h4>
-    {% if reservations %}
+        {% if reservations %}
         <div class="table-responsive">
-            <table class="table table-sm table-bordered shadow" id="">
+            <table class="table table-sm table-bordered shadow">
                 <thead class="text-black">
                     <tr>
                         <th scope="col">Customer Name</th>
                         <th scope="col">Time</th>
                         <th scope="col">Covers</th>
-                        
+
                     </tr>
                 </thead>
-    {% for r in reservations %}
-        <tr>
-            <td>
-                <p class="my-0">{{ r.full_name }}</p>
-            </td>
-            <td>
-                <p class="my-0 small text-muted">{{ r.time  }}</p>
-            </td>
-            <td>
-                <p class="my-0 small text-muted">{{ r.covers }}</p>
-            </td>
-            
-        </tr>       
-        
-    {% endfor %}
-    </table>
-    </div>
-    {% else %}
-    <h5 class="text-orange">No reservations yet!</h5>
-    {% endif %}
-    </div>
-    </div>
-    
-            
-        
-        
-        
+                {% for r in reservations %}
+                <tr>
+                    <td>
+                        <p class="my-0">{{ r.full_name }}</p>
+                    </td>
+                    <td>
+                        <p class="my-0 small text-muted">{{ r.time  }}</p>
+                    </td>
+                    <td>
+                        <p class="my-0 small text-muted">{{ r.covers }}</p>
+                    </td>
 
-        
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+        {% else %}
+        <h5 class="text-orange pt-3">No reservations yet!</h5>
+        {% endif %}
+    </div>
+</div>
+
+
+
+
+
+
+
 </div>
 {% endblock %}

@@ -35,18 +35,18 @@
                 <h6 class="text-center">Please enter your postcode to Calculate Delivery</h6>
                 <form class="form text-center" method="GET">
 
-                    <input name="postcode" type="text" class="rounded shadow postcode-input">
-                    <button type="submit" class="btn btn-calculate"><i class="fas fa-calculator"></i></button>
+                    <input name="postcode" type="text" class="rounded postcode-input">
+                    <button type="submit" class="btn btn-calculate mt-2"><i class="fas fa-calculator"></i></button>
                 </form>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </div>
         </div>
     </div>
 
-    <div class="col-10 col-md-7 order-md-2 m-auto">
+    <div class="col-10 col-md-7 order-md-2 mx-auto mt-3">
         <h3 class="text-center mt-2">Here's what you have ordered...</h3>
-        <div class="table-responsive mt-4">
-            <table class="table table-sm shadow">
+        <div class="table-responsive shadow mt-4">
+            <table class="table table-sm mb-0">
                 <thead class="text-black">
                     <tr>
                         <th scope="col">Your Food</th>
@@ -76,7 +76,7 @@
                                         </button>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <input class="form-control form-control-sm qty_input rounded shadow text-center" type="number" name="quantity" value="{{ i.quantity }}" min="1" max="99" data-item_id="{{ i.item_id }}" id="id_qty_{{ i.item_id }}">
+                                        <input class="form-control form-control-sm qty_input rounded text-center" type="number" name="quantity" value="{{ i.quantity }}" min="1" max="99" data-item_id="{{ i.item_id }}" id="id_qty_{{ i.item_id }}">
                                     </div>
                                     <div class="input-group-append p-0 col-12 col-md-3">
                                         <button class="increment-qty btn btn-quantity m-auto" data-item_id="{{ i.item_id }}" id="increment-qty_{{ i.item_id }}">
@@ -123,9 +123,9 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-12 mb-4 text-center">
-        <a href="{% url 'checkout' %}" class="btn checkout-btn rounded shadow btn-lg">
-            <span class="text-uppercase">Secure Checkout</span>
+    <div class="col-12 mb-4 text-center mt-4">
+        <a href="{% url 'checkout' %}" class="buttons rounded btn-lg">
+            <span>Secure Checkout</span>
             <span class="icon">
                 <i class="fas fa-lock"></i>
             </span>
@@ -138,7 +138,7 @@
 {% else %}
 <div class="col-12 text-center">
     <p>Sorry, no food here yet.</p>
-    <a href="{% url 'all_menu' %}" class="btn checkout-btn rounded shadow btn-lg">
+    <a href="{% url 'all_menu' %}" class="buttons rounded btn-lg">
         <span class="icon">
             <i class="fas fa-utensils"></i>
         </span>

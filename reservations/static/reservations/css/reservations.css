@@ -2,7 +2,6 @@
     background: url('/media/table.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
-
 }
 
 .img-container {
@@ -13,9 +12,4 @@
 .form-container {
     z-index: 2;
 
-}
-
-.reservation-btn {
-    border: solid grey 1px;
-    font-weight: 600;
 }

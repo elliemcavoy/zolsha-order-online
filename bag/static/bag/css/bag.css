@@ -1,36 +1,21 @@
-
-
-.btn-calculate i{
-    color:rgb(245, 94, 7);
-    font-size:20px;
+.btn-calculate i {
+    color: rgb(245, 94, 7);
+    font-size: 20px;
 }
 
-.postcode-input{
-    border:solid 1px grey;
+.postcode-input {
+    border: solid 1px grey;
+    width: 90%;
 }
 
-.form-group{
-    margin-bottom:0px !important;
+.form-group {
+    margin-bottom: 0px !important;
 }
 
-
-
-.increment-qty{
-    
-    margin-bottom:10px;
-
-}
-.decrement-qty i{
-    
-    margin-bottom:10px;
+.increment-qty {
+    margin-bottom: 10px;
 }
 
-.checkout-btn{
-    border: solid grey 1px;
-    font-weight: 600;
-}
-
-.checkout-btn i{
-    color:rgb(245, 94, 7);
-    
+.decrement-qty i {
+    margin-bottom: 10px;
 }

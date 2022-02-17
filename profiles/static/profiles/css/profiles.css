@@ -1,14 +1,11 @@
 .details-form {
     width: 70%;
     background-color: #e9e8e8;
-
-
-
 }
 
 .logo-img {
     background-image: url('/media/logo-background.JPG');
-    background-size: 150px ;
+    background-size: 150px;
     background-repeat: repeat;
 }
 
@@ -26,11 +23,6 @@
     margin-top: 5px;
 }
 
-.reorder-btn {
-    border: solid grey 1px;
-    font-weight: 600;
-    margin-top: 5px;
-}
 
 .details-form input {
     border: solid 1px grey;
