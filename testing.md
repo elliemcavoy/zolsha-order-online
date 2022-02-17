@@ -15,7 +15,6 @@
 </ul><br>
 <li><b>Add items to my shopping bag.</b>
 </li><br>
-<img src="">
 <ul>
 <li>Once an item has been decided upon, it is very easy to add this to the shopping bag. For items that have different options which are: Vegetable, Chicken, Keema, Lamb & Fish, there is a dropdown menu to allow you to select one of the previously mentioned options.</li>
 <li>The quantity of the item can then be adjusted accordingly and then clicking the 'Add to Bag' button will add the quantity and option selected to the shopping bag.</li>
@@ -74,7 +73,7 @@
 <li>Upon clicking on the link, the check availability page is displayed which requires an entry of a date and a time that the user would like to book for.
 <img src="media/readme/us-15.JPG" class="m-auto"><br></li>
 <li>Upon clicking the 'check availability' button, there are two possible outcomes.</li>
-<li>If there is no availability for the date and time, an error message is displayed in the top right hand corner of the screen advising to try a different date or time.
+<li>If there is no availability for the date and time, an error message is displayed in the top right hand corner of the screen advising to try a different date or time.<br>
 <img src="media/readme/us-17.JPG" class="m-auto"><br></li>
 <li>If there is availability for the date and time requested, the user is redirected to the booking form to provide their details</li>
 <li>The booking form requires the users details which are pre-populated if the user is signed in and they have their details stored in their profile. The date & time are also pre-populated from the previous availability search.
@@ -87,14 +86,16 @@
 <li><b>Save my delivery details to my profile which will then be automatically entered at the checkout.</b></li><br>
 <ul>
 <li>When logged in, the profile can be accessed from any page as it is displayed in a dropdown in the navbar.</li>
-<li>On the profile page, there is a form that can be used to add or update personal details. These are saved to the profile and if the user is logged in when completing an order, the address details will be pre-populated in the checkout form.</li>
+<li>On the profile page, there is a form that can be used to add or update personal details. These are saved to the profile and if the user is logged in when completing an order, the address details will be pre-populated in the checkout form.
+<img src="media/readme/us-19.JPG" class="m-auto"><br>
+</li>
 
 </ul><br>
 <li><b>View my previous order details including the items ordered in my profile.</b></li><br>
-<img src="">
 <ul>
 <li>When visiting the 'Profile' page, any previous orders that were made while logged in are displayed in the order history section.</li>
-<li>The order number, order price and the items ordered (including their quantity) are shown for each previous order.</li>
+<li>The order number, order price and the items ordered (including their quantity) are shown for each previous order.
+<img src="media/readme/us-20.JPG" class="m-auto"><br></li>
 
 </ul><br>
 <li><b>Reorder previous orders directly from the order history without having to search through the menu to find each item.</b></li><br>
@@ -102,49 +103,58 @@
 <ul>
 <li>In the order history section of the user profile, the previous orders are displayed with the item details and total price.</li>
 <li>For each of the previous orders there is a 'reorder' button. Clicking this automatically adds the order items and the quantity of each to the current shopping bag.</li>
-<li>A success message appears in the top right of the screen which also displays the current shopping basket details and total price.</li>
+<li>A success message appears in the top right of the screen which also displays the current shopping basket details and total price.
+<img src="media/readme/us-21.JPG" class="m-auto"><br></li>
 <li>Should the user wish to add additional items to their order, they can then do this is the usual way.</li>
 
 </ul>
 <li><b>View any table reservations I have made including the reservation details, such as the date & time, in my profile</b></li><br>
-<img src="">
 <ul>
 <li>Once logged in and on the 'My Profile' page, there are three sections. The final section is a display of any previous dining reservations.</li>
-<li>The date, time and number of diners that the reservation was made for are all displayed for each reservation.</li>
-<li>If the user has not made any dining reservations, there is a button which takes the user to the 'check availability' page so they can make a new reservation. </li>
+<li>The date, time and number of diners that the reservation was made for are all displayed for each reservation.
+<img src="media/readme/us-22.JPG" class="m-auto"><br></li>
+<li>If the user has not made any dining reservations, there is a button which takes the user to the 'check availability' page so they can make a new reservation. 
+<img src="media/readme/us-23.JPG" class="m-auto"><br></li>
 
 </ul>
 <li><b>Have the ability to cancel any table reservations I have made directly from my profile without having to contact the restaurant directly.</b></li><br>
-<img src="">
 <ul>
-<li>On the profile page, as well as all of the details of each reservation, there is a 'cancel' button displayed next to each reservation to allow the user to cancel the booking easily should they need to. </li>
+<li>On the profile page, as well as all of the details of each reservation, there is a 'cancel' button displayed next to each reservation to allow the user to cancel the booking easily should they need to.
+<img src="media/readme/us-22.JPG" class="m-auto"><br> </li>
 
 </ul>
 <li><b>Add new dishes/items to the menu. </b></li><br>
-<img src="">
 <ul>
-<li>This is only available to admin users as the link to add a new item is displayed on the Restaurant Dashborad page.</li>
-<li>Upon logging in a the admin user & navigating to the Restaurant Dashboard, the 'Add Item' button is located in between the tables for todays orders & todays reservations.</li>
+<li>This is only available to admin users as the link to add a new item is displayed on the Restaurant Dashboard page.</li>
+<li>Upon logging in a the admin user & navigating to the Restaurant Dashboard, the 'Add Item' button is located in between the tables for todays orders & todays reservations.
+<img src="media/readme/us-24.JPG" class="m-auto"><br>
+</li>
 <li>Clicking the button redirects the admin user to the form that is required to be completed in order to add the item.</li>
 <li>The admin user is then required to complete the following fields: Category, Subcategory, Name, SKU, Price. The Category & Subcategory fields are dropdowns to ensure the user only selects a valid category. </li>
 <li>The Description field is option as some items do not require a description.</li>
-<li>The 'Has Options' field is defaulted to 'No' however this can be changed to 'Yes' if required.</li>
-<li>As long as the fields are filled out correctly, upon submitting the form, a success message is displayed and the admin user is redirected to the Restaurant Dashboard.</li>
+<li>The 'Has Options' field is defaulted to 'No' however this can be changed to 'Yes' if required.
+<img src="media/readme/us-25.JPG" class="m-auto"><br>
+</li>
+<li>As long as the fields are filled out correctly, upon submitting the form, a success message is displayed and the admin user is redirected to the Restaurant Dashboard.
+<img src="media/readme/us-26.JPG" class="m-auto"><br>
+</li>
 </ul>
 <li><b>View all of the current days orders including the postcode and price. </b></li><br>
-<img src="">
 <ul>
 <li>After logging in as the admin user & visiting the Restaurant Dashboard, if there are any orders that have been placed on the current date they are displayed in a table on this page.</li>
-<li>The table displays the order time, order number, price & postcode for each order. </li>
-<li>If there are no orders that have been made on the current date, there is just a message advising the user that there are no orders yet. </li>
+<li>The table displays the order time, order number, price & postcode for each order.
+<img src="media/readme/us-27.JPG" class="m-auto"><br> </li>
+<li>If there are no orders that have been made on the current date, there is just a message advising the user that there are no orders yet. 
+<img src="media/readme/us-24.JPG" class="m-auto"><br></li>
 
 </ul>
 <li><b>View all of the current days table reservations in details with the time and number of people shown. </b></li><br>
-<img src="">
 <ul>
 <li>After logging in as the admin user & visiting the Restaurant Dashboard, if there are any reservations for dining in on the current date they are displayed in a table on this page.</li>
-<li>The table shows the customer name, the time of the reservation & the number of people.</li>
-<li>If there are no table reservation for the current date, there is a message advising the user that there are no reservations for today.</li>
+<li>The table shows the customer name, the time of the reservation & the number of people.
+<img src="media/readme/us-28.JPG" class="m-auto"><br></li>
+<li>If there are no table reservation for the current date, there is a message advising the user that there are no reservations for today.
+<img src="media/readme/us-24.JPG" class="m-auto"><br></li>
 </ul>
 </ol>
 
@@ -161,8 +171,6 @@ I manually tested the following to make sure they worked as designed:
 <li>When on a smaller screen, the logo is placed on top of the navigation links. The search bar has been moved into a dropdown that is only visible when the search icon is clicked. The link descriptions have also been shortened to ensure they are visible & not to long to cause problems with spacing.  </li>
 <li>The secondary navbar displays the menu categories & allows users to filter the menu. On largescreens the secondary navbar in located underneath the main nav and is a full width row. The main categories are displayed & are links to the subcategories associated with each category. Upon clicking on each category, a further navigation dropdown appears with the subcategory links listed.</li>
 <li>On smaller screens, the secondary nav has been moved into a sidenav which is accessed by the collapsible nav link. The link to this is located next to the logo on smaller screens. Upon clicking this, a dropdown menu of all the category links appears. Further dropdown menus appear displaying the subcategories when each category is clicked on. Only one st of subcategories is displayed at a time to avoid the nav overflowing the screen size.</li>
-<img src="">
-<img src="">
 </ul>
 
 <h3>Messages</h3>
@@ -199,9 +207,6 @@ I have tested each function and the messages are displayed correctly for each wi
 <li>All forms inputs are centre aligned so that when the screen size is changed, they are still easily visible and not compressed.</li>
 <li>I have tested all pages of the site on each size of screen to ensure that the elements are spaced nicely on each. I have not found any pages where there is an issue with the elements or where any aspect is missing or unreadable.</li>
 
-<img src="">
-<img src="">
-<img src="">
 </ul>
 
 <h2>Bugs Discovered</h2>
@@ -285,5 +290,6 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>The calculate delivery charge is only available in the shopping bag and may be more useful either being located on the checkout page or at least having a link to take the user bag to the shopping bag to calculate this.</li>
 <li>Although the date & time are prepopulated into the booking form, they could be deleted and different details typed in manually to these form inputs. Therefore it would be ideal to make these fields fixed & unable to be edited by the user.</li>
 <li>Currently when a postcode is entered into the 'Calculate Delivery' input, it is just used to provide the delivery charge. The postcode is not then saved into the checkout form & so users could enter a postcode they know has a lower delivery charge and then enter their actual postcode at the checkout. I would like to implement some defensive design to ensure that if a postcode is provided to calculate delivery, it is then added to the checkout form & is not able to be removed.</li>
+<li>I would also like to alter the restaurant dashboard section to allow the daily orders & reservations to be displayed with the earliest time at the top and then going down in time order.</li>
 
 </ul>
