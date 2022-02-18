@@ -74,11 +74,18 @@
 <li>Once the payment has been completed, an order number is created and the user is redirected to the confirmation page.</li>
 <li>On the confirmation page there is a reminder of the address provided in case the user has made an error. There is also a section containing the items order and the quantity of each. Finally, a recap of the total amount paid is also displayed.<br>
 <img src="media/readme/us-30.JPG" class="m-auto"><br> </li>
-<li>A toast message also appears to advise the user of the order number and advising that an email confirmation will be sent to the email they provided.</li></ul><br>
+<li>A toast message also appears to advise the user of the order number and advising that an email confirmation will be sent to the email they provided.<br>
+<img src="media/readme/us-31.JPG" class="m-auto"><br>
+</li></ul><br>
 
 <li><b>Have the option to register for an account by providing an email and creating a password & username.</b></li><br>
-<img src="media/readme/us-14.JPG" class="m-auto"><br>
 <ul>
+<li>Upon clicking the register option from the account dropdown, the user is given a form to complete in order to register.</li>
+<li>The form is provided by Django AllAuth and requires the user to provide their email address, then create a username & password.<br>
+<img src="media/readme/us-14.JPG" class="m-auto"><br></li>
+<li>The user will then recieve notification on the screen that they need to verify their email address by following the link sent to their email.<br>
+<img src="media/readme/us-32.JPG" class="m-auto"><br></li>
+
 </ul><br>
 <li><b>Check availability for a table in the restaurant on a given date and make a dining reservation. </b></li><br>
 <ul>
@@ -112,7 +119,6 @@
 
 </ul><br>
 <li><b>Reorder previous orders directly from the order history without having to search through the menu to find each item.</b></li><br>
-<img src="">
 <ul>
 <li>In the order history section of the user profile, the previous orders are displayed with the item details and total price.</li>
 <li>For each of the previous orders there is a 'reorder' button. Clicking this automatically adds the order items and the quantity of each to the current shopping bag.</li>
@@ -223,7 +229,7 @@ I have tested each function and the messages are displayed correctly for each wi
 </ul>
 
 <h2>Bugs Discovered</h2>
-Here are details of bugs that were discovered during manual testing and how they were rectified.
+Here are details of bugs that were discovered during manual testing and during the development process and how they were rectified.
 
 <ol>
 <li>Checkout Form Submission</li>
@@ -287,6 +293,15 @@ Here are details of bugs that were discovered during manual testing and how they
 <li>Testing of this section discovered that when a correct discount code was entered, the discount was applied and the functionality worked correctly. However if an incorrect or invalid discount code was entered, there was no error message displayed to advise the user of this. Instead the page just reloaded and the price remained the same. </li>
 <li>To rectify this and make it easier for the user to understand what has gone wrong, I added an else statement to the discount code functionality.</li>
 <li>The else statement provided a message to be displayed to the user in a toast which advises them that the discount code is invalid.</li>
+</ul>
+<li>Delivery Charge remaining in session after order complete</li>
+<ul>
+<li>While testing the user stories, it became apparent that because the delivery charge was stored in the session and not in the bag itself, when the order was completed the delivery charge remained.</li>
+<li>This meant that when the order success toast was displayed, the order summary page was also displayed despite not having any items in the bag. However because the delivery charge was still present, there was a grand total for the bag (the delivery charge only) and so the bag summary was set to show. The bag total under the icon on the navbar also still displayed the delivery cost.<br>
+<img src="media/readme/checkout-toast.JPG"><br>
+</li>
+<li>By adding the following code to the checkout success view, I was able to correct this and ensure the delivery charge was removed from the session once an order has been completed.<br>
+<img src="media/readme/checkout-fix.JPG"></li>
 </ul>
 </ol>
 
