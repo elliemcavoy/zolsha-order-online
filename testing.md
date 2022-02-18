@@ -200,11 +200,13 @@ Success Messages
 <ul>
 <li>User successfully signed in</li>
 <li>User successfully signed out</li>
+<li>Registration email sent</li>
 <li>Item added to bag</li>
 <li>Item quantity updated in shopping bag</li>
 <li>Item removed from shopping bag</li>
 <li>New item added to menu</li>
 <li>Reorder completed from user profile</li>
+<li>Order successfull</li>
 </ul>
 Error Messages
 <ul>
