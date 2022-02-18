@@ -65,10 +65,16 @@
 </ul><br>
 <li><b>Provide delivery & contact details before providing payment for the order.</b></li><br>
 <ul>
-<li></li></ul><br>
+<li>Upon reaching the checkout page, there is a summary of the order items and the total price. There is also a form to complete which requests the users personal details such as their name and contact number. The user is then required to enter a delivery address and then their card details in order to pay for the order.<br>
+<img src="media/readme/us-29.JPG" class="m-auto"><br>
+</li></ul><br>
 
 <li><b>View a confirmation of the items I have ordered & the order number.</b></li><br>
-<ul></ul><br>
+<ul>
+<li>Once the payment has been completed, an order number is created and the user is redirected to the confirmation page.</li>
+<li>On the confirmation page there is a reminder of the address provided in case the user has made an error. There is also a section containing the items order and the quantity of each. Finally, a recap of the total amount paid is also displayed.<br>
+<img src="media/readme/us-30.JPG" class="m-auto"><br> </li>
+<li>A toast message also appears to advise the user of the order number and advising that an email confirmation will be sent to the email they provided.</li></ul><br>
 
 <li><b>Have the option to register for an account by providing an email and creating a password & username.</b></li><br>
 <img src="media/readme/us-14.JPG" class="m-auto"><br>
