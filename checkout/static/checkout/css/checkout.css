@@ -1,8 +1,7 @@
 
 .details-form{
     width:80%;
-    background-color:#e9e8e8;
-    border: solid grey 1px;
+    
 }
 
 #payment-form input{
@@ -11,6 +10,14 @@
     border-radius:10px;
     text-align:center;
     width:65%; 
+}
+
+#payment-form {
+    width: 100%;
+    background-color:white !important;
+    text-align: center;
+    margin: auto;
+
 }
 
 .text-orange{

@@ -60,6 +60,7 @@ As a user of the website, the following actions and results would need to be ach
 <li>See a summary of the items in my shopping bag and an order total each time I add a new item without having to visit the shopping bag each time.</li>
 <li>Calculate the delivery fee by providing my postcode. </li>
 <li>Review my shopping bag details before completing the checkout process and make any amendments should they be required. </li>
+<li>Provide delivery & contact details before providing payment for the order.</li>
 <li>Have the option to register for an account by providing an email and creating a password & username.</li>
 <li>Check availability for a table in the restaurant on a given date and make a dining reservation. </li>
 </ol>
@@ -364,8 +365,7 @@ Please see below a brief overview of the testing carried out. Any issues found a
 <li>Toast component for messages section.</li>
 <li>Date & time selectors for dining availability.</li>
 </ul>
-
-<li></li>
+<li>Bootstrap classes have also been used for styling the components.</li>
 <li>Google Fonts utilized for all font styles within the project.</li></ul>
 
 <h3>Code</h3>
@@ -373,7 +373,7 @@ Please see below a brief overview of the testing carried out. Any issues found a
 <li><a href= target="_blank">Django Documentation</a> </li>
 <li><a href="" target="_blank"></li>
 <li>Tutor Support assisted with </li>
-<li>Code Institute Turtorials were used for reference when creating functions.</li>
+<li>Code Institute Tutorials were used for reference when creating functions.</li>
 <li>Boutique Ado Mini Project.  </li>
 <li><a href="" target="_blank"></a> </li>
 
@@ -384,5 +384,5 @@ Please see below a brief overview of the testing carried out. Any issues found a
 <ul>
 <li>Font Awesome used for all icons and symbols.
 </li>
-<li></li>
+<li>All photograph images were provided by Zolsha Restaurant.</li>
 <li>Image to show responsive design from <a href="http://ami.responsivedesign.is/#" target="_blank">http://ami.responsivedesign.is/#</a></li></ul>

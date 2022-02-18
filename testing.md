@@ -28,7 +28,7 @@
 </li><br>
 
 <ul>
-<li>A search bar is clearly visible in the navbar either with the text box showing (on larger screens) or just with a search icon (on smaller screens). Clicking on the search icon, drops down a search bar where the search terms can be entered.
+<li>A search bar is clearly visible in the navbar either with the text box showing (on larger screens) or just with a search icon (on smaller screens). Clicking on the search icon, drops down a search bar where the search terms can be entered.<br>
 <img src="media/readme/us-6.JPG" class="m-auto"><br>
 <img src="media/readme/us-7.JPG" class="m-auto"><br></li>
 <li>By typing a keyword into the search bar and clicking 'Search' the menu items are filtered to match the keyword provided.</li>
@@ -63,6 +63,13 @@
 <li>There is also a final chance to review the order details on the checkout page before completing the payment.</li>
 
 </ul><br>
+<li><b>Provide delivery & contact details before providing payment for the order.</b></li><br>
+<ul>
+<li></li></ul><br>
+
+<li><b>View a confirmation of the items I have ordered & the order number.</b></li><br>
+<ul></ul><br>
+
 <li><b>Have the option to register for an account by providing an email and creating a password & username.</b></li><br>
 <img src="media/readme/us-14.JPG" class="m-auto"><br>
 <ul>
@@ -111,49 +118,49 @@
 <li><b>View any table reservations I have made including the reservation details, such as the date & time, in my profile</b></li><br>
 <ul>
 <li>Once logged in and on the 'My Profile' page, there are three sections. The final section is a display of any previous dining reservations.</li>
-<li>The date, time and number of diners that the reservation was made for are all displayed for each reservation.
+<li>The date, time and number of diners that the reservation was made for are all displayed for each reservation.<br>
 <img src="media/readme/us-22.JPG" class="m-auto"><br></li>
-<li>If the user has not made any dining reservations, there is a button which takes the user to the 'check availability' page so they can make a new reservation. 
+<li>If the user has not made any dining reservations, there is a button which takes the user to the 'check availability' page so they can make a new reservation. <br>
 <img src="media/readme/us-23.JPG" class="m-auto"><br></li>
 
 </ul>
 <li><b>Have the ability to cancel any table reservations I have made directly from my profile without having to contact the restaurant directly.</b></li><br>
 <ul>
-<li>On the profile page, as well as all of the details of each reservation, there is a 'cancel' button displayed next to each reservation to allow the user to cancel the booking easily should they need to.
+<li>On the profile page, as well as all of the details of each reservation, there is a 'cancel' button displayed next to each reservation to allow the user to cancel the booking easily should they need to.<br>
 <img src="media/readme/us-22.JPG" class="m-auto"><br> </li>
 
 </ul>
 <li><b>Add new dishes/items to the menu. </b></li><br>
 <ul>
 <li>This is only available to admin users as the link to add a new item is displayed on the Restaurant Dashboard page.</li>
-<li>Upon logging in a the admin user & navigating to the Restaurant Dashboard, the 'Add Item' button is located in between the tables for todays orders & todays reservations.
+<li>Upon logging in a the admin user & navigating to the Restaurant Dashboard, the 'Add Item' button is located in between the tables for todays orders & todays reservations.<br>
 <img src="media/readme/us-24.JPG" class="m-auto"><br>
 </li>
 <li>Clicking the button redirects the admin user to the form that is required to be completed in order to add the item.</li>
 <li>The admin user is then required to complete the following fields: Category, Subcategory, Name, SKU, Price. The Category & Subcategory fields are dropdowns to ensure the user only selects a valid category. </li>
 <li>The Description field is option as some items do not require a description.</li>
-<li>The 'Has Options' field is defaulted to 'No' however this can be changed to 'Yes' if required.
+<li>The 'Has Options' field is defaulted to 'No' however this can be changed to 'Yes' if required.<br>
 <img src="media/readme/us-25.JPG" class="m-auto"><br>
 </li>
-<li>As long as the fields are filled out correctly, upon submitting the form, a success message is displayed and the admin user is redirected to the Restaurant Dashboard.
+<li>As long as the fields are filled out correctly, upon submitting the form, a success message is displayed and the admin user is redirected to the Restaurant Dashboard.<br>
 <img src="media/readme/us-26.JPG" class="m-auto"><br>
 </li>
 </ul>
 <li><b>View all of the current days orders including the postcode and price. </b></li><br>
 <ul>
 <li>After logging in as the admin user & visiting the Restaurant Dashboard, if there are any orders that have been placed on the current date they are displayed in a table on this page.</li>
-<li>The table displays the order time, order number, price & postcode for each order.
+<li>The table displays the order time, order number, price & postcode for each order.<br>
 <img src="media/readme/us-27.JPG" class="m-auto"><br> </li>
-<li>If there are no orders that have been made on the current date, there is just a message advising the user that there are no orders yet. 
+<li>If there are no orders that have been made on the current date, there is just a message advising the user that there are no orders yet. <br>
 <img src="media/readme/us-24.JPG" class="m-auto"><br></li>
 
 </ul>
 <li><b>View all of the current days table reservations in details with the time and number of people shown. </b></li><br>
 <ul>
 <li>After logging in as the admin user & visiting the Restaurant Dashboard, if there are any reservations for dining in on the current date they are displayed in a table on this page.</li>
-<li>The table shows the customer name, the time of the reservation & the number of people.
+<li>The table shows the customer name, the time of the reservation & the number of people.<br>
 <img src="media/readme/us-28.JPG" class="m-auto"><br></li>
-<li>If there are no table reservation for the current date, there is a message advising the user that there are no reservations for today.
+<li>If there are no table reservation for the current date, there is a message advising the user that there are no reservations for today.<br>
 <img src="media/readme/us-24.JPG" class="m-auto"><br></li>
 </ul>
 </ol>
