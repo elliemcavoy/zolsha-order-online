@@ -286,33 +286,47 @@ See below a diagram for the flow of data through the different database models i
 <h3>Languages Used</h3>
 <ul>
 <li>HTML5</li>
+<ul><li>HTML5 has been used to create the core content and base structure for each page.</li></ul>
 <li>CSS3 </li>
+<ul><li>CSS3 was used to style the HTML elements and create a responsive design.</li></ul>
 <li>JavaScript</li>
+<ul><li>Javascript was used on numerous elements to make them responsive to user input. For example, to sort & order menu items dependant on the users desired output.</li></ul>
 <li>Python3</li>
+<ul><li>Python was used to create all of the backend functionality of the web application.</li></ul>
 </ul>
-<h3>Libraries Used</h3>
+<h3>Django & Django Extensions Used</h3>
 <ul>
-<li>JQuery</li>
-<li><a href=" target="_blank">Bootstrap</a> - Used to provide page structure, Navbar design and form components. Also used to provide generic styling. </li>
+<li>Django Framework</li>
+<ul><li>Django has been used to create the whole project. The framework has provided a base for all apps that make up the web application.</li></ul>
+<li>Django AllAuth</li>
+<ul><li>This was used to create the sign up & sign in functionality of the application. Essentially, Django AllAuth provides the functionality to create a user for the site.</li></ul>
+<li>Django Crispy Forms</li>
+<ul><li>All forms were created using the crispy form framework to allow for standardisation throughtout the project.</li></ul>
+</ul>
+<h3>Libraries & Frameworks Used</h3>
+<ul>
+<li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> - Used to provide page structure, Navbar design and form components. Also used to provide generic styling using Bootstrap classes. </li>
+<li><a href="https://jquery.com/" target="_blank">JQuery</a> - Used to simplify the javascript written in this project & used to activate some of the components provided by bootstrap i.e the toasts</li>
+<li><a href="https://stripe.com/gb" target="_blank">Stripe</a> - Used to implement the payment system for completing orders. The payment form element was also provided by Stripe.</li>
 <li><a href="https://fontawesome.com/" target="_blank">Font Awesome</a>  - Icons for forms and styling.</li>
 <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a> - Used to create a look in keeping with the website aim and to create uniform styling throughout.</li>
+<li><a href="https://balsamiq.com/wireframes/" target="_blank">Balsamiq</a> - Used to create the wireframes for the desktop & mobile views.</li>
 </ul>
-<h3>Python Frameworks & Libraries</h3>
+<h3>Project Creation & Coding</h3>
 <ul>
-<li>Django</li>
-<ul>
-<li>AllAuth</li>
-</ul>
-<li></li>
-<li></li>
-<li></li>
+<li>GitHub</li>
+<ul><li>GitHub was used to create the repository for storing all code aspects of this project.</li></ul>
+<li>GitPod</li>
+<ul><li>Gitpod was the platform used to create all of the files and content for my project.</li></ul>
+<li>Git</li>
+<ul><li>Git was used for version control.</li></ul>
 </ul>
 <h3>Database & Deployment</h3>
 <ul>
-<li></li>
-<li>Git</li>
-<li>GitHub</li>
-<li>Heroku</li>
+<li>Heroku - Used to deploy the finished project.</li>
+<li>GitHub - Connected Github repository to Heroku to allow for deployment.</li>
+<li>Amazon Web Service - used to store static files & images.</li>
+<li>Gunicorn - Used to deploy the project from Gitpod to Heroku. </li>
 </ul>
 
 </ul>
@@ -355,6 +369,28 @@ Please see below a brief overview of the testing carried out. Any issues found a
 
 <h1 id="deployment"><u>Deployment</u></h1>
 This project has been deployed via Heroku and can be accessed <a href="" target="_blank">here</a> .<br>
+If you would like to deploy the project for yourself, the steps I took to set up my project ready for deployment & to finally deploy when completed are shown below:
+
+<h4>GitHub, Gitpod & Git</h4>
+<ul>
+<li>The repository for this project was created in Github & I used the Code Institute Gitpod Full Template which can be found <a href="https://github.com/Code-Institute-Org/gitpod-full-template" target="_blank">here.</a> I then clicked the 'Use Template' button and created my repository with the name zolsha-online-ordering. You are required to be logged into your GitHub account to be able to view the 'Use Template' button. </li>
+<li>Once the repository had been successfully created in GitHub I was able to redirect to Gitpod directly using the 'Gitpod' button.</li>
+<li>Throughout the project, I used Gitpod to create all the folders & files to hold all my code. </li>
+<li>I used Git to add any changes to version control in GitHub. As I used the Code Institute template, my Git branch was already set up and so to commit any changes I just followed the below process:
+<ul>
+<li><b>git status</b> (this gives a list of all modified or untracked files).</li>
+<li><b>git add .</b> (adds all modified/untracked files to commit staging area) or <b>git add [filename]</b> (adds only specified file to commit staging area).</li>
+<li><b>git commit -m "commit message"</b> (the commit message explains the changes made).</li>
+<li><b>git push</b> (this will push the changes up to GitHub).</li>
+</ul></li>
+</ul>
+
+<h4>Heroku</h4>
+
+
+
+
+
 
 If you would like to deploy this project for yourself please see below the steps I followed to deploy and you can do the same:
 <ol>
