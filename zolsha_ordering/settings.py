@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-rwet1ttqgr2%()=hbbn61_i%a57a8$r1wb(0+wlv68_ah-8wx$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['zolsha-online-ordering.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['zolsha-order-online.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -118,9 +118,9 @@ WSGI_APPLICATION = 'zolsha_ordering.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
-DATABASES = {
-    'default': dj_database_url.parse('DATABASE_URL')
-    }
+    DATABASES = {
+        'default': dj_database_url.parse('DATABASE_URL')
+        }
 else:
    DATABASES = {
         'default': {
