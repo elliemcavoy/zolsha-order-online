@@ -385,10 +385,9 @@ If you would like to deploy the project for yourself, the steps I took to set up
 </ul></li>
 </ul>
 
-<h4>Heroku</h4>
+<h4>Setting up Heroku & Postgres</h4>
 <ul>
 <li>I logged into my Heroku account however if you do not have an account you can sign up <a href="https://signup.heroku.com/" target="_blank">here</a>.</li>
-
 <li>Once signed in, I created a new app ensuring to select the region closest to my location i.e. Europe.</li>
 <li>With the app created, I selected the 'Resources' tab and searched for 'Postgres' which will create a Postgres database for this project. I just selected the FREE plan for use with this project.</li>
 <li>To use Postgres with my project, there are two installations that are required. I installed these in the gitpod terminal with the following commands:</li>
@@ -397,8 +396,55 @@ If you would like to deploy the project for yourself, the steps I took to set up
 <li><b>pip3 install psychopg2-binary</b></li>
 </ul>
 <li>As new installation had been made, I updated my requirements.txt file which advises Heroku the installations it needs to make in order to run the app. The update this file I typed the following in the Gitpod terminal: <b>pip3 freeze > requirements.txt</b></li>
+<li>To ensure that the project is set up to use Postgres when the project is deployed, I changed a few sections in the settings.py file of zolsha_ordering. </li>
+<li>Firstly at the top of the file, I added the following:<b> import dj_database_ur</b></li>
+<li>Then to ensure all of the migrations are completed for Postgres as well as the SQLite database used in development, I commented out the current database settings.</li>
+<li>I then added the below to the database setting:<br>
+<b>DATABASES = {<br>
+        'default': dj_database_url.parse('DATABASE_URL')<br>
+    }</b><br>
+    The DATABASE_URL can be found in Heroku under the settings section. If you 'Reveal Config Variables' the DATABASE_URL is displayed there. This can be copied and entered into the settings as above. However this should not be added to version control as this is an environment variable and will eventually be gained from the Heroku Config Variables when deployed. But for setting up the Postgres database this can be entered directly into the settings.</li>
+<li>Once these settings are updated, I need to migrate all of the migrations using the following command:<br>
+<b>python3 manage.py migrate</b></li>
+<li>I also need to load all of the pre-set data into the Postgres database such as the categories, sub-categories and menu items. To do this I entered the following commands into the terminal:<br>
+<b>python3 manage.py loaddata categories<br>
+python3 manage.py loaddata subcategories<br>
+python3 manage.py loaddata menu </b></li>
+<li>I also needed to recreate the superuser with the following commmand:<br>
+<b>python3 manage.py createsuperuser</b></li>
+<li>Once all of these changes had been made, I removed the DATABASE_URL from the settings so I did not end up in version control and commited the changes.</li>
+<li>I then implemented an if statement in the settings.py under the DATABASE section. This will ensure that during development the SQLite database setting are used and when deployed, the Postgres database setting will be used.</li>
+<li>The following if statement was added:<br>
+<b>if 'DATABASE_URL' in os.environ:<br>
+    DATABASES = {<br>
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))<br>
+    }<br>
+else:<br>
+    DATABASES = {<br>
+        'default': {<br>
+            'ENGINE': 'django.db.backends.sqlite3',<br>
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),<br>
+        }<br>
+    }</b>
+</li>
+<li>This will ensure that the DATABASE_URL environment variable is retrieved from Heroku and not stored in version control.</li>
+<li>The Postgres database is now set up and ready to use for deployment.</li>
 </ul>
 
+<h4>Gunicorn & Procfile</h4>
+<ul>
+<li>I order for the app to be deployed correctly to Heroku I needed to install Gunicorn.</li>
+<li>To do this I entered the command below into the terminal:<br>
+<b>pip3 install gunicorn</b></li>
+<li>This will need adding to the requirements.txt file using the following command:<br>
+<b>pip3 install gunicorn</b></li>
+<li>Heroku also requires a Procfile to know how to run the application. </li>
+<li>To create a Procfile in the workspace I entered the following into the terminal:<br>
+<b>touch Procfile</b></li>
+<li>The following is then added to the Procfile:<br>
+<b>web: gunicorn zolsha_ordering.wsgi:application</b><br>
+The 'zolsha_ordering' is the name of the app in which the settings are located.</li>
+</ul>
 
 
 
@@ -406,7 +452,7 @@ If you would like to deploy the project for yourself, the steps I took to set up
 
 <ol>
 <li>
-Create your new repository (I used GitHub) and then download or clone the following link: <a href = "">
+Create your new repository (I used GitHub) and then download or clone the following link: <a href = ""></a>
 </li>
 
 This site is currently deployed on Heroku using the master branch on GitHub. You can deploy this project remotely using the following steps:
