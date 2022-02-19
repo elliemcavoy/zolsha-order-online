@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-rwet1ttqgr2%()=hbbn61_i%a57a8$r1wb(0+wlv68_ah-8wx$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['zolsha-online-ordering.herokuapp.com', 'localhost']
 
 
 # Application definition
