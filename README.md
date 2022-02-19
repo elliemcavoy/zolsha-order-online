@@ -386,13 +386,24 @@ If you would like to deploy the project for yourself, the steps I took to set up
 </ul>
 
 <h4>Heroku</h4>
+<ul>
+<li>I logged into my Heroku account however if you do not have an account you can sign up <a href="https://signup.heroku.com/" target="_blank">here</a>.</li>
+
+<li>Once signed in, I created a new app ensuring to select the region closest to my location i.e. Europe.</li>
+<li>With the app created, I selected the 'Resources' tab and searched for 'Postgres' which will create a Postgres database for this project. I just selected the FREE plan for use with this project.</li>
+<li>To use Postgres with my project, there are two installations that are required. I installed these in the gitpod terminal with the following commands:</li>
+<ul>
+<li><b>pip3 install dj_database_url</b></li>
+<li><b>pip3 install psychopg2-binary</b></li>
+</ul>
+<li>As new installation had been made, I updated my requirements.txt file which advises Heroku the installations it needs to make in order to run the app. The update this file I typed the following in the Gitpod terminal: <b>pip3 freeze > requirements.txt</b></li>
+</ul>
 
 
 
 
 
 
-If you would like to deploy this project for yourself please see below the steps I followed to deploy and you can do the same:
 <ol>
 <li>
 Create your new repository (I used GitHub) and then download or clone the following link: <a href = "">
@@ -414,37 +425,17 @@ echo web: python run.py > Procfile
 
 You can view the Procfile for my project here: Procfile</li>
 
-<li>You will then need to sign up for a free Heroku account or, if you already have one, you will need to sign in. The link to create your account is: https://signup.heroku.com/ </li>
 
-<li>Once signed in to your Heroku account, you will need to create a new app ensuring you select the region closest to your location.</li>
 
 <li>You then need to choose your deployment method in the Deploy section. If you have created your repository using GitHub, you can connect to the specific repository by searching for the repo-name. If you cannot connect via GitHub, you can connect using Heroku Git (follow the instructions provided on Heroku).</li>
 
 <li>Once connected, you can 'Enable Automatice Deploys' so if you make any further changes and commits, it will automatically update and deploy a new version of the application.</li>
 
-<li>In Heroku click on the 'Settings' tab. In the Config Vars section, click on 'Reveal Config Vars' which is used to configure the environmental variables. You will need to set up your env.py file in order to complete this section. Setting up your env.py file can be done as follows:
+<li>In Heroku click on the 'Settings' tab. In the Config Vars section, click on 'Reveal Config Vars' which is used to configure the environmental variables. 
 <ul>
-<li>Create a new file outside the folder structure called env.py.</li>
-<li>You will need to type 'import os' at the top of this file.</li>
-<li>Then the environment variables need adding as below:<br>
-os.environ.setdefault("IP", "0.0.0.0")<br>
-os.environ.setdefault("PORT", "5000")<br>
-os.environ.setdefault("SECRET_KEY", "insert your secret key here")<br>
-os.environ.setdefault("MONGO_URI", "insert your connection string here")<br>
-os.environ.setdefault("MONGO_DBNAME", "insert you database name here")<br>
-The SECRET_KET can be anything you choose.<br>
-The MONGO_URI connection string can be found by doing the following in MongoDB:
-<ul>
-<li>Click on the 'Overview' tab</li>
-<li>Click on the 'Connect' option</li>
-<li>Select the 'Connect your application' option</li>
-<li>Select 'Python' as the driver</li>
-<li>You will then be provided with a connection string</li>
-<li>Paste the connection string into MONGO_URI variable</li>
-<li>Ensure you update the sections in capital letters with your own information e.g your password, your cluster name and your collection name: mongodb+srv://myRoot:MONGODB-PASSWORD@CLUSTER-NAME-96wib.mongodb.net/DATABASE-NAME?retryWrites=true&w=majority".</li></ul></li>
+
 </ul>
 </li>
-<li>Once your env.py file is created, go back to the Config Vars in Heroku and add the IP, PORT, SECRET_KEY, MONGO_URI & MONGO_DBNAME with the correct values as per your env.py file.</li>
 <li>Finally, go back to the 'Deploy' tab on Heroku and in the Manual Deploy section chose the 'main' branch and click 'Deploy Branch'. Once the application has been built, you will receive a message stating 'Your app was successfully deployed' with a link to view the app.</li>
 </ol>
 </li>
