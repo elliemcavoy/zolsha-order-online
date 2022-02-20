@@ -12,7 +12,7 @@ header {
 }
 
 .page-header-container {
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Special Elite', cursive;
     font-weight: 900;
 }
 
@@ -175,9 +175,9 @@ form input {
 
 .card-header {
     background-image: linear-gradient(to bottom, rgb(99, 99, 99), rgb(111, 111, 111), rgb(122, 122, 122), rgb(111, 111, 111), rgb(99, 99, 99));
-    border:solid 2px black;
+    border: solid 2px black;
     color: #fafafa;
-    margin:4px;
+    margin: 4px;
 }
 
 .buttons {
