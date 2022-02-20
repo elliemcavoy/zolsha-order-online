@@ -89,7 +89,7 @@ I have kept the design of the webpages simple and easy to navigate.
 <li>Also all of the buttons have the same colour schemes including when they are hovered over.</li>
 <li>The forms displaying data to the user have the same styling throughout the site so the the user is able to locate a form easily should they need to reference back to the items in their order.</li>
 <li>All input forms that require details from the user, are displayed in the card component from Bootstrap. These all have the same grey styling to make it easy for users to locate the sections that require their input.</li>
-<li>The background for each page is dependant on the content. For the menu and profile sections, the background is vector images suchas the restaurant logo and food items. The pages relating to the restaurant dining have a photograph of the restaurant or the restaurant food. This shows a divide between the online ordering for takeaways & then the restaurant features.</li>
+<li>The background for each page is dependant on the content. For the menu and profile sections, the background is vector images such as the restaurant logo and food items. The pages relating to the restaurant dining have a black & white photograph style image of the restaurant. This shows a divide between the online ordering for takeaways & then the restaurant features.</li>
 </ul>
 
 <h2 id="defensive-design">Defensive Design & Security</h2>
@@ -104,6 +104,7 @@ I have kept the design of the webpages simple and easy to navigate.
 <li>For the restaurant admin page, I have ensured that only a superuser can access this page. Should a user who is not logged in, try and access this by adding 'profile/restaurant-admin' to the end of their url, they will be redirected to the sign in page. Once signed in, is a user again tries to access this url, they will be redirected back to the homepage and a toast message appears advising them that only restaurant users can do that.<br>
 <img src="media/readme/restaurant-admin-defense.JPG"></li>
 <li>The same has been added to the 'add menu item' view to ensure that someone who is not a super user cannot just type in the url and add items to the menu. This is very important as if a user was able to access this, they could add menu items with very low prices and then complete an order.</li>
+<li>I have also added a custom 404 error page which will replace the generic 404 page. The design follows that of the website as a whole and contains a link for users to return to the homepage.</li>
 </ul>
 
 <h2 id="typography">Typography</h2>
@@ -557,6 +558,7 @@ Ensure you enter these in the above order as the subcategories & menu data requi
 <li><a href="https://timepicker.co/" target="_blank">Timepicker.co</a> - used to implement the date & time picker elements in the correct format.</li>
 <li><a href="https://stripe.com/docs/development" target="_blank">Stripe Documentation</a> - used to implement the payment system including the javascript to submit the payment form.  </li>
 <li><a href="https://www.w3schools.com/python/python_while_loops.asp">W3Schools</a> - used to help implement the while loop for the delivery charge functionality in contexts.py.</li>
+<li><a href="https://www.etemkeskin.com/index.php/2020/12/28/creating-custom-404-page-in-python-django/">404 Page</a> - used to add a 404 error page to replace the standard error page.</li>
 <li>Tutor Support assisted with bug fixes on elements of the project such as webhook errors & filtering issues. Please see the testing documentation for further details on the assistance received. </li>
 <li>Code Institute Tutorials were used for reference when creating functions & deploying to Heroku.</li>
 <li>Boutique Ado Mini Project was used as reference for this project as some of the functionality required for this project was similar to that created in the mini project. </li>

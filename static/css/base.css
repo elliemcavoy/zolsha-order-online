@@ -58,7 +58,7 @@ header {
 }
 
 .hero-img {
-    background: url('/media/hero.jpg') no-repeat center center fixed;
+    background: url('/media/zolshamainimg.jpg') no-repeat center;
     background-size: cover;
     height: calc(100vh - 164px);
     position: relative;

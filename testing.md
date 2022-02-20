@@ -311,7 +311,8 @@ Here are details of bugs that were discovered during manual testing and during t
 <ul>
 <li>When testing the user stories, it became apparent that although the user could select specific categories, there was no link to view all menu items. This may not be used by regular users, however if a new user just wanted to get a general overview of the menu, having this option would be beneficial. It is also good practise to have a link to all products available. Therefore this was added to the homepage.</li>
 <li>Again, when testing the user stories, it was obvious that in order to get back to the top of the list of menu items, the user would have to scroll right back up or reselect the subcategory from the navbar. To make it easier for users, I added a back to top button on the menu items page.</li>
-<li>Upon testing the user stories, I realised that there was no way for users to amend, update or remove items from their shopping basket. Therefore I added a quantity input element to the shopping bag and also a remove button. 
+<li>Upon testing the user stories, I realised that there was no way for users to amend, update or remove items from their shopping basket. Therefore I added a quantity input element to the shopping bag and also a remove button. </li>
+<li>After testing the functionality of the website, I realised that I needed to make some changes to the CSS and images. The fonts I had originally selected did not go with the modern style of the website so I replaced both of the fonts originally chosen. I also changed the hero image to a black and white image, again to fit in with the colour scheme of the website.</li>
 </ul>
 
 <h2>Bugs/Features still to be rectified</h2>
