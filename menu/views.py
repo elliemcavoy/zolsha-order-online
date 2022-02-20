@@ -62,7 +62,9 @@ def all_menu(request):
 
 def add_menu_item(request):
     """ Add a product to the store """
-
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only the restaurant can do that.')
+        return redirect(reverse('home'))
     if request.method == 'POST':
         form = MenuForm(request.POST, request.FILES)
         if form.is_valid():

@@ -92,14 +92,18 @@ I have kept the design of the webpages simple and easy to navigate.
 <li>The background for each page is dependant on the content. For the menu and profile sections, the background is vector images suchas the restaurant logo and food items. The pages relating to the restaurant dining have a photograph of the restaurant or the restaurant food. This shows a divide between the online ordering for takeaways & then the restaurant features.</li>
 </ul>
 
-<h2 id="defensive-design">Defensive Design</h2>
-<p></p>
+<h2 id="defensive-design">Defensive Design & Security</h2>
+<h4>Security</h4>
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li> </li>
-<li></li>
+<li>To ensure all passwords, secure URL's and API keys remain secure, these have all been set to be retrieved using os from the environment. In Gitpod, these are set as environment variables & then when deployed with Heroku, they are set as 'Config Variables'. This means that they will never appear in Git version control.</li>
+<li>To ensure the security of user's details, I have used Django's AllAuth to handle all of the user admin. This will ensure the user passwords are hashed and stored securely. Django AllAuth will also added the added level of security when a user is creating an account by asking them to verify their email address before they can log into their account.</li>
+</ul>
+<h4>Defensive Design</h4>
+<p>I have added some features to ensure unauthorised users cannot access pages outside their scope.</p>
+<ul>
+<li>For the restaurant admin page, I have ensured that only a superuser can access this page. Should a user who is not logged in, try and access this by adding 'profile/restaurant-admin' to the end of their url, they will be redirected to the sign in page. Once signed in, is a user again tries to access this url, they will be redirected back to the homepage and a toast message appears advising them that only restaurant users can do that.<br>
+<img src="restaurant-admin-defense.JPG"></li>
+<li>The same has been added to the 'add menu item' view to ensure that someone who is not a super user cannot just type in the url and add items to the menu. This is very important as if a user was able to access this, they could add menu items with very low prices and then complete an order.</li>
 </ul>
 
 <h2 id="typography">Typography</h2>
@@ -279,6 +283,7 @@ See below a diagram for the flow of data through the different database models i
 <li>Create an 'address book' of the restaurants customers who have previously ordered or booked a table and only give access to the admin user.</li>
 <li>Add additional functionality to the Restaurant Dashboard to allow the restaurant owner to contact customers by email directly from the dashboard.</li>
 <li>Add an additional view to the user profile to allow the user to amend their dining reservation directly from their profile.</li>
+<li>Use further functionality from Django AllAuth to enable users to sign up/log in using their social media accounts such as Facebook.</li>
 </ol>
 
 
@@ -492,7 +497,42 @@ pip3 install django-storages</b></li>
 <img src="media/readme/AWS.JPG"></li>
 <li>I then set up the custom_storages.py file to advise Heroku we want to use AWS for storage. Firstly I imported settings from django.conf and then S3Boto3Storage from storages.backends.s3boto3. The following classes were added to the custom_storages.py file:<br>
 <img src="media/readme/storages_classes.JPG"> </li>
-<li>I was then able to push everything to Github & Heroku.</li>
+<li>I was then able to push everything to Github & Heroku and the project was fully deployed on Heroku.</li>
+</ul>
+
+<h4>Local Set Up</h4>
+If you want to set this project up locally rather than deploying to a hosting site, please see below the steps to take.
+<ul>
+<li>You will first need to download or clone a copy of the code that is provided in my Github repository - please see above for the Github link. You can do this by clicking the 'code' dropdown on Github and either download the zip file and then upload to your own repository or you can use the following command in your own workspace: <b>git clone https://github.com/elliemcavoy/zolsha-order-online.git</b>
+</li>
+<li>Once you have all of the code files in your workspace, use the following command to download all of the required packages to run: <b>pip3 install -r requirements.txt</b></li>
+<li>You will then need to enter your environment variables into your workspace. These easiest way to do this to avoid having to enter them each time you restart your workspace is via the settings section of your Gitpod (or whichever development tool you are using). The following environment variables are required:<br>
+<ul>
+<li>SECRET_KEY = your django secret key which you can generate using the following link: <a href="https://djecrety.ir/" target="_blank">Django secret key generator</a></li>
+<li>STRIPE_PUBLIC_KEY = your Stripe public key (you will need to create an account at: <a href="https://stripe.com/gb">Stripe</a></li>
+<li>STRIPE_SECRET_KEY = your Stripe secret key from your Stripe Account</li>
+<li>STRIPE_WH_SECRET = your Stripe webhook secret key</li>
+<li>IN_DEVELOPMENT = True</li>
+
+</ul></li>
+<li>As you are setting up a new Django app, you will need to migrate all of the models to the database. In order to do this follow the below steps and enter these commands into your terminal:<br>
+<ul>
+<li><b>python3 manage.py makemigrations --dry-run</b></li>
+<li><b>python3 manage.py makemigrations</b></li>
+<li><b>python3 manage.py migrate --plan</b></li>
+<li><b>python3 manage.py migrate</b></li>
+</ul>
+The --dry-run and --plan flags will just display the planned actions so you can ensure there are no migrations that are not correct.</li>
+<li>You will then need to create a super user to enable you to access the models & database items. To do this just enter the following into the terminal:<br>
+<b>python3 manage.py createsuperuser</b><br>
+and follow the on screen prompts to set up your super user.</li>
+<li>You will also need to load the fixtures data to ensure the filtering, searching & adding items work correctly. To do this enter the below into your terminal:<br>
+<b>python3 manage.py loaddata categories</b><br>
+<b>python3 manage.py loaddata subcategories</b><br>
+<b>python3 manage.py loaddata menu</b><br>
+Ensure you enter these in the above order as the subcategories & menu data require the categories data to upload.
+</li>
+<li>You are now ready to start running the website in the local host so you will just need to enter: <b>python3 manage.py runserver</b> in the terminal and open the exposed port in a separate browser window.</li>
 </ul>
 
 
