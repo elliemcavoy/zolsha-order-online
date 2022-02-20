@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="text-center">Profile</h2>
+            <h2 class="text-center">Welcome to your Profile<br> {{ user.username }}</h2>
             <hr>
         </div>
     </div>
@@ -93,15 +93,15 @@
                 <h5 class="text-center mb-2">Order History</h5>
             </div>
             <div class="card-body text-center">
-            <p class="text-uppercase">
-                <span class="icon">
-                    <i class="fas fa-utensils"></i>
-                </span>
-                <span>Feeling Hungry??</span></p>
-            <button class="buttons rounded font-weight-bold"><a href="{% url 'all_menu' %}">Order Now</a></button>
+                <p class="text-uppercase">
+                    <span class="icon">
+                        <i class="fas fa-utensils"></i>
+                    </span>
+                    <span>Feeling Hungry??</span></p>
+                <button class="buttons rounded font-weight-bold"><a href="{% url 'all_menu' %}">Order Now</a></button>
             </div>
         </div>
-            {% endif %}
+        {% endif %}
     </div>
     <div class="col-12 col-lg-4 text-center">
         <div class="card details-form text-center m-auto rounded shadow">

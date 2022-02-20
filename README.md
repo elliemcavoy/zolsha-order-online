@@ -102,7 +102,7 @@ I have kept the design of the webpages simple and easy to navigate.
 <p>I have added some features to ensure unauthorised users cannot access pages outside their scope.</p>
 <ul>
 <li>For the restaurant admin page, I have ensured that only a superuser can access this page. Should a user who is not logged in, try and access this by adding 'profile/restaurant-admin' to the end of their url, they will be redirected to the sign in page. Once signed in, is a user again tries to access this url, they will be redirected back to the homepage and a toast message appears advising them that only restaurant users can do that.<br>
-<img src="restaurant-admin-defense.JPG"></li>
+<img src="media/readme/restaurant-admin-defense.JPG"></li>
 <li>The same has been added to the 'add menu item' view to ensure that someone who is not a super user cannot just type in the url and add items to the menu. This is very important as if a user was able to access this, they could add menu items with very low prices and then complete an order.</li>
 </ul>
 
