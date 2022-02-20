@@ -519,7 +519,6 @@ pip3 install django-storages</b></li>
 <li>Tutor Support assisted with bug fixes on elements of the project such as webhook errors & filtering issues. Please see the testing documentation for further details on the assistance received. </li>
 <li>Code Institute Tutorials were used for reference when creating functions & deploying to Heroku.</li>
 <li>Boutique Ado Mini Project was used as reference for this project as some of the functionality required for this project was similar to that created in the mini project. </li>
-<li><a href="" target="_blank"></a> </li>
 
 
 </ul>

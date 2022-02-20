@@ -1,10 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
-from django.db.models import Q
-from django.db.models.functions import Upper
 from menu.models import Menu
-from .models import DeliveryCharges
-# Create your views here.
+
 
 def shopping_bag(request):
 
