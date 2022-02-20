@@ -446,27 +446,60 @@ else:<br>
 The 'zolsha_ordering' is the name of the app in which the settings are located.</li>
 </ul>
 
+<h4>Deploying to Heroku</h4>
+<ul>
+<li>Firstly, I logged into Heroku in the command line using: <b>heroku login -i</b></li>
+<li>I then disabled the static files being deployed until I had set up my AWS bucket using the following: <b>heroku config:set DISABLE_COLLECTSTATIC=1 --app zolsha-order-online</b> </li>
+<li>I then added Heroku to the allowed hosts in my settings.py using the following:<br><b>ALLOWED_HOSTS = ["zolsha-order-online.herokuapp.com", "localhost"]</b><br>This will also allow the host to be the local hosting environment too.</li>
+<li>Ater pushing the changes to my Github repository, I then set up to push to Heroku as well using the following command in the terminal: <b> heroku git:remote -a zolsha-order-online</b></li>
+<li>Finally, I used the following command to push everything up to Heroku: <b>git push heroku main</b><br> which will allow Heroku to deploy the project.</li>
+<li>I also connected to my Github repository from Heroku & set up 'Automatic Deployments' so that everytime I push to Github, the project is deployed by Heroku.</li>
+</ul>
+
+<h4>Amazon Web Services (AWS)</h4>
+<ul>
+<li>Firstly, I created an AWS account by following the sign up steps & providing all the relevant details. This will be used to host my static files.</li>
+<li>Once my account was created, I searched for S3 which is the cloud based storage and created a bucket. I gave the bucket the same name as my Heroku app to keep everything consistent. I then selected the region that was closest to my location. I also disabled the 'block public access' as I will need everyone to be able to access the static files in order to view the website.</li>
+<li>I then made the following change to the properties for the bucket. I enabled static web hosting and entered a generic index.html and error.html in the relevant feilds as these are not required for our use of S3. </li>
+<li>Then I made the following changes to the permissions. In the CORS section, I entered the following:<br>
+<b>[<br>
+    {<br>
+        "AllowedHeaders": [<br>
+            "Authorization"<br>
+        ],<br>
+        "AllowedMethods": [<br>
+            "GET"<br>
+        ],<br>
+        "AllowedOrigins": [<br>
+            "*"<br>
+        ],<br>
+        "ExposeHeaders": []<br>
+    }<br>
+] <br>
+I then clicked on 'edit' on the Bucket Policy section (you will need to copy the ARN from this page) & then followed the link to generate a policy. I selected 'S3 Policy' from the dropdown and added a * into the Principal field to ensure all were selected. Then the action I selected from the dropdown was 'get object'. I then entered my ARN from the previous page and clicked 'Add Statement' followed by the 'Generate Policy' button. Once the policy has been generated, I copied it and pasted into the Bucket Policy section. I made sure to add /* on to the end of the resource line. Finally, I edited the 'Access Control List' to allow everyone to access the list permission.</li>
+<li>I then needed to create a user for the bucket. To do this I used another section of AWS called IAM. I searched for this in AWS and started by creating a group for my user to be placed in. I clicked the 'Create Group' option and named the group a relatable name compared to my bucket.</li>
+<li>With the group created, I then needed to assign a policy to it. To do this, I accessed the policy section of the group and then clicked 'Create Policy'. Using the JSON tab, I then imported managed policies, searched for S3 and selected the AmazonS3FullAccess and imported this. Once this was imported I added my ARN to the resources section and added a second line with the /* at the end as well. I then reviewed the details, provided a name & description for the policy & finally generated it.</li>
+<li>In the group's permission section, I then attached the policy I had created by finding it in the list using the name I had given it.</li>
+<li>I was then able to create a user, giving the user a name & programmatic access. Finally I selected the group the user would be added to i.e. the group I had just created and clicked 'Create User'.</li>
+<li>This generated the user keys which are needed for Heroku to access the bucket. I downloaded the CSV file as these user keys are important and the file can only be downloaded at this point.</li>
+<li>Back in Gitpod, I then installed two packages to allow Django to connect to AWS. Please see the following commands entered below:<br>
+<b>pip3 install boto3<br>
+pip3 install django-storages</b></li>
+<li>These were then frozen to the requirements.txt file as we have done previously. I also added storages to the list of installed apps in the settings.py file.</li>
+<li>In Heroku, I then set up a new Config Var : USE_AWS and set the value to True</li>
+<li>In settings.py I then added an if statement to check if there is a variable 'USE_AWS' and if so use AWS for static storage. Please see below:<br>
+<img src="media/readme/AWS.JPG"></li>
+<li>I then set up the custom_storages.py file to advise Heroku we want to use AWS for storage. Firstly I imported settings from django.conf and then S3Boto3Storage from storages.backends.s3boto3. The following classes were added to the custom_storages.py file:<br>
+<img src="media/readme/storages_classes.JPG"> </li>
+<li>I was then able to push everything to Github & Heroku.</li>
+</ul>
 
 
 
 
-<ol>
-<li>
-Create your new repository (I used GitHub) and then download or clone the following link: <a href = ""></a>
-</li>
 
-This site is currently deployed on Heroku using the master branch on GitHub. You can deploy this project remotely using the following steps:
-<h3>Deploying with Heroku</h3>
-<ol>
-<li>Firstly you need to create a requirements.txt file. This is used by Heroku to install all the required dependancies that are needed to run the application. To create the requirements.txt file you will need to enter the following into the terminal:
 
-pip3 freeze --local > requirements.txt
-You can view the requirements.txt file for this project here to ensure all of the requirements are present in your own file.</li>
-<li>Secondly, Heroku requires a Procfile which tells it what type of application is being deployed and how it should run it. To add the Procfile you will need to enter the below into the terminal:
 
-echo web: python run.py > Procfile
-
-(Please make note that the 'P' in Procfile should be capitalized)
 
 
 You can view the Procfile for my project here: Procfile</li>
