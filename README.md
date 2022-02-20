@@ -475,7 +475,7 @@ The 'zolsha_ordering' is the name of the app in which the settings are located.<
         ],<br>
         "ExposeHeaders": []<br>
     }<br>
-] <br>
+] <br></b>
 I then clicked on 'edit' on the Bucket Policy section (you will need to copy the ARN from this page) & then followed the link to generate a policy. I selected 'S3 Policy' from the dropdown and added a * into the Principal field to ensure all were selected. Then the action I selected from the dropdown was 'get object'. I then entered my ARN from the previous page and clicked 'Add Statement' followed by the 'Generate Policy' button. Once the policy has been generated, I copied it and pasted into the Bucket Policy section. I made sure to add /* on to the end of the resource line. Finally, I edited the 'Access Control List' to allow everyone to access the list permission.</li>
 <li>I then needed to create a user for the bucket. To do this I used another section of AWS called IAM. I searched for this in AWS and started by creating a group for my user to be placed in. I clicked the 'Create Group' option and named the group a relatable name compared to my bucket.</li>
 <li>With the group created, I then needed to assign a policy to it. To do this, I accessed the policy section of the group and then clicked 'Create Policy'. Using the JSON tab, I then imported managed policies, searched for S3 and selected the AmazonS3FullAccess and imported this. Once this was imported I added my ARN to the resources section and added a second line with the /* at the end as well. I then reviewed the details, provided a name & description for the policy & finally generated it.</li>
@@ -496,29 +496,6 @@ pip3 install django-storages</b></li>
 
 
 
-
-
-
-
-
-
-You can view the Procfile for my project here: Procfile</li>
-
-
-
-<li>You then need to choose your deployment method in the Deploy section. If you have created your repository using GitHub, you can connect to the specific repository by searching for the repo-name. If you cannot connect via GitHub, you can connect using Heroku Git (follow the instructions provided on Heroku).</li>
-
-<li>Once connected, you can 'Enable Automatice Deploys' so if you make any further changes and commits, it will automatically update and deploy a new version of the application.</li>
-
-<li>In Heroku click on the 'Settings' tab. In the Config Vars section, click on 'Reveal Config Vars' which is used to configure the environmental variables. 
-<ul>
-
-</ul>
-</li>
-<li>Finally, go back to the 'Deploy' tab on Heroku and in the Manual Deploy section chose the 'main' branch and click 'Deploy Branch'. Once the application has been built, you will receive a message stating 'Your app was successfully deployed' with a link to view the app.</li>
-</ol>
-</li>
-
 <h1 id="#credits">Credits</h1>
 
 <h3>Design</h3>
@@ -535,11 +512,13 @@ You can view the Procfile for my project here: Procfile</li>
 
 <h3>Code</h3>
 <ul>
-<li><a href= target="_blank">Django Documentation</a> </li>
-<li><a href="" target="_blank"></li>
-<li>Tutor Support assisted with </li>
-<li>Code Institute Tutorials were used for reference when creating functions.</li>
-<li>Boutique Ado Mini Project.  </li>
+<li><a href="https://docs.djangoproject.com/en/4.0/" target="_blank">Django Documentation</a>- used to help implement AllAuth and also assisted with issues relating to Django such as correct settings to be applied in settings.py.</li>
+<li><a href="https://timepicker.co/" target="_blank">Timepicker.co</a> - used to implement the date & time picker elements in the correct format.</li>
+<li><a href="https://stripe.com/docs/development" target="_blank">Stripe Documentation</a> - used to implement the payment system including the javascript to submit the payment form.  </li>
+<li><a href="https://www.w3schools.com/python/python_while_loops.asp">W3Schools</a> - used to help implement the while loop for the delivery charge functionality in contexts.py.</li>
+<li>Tutor Support assisted with bug fixes on elements of the project such as webhook errors & filtering issues. Please see the testing documentation for further details on the assistance received. </li>
+<li>Code Institute Tutorials were used for reference when creating functions & deploying to Heroku.</li>
+<li>Boutique Ado Mini Project was used as reference for this project as some of the functionality required for this project was similar to that created in the mini project. </li>
 <li><a href="" target="_blank"></a> </li>
 
 
