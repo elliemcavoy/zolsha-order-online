@@ -86,9 +86,10 @@ As a user of the website, the following actions and results would need to be ach
 <h2 id="design"><u>Design</u></h2>
 I have kept the design of the webpages simple and easy to navigate.
 <ul><li>All of the headings are the same size, colour & font and the colour scheme is the same throughout.</li>
-<li>Also all of the buttons have the same colour schemes and sizes.</li>
-<li></li>
-<li></li>
+<li>Also all of the buttons have the same colour schemes including when they are hovered over.</li>
+<li>The forms displaying data to the user have the same styling throughout the site so the the user is able to locate a form easily should they need to reference back to the items in their order.</li>
+<li>All input forms that require details from the user, are displayed in the card component from Bootstrap. These all have the same grey styling to make it easy for users to locate the sections that require their input.</li>
+<li>The background for each page is dependant on the content. For the menu and profile sections, the background is vector images suchas the restaurant logo and food items. The pages relating to the restaurant dining have a photograph of the restaurant or the restaurant food. This shows a divide between the online ordering for takeaways & then the restaurant features.</li>
 </ul>
 
 <h2 id="defensive-design">Defensive Design</h2>
@@ -104,8 +105,8 @@ I have kept the design of the webpages simple and easy to navigate.
 <h2 id="typography">Typography</h2>
 <p>2 Google Fonts were used in this project:</p>
 <ol>
-<li></li>
-<li> </li>
+<li>Montserrat Subrayada - used for all headings & card headers</li>
+<li>Short Stack - used for all body text.</li>
 </ol><br>
 
 <h1 id="database"><u>Database</u></h1>

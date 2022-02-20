@@ -1,9 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
 .logo h2 {
-    font-family: 'Berkshire Swash';
+    font-family: 'Montserrat Subrayada', sans-serif;
+
     color: rgb(255, 123, 0);
     font-size: 50px;
+}
+
+.logo h2:hover {
+    color: grey;
+}
+
+.logo:hover {
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Short Stack', cursive;
 }
 
 header {
@@ -12,8 +29,10 @@ header {
 }
 
 .page-header-container {
-    font-family: 'Special Elite', cursive;
-    font-weight: 900;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    color: rgb(255, 102, 0);
+    text-transform: uppercase;
+
 }
 
 
@@ -27,7 +46,7 @@ header {
     }
 
     .page-header-container {
-        padding-top: 185px;
+        padding-top: 195px;
     }
 }
 
@@ -51,7 +70,6 @@ header {
     top: 40%;
     width: 100%;
     text-align: center;
-
 
 }
 
@@ -178,6 +196,8 @@ form input {
     border: solid 2px black;
     color: #fafafa;
     margin: 4px;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    text-transform: uppercase;
 }
 
 .buttons {
@@ -188,6 +208,20 @@ form input {
     text-transform: uppercase;
     box-shadow: 0 .5rem 1rem rgba(119, 119, 119, 0.61) !important;
     margin-top: 5px;
+}
+
+.buttons:hover {
+    background-color: rgb(253, 136, 27);
+    color: black;
+}
+
+
+.buttons:hover i {
+    color: black;
+}
+
+.buttons a:hover {
+    color: black;
 }
 
 input {
