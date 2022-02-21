@@ -390,7 +390,7 @@ Please see below a brief overview of the testing carried out. Any issues found a
 | Add New Recipe (admin user) | No issues found    | 
 
 <h1 id="deployment"><u>Deployment</u></h1>
-This project has been deployed via Heroku and can be accessed <a href="" target="_blank">here</a> .<br>
+This project has been deployed via Heroku and can be accessed <a href="https://zolsha-order-online.herokuapp.com/" target="_blank">here</a> .<br>
 If you would like to deploy the project for yourself, the steps I took to set up my project ready for deployment & to finally deploy when completed are shown below:
 
 <h4>GitHub, Gitpod & Git</h4>

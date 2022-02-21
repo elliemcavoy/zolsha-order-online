@@ -2,7 +2,8 @@ from decimal import Decimal
 import json
 import stripe
 
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (render, redirect,
+                              reverse, get_object_or_404, HttpResponse)
 from django.contrib import messages
 from django.conf import settings
 from django.views.decorators.http import require_POST
@@ -12,7 +13,6 @@ from profiles.models import UserProfile
 from menu.models import Menu
 from .models import Order, OrderLineItem, Offer
 from .forms import OrderForm
-
 
 
 @require_POST
@@ -32,38 +32,40 @@ def cache_checkout_data(request):
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
+
 def checkout(request):
     """Uses stripe & checkout form data to create a successful checkout"""
 
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     current_bag = bag_items(request)
-    warning=None
+    warning = None
     order_total = current_bag['total']
     delivery_cost = 0
 
     if 'delivery_charge' in request.session:
         charge = request.session.get('delivery_charge')
-        delivery_cost = Decimal(charge)        
-    else: 
-        warning=("Are you sure you want to collect?")
-        
+        delivery_cost = Decimal(charge)
+    else:
+        warning = ("Are you sure you want to collect?")
+
     if 'discount' in request.GET:
         order_total = current_bag['total']
         offer = Offer.objects.all()
         discount = request.GET['discount']
         discount_code = discount.upper()
-        for o in offer: 
+        for o in offer:
             if discount_code == o.offer_code:
                 percent = o.discount/100
                 discounted = order_total * percent
                 order_total = order_total - discounted
             else:
-                messages.error(request, 'Sorry, that is not a valid discount code.')
-                
+                messages.error(request, 'Sorry, that is not a valid\
+                discount code.')
+
     else:
         order_total = current_bag['total']
-                
+
     if request.method == 'POST':
         bag = request.session.get('bag', {})
         form_data = {
@@ -83,7 +85,7 @@ def checkout(request):
             order.original_bag = json.dumps(bag)
             order.delivery_cost = delivery_cost
             order.save()
-            
+
             for item_id, quant in bag.items():
                 try:
                     item = Menu.objects.get(id=item_id)
@@ -95,7 +97,8 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for option, quantity in quant['items_by_option'].items():
+                        for option, quantity in quant['items_by_option'].items(
+                        ):
                             order_line_item = OrderLineItem(
                                 order=order,
                                 item=item,
@@ -105,20 +108,23 @@ def checkout(request):
                             order_line_item.save()
                 except Menu.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your bag wasn't found\
+                        in our database. "
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, "There's nothing in your bag\
+                           at the moment")
             return redirect(reverse('products'))
 
         grand_total = order_total + delivery_cost
@@ -153,7 +159,7 @@ def checkout(request):
         'client_secret': intent.client_secret,
         'order_total': order_total,
         'grand_total': grand_total,
-        'delivery_cost':delivery_cost,
+        'delivery_cost': delivery_cost,
         'warning': warning
     }
 
@@ -161,11 +167,10 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    """Confirms order success, displays order confirmation 
+    """Confirms order success, displays order confirmation
         & saves order to user profile"""
 
     order = get_object_or_404(Order, order_number=order_number)
-    
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         order.user_profile = profile

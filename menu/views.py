@@ -1,12 +1,10 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Menu, Category, SubCategory
+from .models import Menu, SubCategory
 from .forms import MenuForm
 
-
-# Create your views here.
 
 def all_menu(request):
     """ View to render the menu page """
@@ -16,7 +14,6 @@ def all_menu(request):
     sort = None
     direction = None
     unselected = None
-
     if request.GET:
         if 'subcategory' in request.GET:
             subcats = request.GET['subcategory'].split(',')
@@ -24,7 +21,8 @@ def all_menu(request):
             subcategories = SubCategory.objects.filter(name__in=subcats)
             for s in subcategories:
                 cats = list(s.category.name.split(','))
-                unselected = SubCategory.objects.filter(category__name__in=cats).exclude(name__in=subcats)
+                unselected = SubCategory.objects.filter(
+                    category__name__in=cats).exclude(name__in=subcats)
 
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
@@ -43,12 +41,13 @@ def all_menu(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request, "You didn't enter any \
+                               search criteria!")
                 return redirect(reverse('menu'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             menu = menu.filter(queries)
-        
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -60,7 +59,6 @@ def all_menu(request):
     return render(request, 'menu/menu.html', context)
 
 
-
 def add_menu_item(request):
     """ Add a menu item """
 
@@ -70,14 +68,15 @@ def add_menu_item(request):
     if request.method == 'POST':
         form = MenuForm(request.POST, request.FILES)
         if form.is_valid():
-            menu = form.save()
+            form.save()
             messages.info(request, 'Successfully added product!')
             return redirect(reverse('restaurant_admin'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. Please ensure the\
+                           form is valid.')
     else:
         form = MenuForm()
-    
+
     template = 'menu/add_menu_item.html'
     context = {
         'form': form,

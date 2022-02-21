@@ -1,13 +1,13 @@
 from decimal import Decimal
-from django.conf import settings
 from django.shortcuts import get_object_or_404
-from menu.models import Menu
-from django.db.models.functions import Upper
 from django.contrib import messages
+from menu.models import Menu
 from .models import DeliveryCharges
-from decimal import Decimal
+
 
 def bag_items(request):
+    """Adds items to the shopping bag"""
+
     basket_items = []
     total = 0
     item_count = 0
@@ -43,39 +43,35 @@ def bag_items(request):
         charge = DeliveryCharges.objects.all()
         postcode = request.GET['postcode']
         delivery_postcode = postcode.upper()
-        list= []
+        plist = []
         attempt = 1
         while attempt <= 4:
-                for c in charge: 
-                    if delivery_postcode.__contains__(c.area):
-                        delivery_charge = c.charge
-                        dcharge = 1
-                        attempt += 1
-                        request.session['delivery_charge']= str(delivery_charge)
-                    elif delivery_postcode.__contains__(c.area) == False:  
-                        dcharge= 0 
-                        attempt += 1
-                        
-                    list.append(dcharge)
-                    
+            for c in charge:
+                if delivery_postcode.__contains__(c.area):
+                    delivery_charge = c.charge
+                    dcharge = 1
+                    attempt += 1
+                    request.session['delivery_charge'] = str(delivery_charge)
+                elif not delivery_postcode.__contains__(c.area):
+                    dcharge = 0
+                    attempt += 1
+
+                    plist.append(dcharge)
+
                     if attempt == 4:
-                        final_list = sum(list)
+                        final_list = sum(plist)
                         if final_list == 0:
-                            messages.error(request, 'Sorry we do not deliver here')
-            
-                    
-
-
+                            messages.error(request, 'Sorry\
+                            we do not deliver here')
 
     grand_total = delivery_charge + total
-    
+
     context = {
         "bag_items": basket_items,
         "total": total,
         "grand_total": grand_total,
         "item_count": item_count,
         "delivery_charge": delivery_charge
-        
     }
-    
+
     return context
