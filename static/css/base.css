@@ -119,7 +119,7 @@ input {
 .order-now {
     z-index: 4;
     position: absolute;
-    top: 40%;
+    top: 50%;
     width: 100%;
     text-align: center;
 }
@@ -209,6 +209,16 @@ input {
 
 .list-inline-item a {
     color: black;
+    font-size:15px;
+}
+
+.ul{
+    display:flex;
+    padding:1px;
+}
+
+.ul li{
+    width:100%;
 }
 
 

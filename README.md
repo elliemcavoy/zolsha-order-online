@@ -1,6 +1,6 @@
 <h1>Zolsha Online Ordering</h1>
 
-<img src=""><br>
+<img src="media/readme/amiresponsive.JPG"><br>
 <h4><a href="" target="_blank">GitHub Link</a></h4>
 <h4><a href="https://zolsha-order-online.herokuapp.com/" target="_blank">Deployed Project</a></h4><br>
 <p>This is my Milestone 4 Project which aims to create a full stack web application using Django Frameworks in combination with HTML, CSS, Javascript & Python languages. The application provides an e-commerce app in the form of a food delivery site, including a payment system provided by Stripe. The app also features account creation & login functionality using Django AllAuth & a dining reservation system. There is also a dashboard specifically for the restaurant owners to allow them to monitor the current orders & reservations.</p> 
