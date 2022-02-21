@@ -3,7 +3,20 @@
 <img src=""><br>
 <h4><a href="" target="_blank">GitHub Link</a></h4>
 <h4><a href="https://zolsha-order-online.herokuapp.com/" target="_blank">Deployed Project</a></h4><br>
-<p></p> 
+<p>This is my Milestone 4 Project which aims to create a full stack web application using Django Frameworks in combination with HTML, CSS, Javascript & Python languages. The application provides an e-commerce app in the form of a food delivery site, including a payment system provided by Stripe. The app also features account creation & login functionality using Django AllAuth & a dining reservation system. There is also a dashboard specifically for the restaurant owners to allow them to monitor the current orders & reservations.</p> 
+<p>As this application is set up for testing purposs only, the Stripe payment system will require a test card to be entered at checkout. Please see below the details of the card to be used:<br>
+Card Number: 4242 4242 4242 4242<br>
+Expiry Date: Any expiry date<br>
+CVV: Any CVV<br>
+As this is a US card number, you will need to enter a ZIP code at checkout instead of a postcode so please enter any 5 numbers.</p>
+<p>As this restaurant only caters for a specfic geographical area, the postcodes that the 'Calculate Delivery' functionality will accept begin with the following:<br>
+BD20<br>
+BD21<br>
+BD22<br>
+BD23<br>
+Any other postcodes will advise delivery is not possible so if you would like to test this functionality please use one of the above postcode prefixes.
+</p>
+<p>An admin user has been set up to access the Restaurant Dashboard & login details have been provided in the Project Submission form for security reasons.</p>
 <h2>Table of Contents</h2>
 <ol>
 <li><a href="#ux">UX</a></li>
@@ -285,6 +298,7 @@ See below a diagram for the flow of data through the different database models i
 <li>Add additional functionality to the Restaurant Dashboard to allow the restaurant owner to contact customers by email directly from the dashboard.</li>
 <li>Add an additional view to the user profile to allow the user to amend their dining reservation directly from their profile.</li>
 <li>Use further functionality from Django AllAuth to enable users to sign up/log in using their social media accounts such as Facebook.</li>
+<li>Provide functionality to the restaurant owner to remove items from the menu for a specified period of time in case of stock shortages. This will allow them to temporarily remove an item should they not have the ingredients to make it, but mean they don't then have to re-add the item when they are able to offer this item again.</li>
 </ol>
 
 
