@@ -344,7 +344,8 @@ See below a diagram for the flow of data through the different database models i
 <li>W3C HTML Validator</li>
 All pages of HTML content have been checked by the HTML validator and have passed.
 <li>W3C CSS Validator</li>
-<img src="">
+The CSS has been passed through the validator & passed.
+<img src="media/readme/css-validation.JPG">
 <li>PEP8 Compliant</li>
 <img src="">
 </ul>

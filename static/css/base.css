@@ -231,7 +231,6 @@ input {
 
 .card-body a {
     color: black;
-    font-weight: 700px;
 }
 
 /*-- Buttons --*/
@@ -262,7 +261,6 @@ input {
 .buttons a {
     color: black;
     text-transform: uppercase;
-    font-weight: 700px;
 }
 
 .buttons i {
