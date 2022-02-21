@@ -2,7 +2,7 @@
 
 <img src=""><br>
 <h4><a href="" target="_blank">GitHub Link</a></h4>
-<h4><a href="" target="_blank">Deployed Project</a></h4><br>
+<h4><a href="https://zolsha-order-online.herokuapp.com/" target="_blank">Deployed Project</a></h4><br>
 <p></p> 
 <h2>Table of Contents</h2>
 <ol>
