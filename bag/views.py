@@ -4,11 +4,15 @@ from menu.models import Menu
 
 
 def shopping_bag(request):
-
+    """Renders the shopping bag page"""
+    
     return render(request, 'bag/bag.html')
 
 
 def add_to_bag(request, item_id):
+    """Adds the selected menu item to the shopping bag with the requested
+       quantity and option if applicable."""
+
     item = get_object_or_404(Menu, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -43,7 +47,7 @@ def add_to_bag(request, item_id):
 
 
 def adjust_bag(request, item_id):
-    """Adjust the quantity of the specified product to the specified amount"""
+    """Adjust the quantity of the selected menu item to the specified amount"""
 
     item = get_object_or_404(Menu, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -73,7 +77,7 @@ def adjust_bag(request, item_id):
     return redirect(reverse('shopping_bag'))
 
 def delete_from_bag(request, item_id):
-    """Remove the item from the shopping bag"""
+    """Remove the menu item from the shopping bag"""
 
     try:
         item = get_object_or_404(Menu, pk=item_id)

@@ -8,10 +8,9 @@ from django.db.models import Q
 from profiles.models import UserProfile
 
 def reservation(request):
-
+    """View to create a table reaservation using form data """
 
     if request.method == 'POST':
-        
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -58,11 +57,11 @@ def reservation(request):
 
 
 def reservation_complete(request, res_number):
-    res = get_object_or_404(Reservation, res_number=res_number)
+    """View to display confirmed reservation"""
 
+    res = get_object_or_404(Reservation, res_number=res_number)
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
         res.user_profile = profile
         res.save()
     
@@ -75,7 +74,8 @@ def reservation_complete(request, res_number):
 
 
 def check_availability(request):
-    
+    """Checks availability for table reservations"""
+
     if request.GET:
         if 'date' in request.GET:
             date = request.GET['date']
@@ -96,8 +96,6 @@ def check_availability(request):
         else:
             messages.error(request, 'Please select a date & time')
 
-        
-    
     availability_form = AvailabilityForm()
     template = 'reservations/check_availability.html'
     context={
@@ -107,6 +105,8 @@ def check_availability(request):
    
 
 def cancel_reservation(request, res_number):
+    """Cancel table reservation"""
+    
     res = get_object_or_404(Reservation, res_number=res_number)
     res.delete()
 

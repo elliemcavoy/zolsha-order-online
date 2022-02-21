@@ -6,16 +6,19 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpR
 from django.contrib import messages
 from django.conf import settings
 from django.views.decorators.http import require_POST
-from bag.contexts import bag_items
 
+from bag.contexts import bag_items
 from profiles.models import UserProfile
 from menu.models import Menu
-from .forms import OrderForm
 from .models import Order, OrderLineItem, Offer
+from .forms import OrderForm
+
 
 
 @require_POST
 def cache_checkout_data(request):
+    """Saves bag metadata"""
+
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -30,6 +33,8 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 def checkout(request):
+    """Uses stripe & checkout form data to create a successful checkout"""
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     current_bag = bag_items(request)
@@ -39,18 +44,15 @@ def checkout(request):
 
     if 'delivery_charge' in request.session:
         charge = request.session.get('delivery_charge')
-        delivery_cost = Decimal(charge)
-        
+        delivery_cost = Decimal(charge)        
     else: 
         warning=("Are you sure you want to collect?")
         
-
     if 'discount' in request.GET:
         order_total = current_bag['total']
         offer = Offer.objects.all()
         discount = request.GET['discount']
         discount_code = discount.upper()
-        
         for o in offer: 
             if discount_code == o.offer_code:
                 percent = o.discount/100
@@ -62,10 +64,8 @@ def checkout(request):
     else:
         order_total = current_bag['total']
                 
-    
     if request.method == 'POST':
         bag = request.session.get('bag', {})
-
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -121,7 +121,6 @@ def checkout(request):
             messages.error(request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
-        
         grand_total = order_total + delivery_cost
         stripe_total = round(grand_total * 100)
         stripe.api_key = stripe_secret_key
@@ -162,11 +161,13 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
+    """Confirms order success, displays order confirmation 
+        & saves order to user profile"""
+
     order = get_object_or_404(Order, order_number=order_number)
     
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
 

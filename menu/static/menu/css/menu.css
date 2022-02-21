@@ -17,7 +17,6 @@
 .btn-to-top {
     height: 42px;
     width: 42px;
-
     bottom: 10px;
     left: 10px;
     z-index: 5;
@@ -30,7 +29,6 @@
     font-weight: 700;
 }
 
-
 .menu-card {
     border: solid black 3px;
 }
@@ -40,19 +38,18 @@
     font-weight: 600;
 }
 
-select option:hover {
-    background: grey !important;
-}
-
 option:hover {
     background: grey;
 }
-
 
 .category-container {
     border: solid 1px grey;
     width: 90%;
     font-size: 12px;
     margin: 3px;
+}
 
+.category-name{
+    font-family: 'Montserrat Subrayada', sans-serif;
+    color: rgb(99, 99, 99);
 }

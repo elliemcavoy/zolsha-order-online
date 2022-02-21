@@ -559,6 +559,7 @@ Ensure you enter these in the above order as the subcategories & menu data requi
 <li><a href="https://stripe.com/docs/development" target="_blank">Stripe Documentation</a> - used to implement the payment system including the javascript to submit the payment form.  </li>
 <li><a href="https://www.w3schools.com/python/python_while_loops.asp">W3Schools</a> - used to help implement the while loop for the delivery charge functionality in contexts.py.</li>
 <li><a href="https://www.etemkeskin.com/index.php/2020/12/28/creating-custom-404-page-in-python-django/">404 Page</a> - used to add a 404 error page to replace the standard error page.</li>
+<li><a href="https://stackoverflow.com/questions/14249998/jquery-back-to-top">Back to top button</a> - used to implement the back to top button on the menu items.</li>
 <li>Tutor Support assisted with bug fixes on elements of the project such as webhook errors & filtering issues. Please see the testing documentation for further details on the assistance received. </li>
 <li>Code Institute Tutorials were used for reference when creating functions & deploying to Heroku.</li>
 <li>Boutique Ado Mini Project was used as reference for this project as some of the functionality required for this project was similar to that created in the mini project. </li>

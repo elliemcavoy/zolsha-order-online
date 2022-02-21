@@ -6,6 +6,23 @@
 
 {% endblock %}
 
+{% block extra_js %}
+<script type="text/javascript">
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('.btn-up').fadeIn();
+            } else {
+                $('.btn-up').fadeOut();
+            }
+        });
+        $('.btn-up').click(function(e) {
+            window.scrollTo(0, 0)
+        });
+    
+
+</script>
+{% endblock %}
+
 
 {% block page_header %}
 <div class="container page-header-container">
@@ -26,7 +43,7 @@
             {% for category in selected_categories %}
 
             <span class="p-2 text-center">
-                <h3>{{ category.friendly_name }}</h3>
+                <h3 class="category-name">{{ category.friendly_name }}</h3>
             </span>
             <h6 class="pl-4 text-center">Check out our other {{ category.category.friendly_name|title }}</h6>
             {% endfor %}
@@ -47,7 +64,7 @@
 <div class="row">
     <div class="col-10 offset-1">
         <div class="row ">
-            <div class="col-12 order-md-last d-flex justify-content-center justify-content-md-end">
+            <div class="col-12 order-md-last d-flex justify-content-center justify-content-md-end mt-2 mb-2">
                 <div class="sort-select-wrapper w-20">
                     <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
@@ -165,11 +182,6 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'menu/includes/quantity_input_script.html' %}
-<script type="text/javascript">
-    $('.btn-up').click(function(e) {
-        window.scrollTo(0, 0)
-    })
-</script>
 
 <script type="text/javascript">
     $('#sort-selector').change(function() {

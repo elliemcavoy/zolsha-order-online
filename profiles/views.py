@@ -10,8 +10,8 @@ import datetime
 
 def profile(request):
     """ Display the user's profile. """
-    profile = get_object_or_404(UserProfile, user=request.user)
 
+    profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -38,8 +38,9 @@ def profile(request):
     return render(request, template, context)
 
 
-
 def reorder(request, order_number):
+    """View to reorder previous orders"""
+
     order = get_object_or_404(Order, order_number=order_number)
     reorder_bag = order.original_bag
     lineitems = order.lineitems.all()
@@ -60,8 +61,11 @@ def reorder(request, order_number):
     
     return redirect(redirect_url)
 
+
 @login_required
 def restaurant_admin(request):
+    """Displays Restaurant Dashboard"""
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only the restaurant can do that.')
         return redirect(reverse('home'))
@@ -73,7 +77,6 @@ def restaurant_admin(request):
     res_filtered = Q(date__icontains=todays_date)
     orders = orders.filter(order_filtered)
     reservations = reservations.filter(res_filtered)
-
 
     template = 'profiles/restaurant-admin.html'
     context = {

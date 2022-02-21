@@ -1,7 +1,5 @@
-
 .details-form{
-    width:80%;
-    
+    width:80%;   
 }
 
 #payment-form input{
@@ -17,7 +15,6 @@
     background-color:white !important;
     text-align: center;
     margin: auto;
-
 }
 
 .text-orange{

@@ -10,6 +10,7 @@ from .forms import MenuForm
 
 def all_menu(request):
     """ View to render the menu page """
+
     menu = Menu.objects.all()
     subcategories = None
     sort = None
@@ -61,7 +62,8 @@ def all_menu(request):
 
 
 def add_menu_item(request):
-    """ Add a product to the store """
+    """ Add a menu item """
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only the restaurant can do that.')
         return redirect(reverse('home'))
