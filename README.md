@@ -1,7 +1,8 @@
 <h1>Zolsha Online Ordering</h1>
+<hr>
 
 <img src="media/readme/amiresponsive.JPG"><br>
-<h4><a href="" target="_blank">GitHub Link</a></h4>
+<h4><a href="https://github.com/elliemcavoy/zolsha-order-online" target="_blank">GitHub Link</a></h4>
 <h4><a href="https://zolsha-order-online.herokuapp.com/" target="_blank">Deployed Project</a></h4><br>
 <p>This is my Milestone 4 Project which aims to create a full stack web application using Django Frameworks in combination with HTML, CSS, Javascript & Python languages. The application provides an e-commerce app in the form of a food delivery site, including a payment system provided by Stripe. The app also features account creation & login functionality using Django AllAuth & a dining reservation system. There is also a dashboard specifically for the restaurant owners to allow them to monitor the current orders & reservations.</p> 
 <p>As this application is set up for testing purposs only, the Stripe payment system will require a test card to be entered at checkout. Please see below the details of the card to be used:<br>
@@ -16,6 +17,7 @@ BD22<br>
 BD23<br>
 Any other postcodes will advise delivery is not possible so if you would like to test this functionality please use one of the above postcode prefixes.
 </p>
+<p>If you wish to test the discount code functionality, currently the only offer code set up is 10OFF and this can be entered at the checkout for 10% off the order.</p>
 <p>An admin user has been set up to access the Restaurant Dashboard & login details have been provided in the Project Submission form for security reasons.</p>
 <h2>Table of Contents</h2>
 <ol>
@@ -348,6 +350,7 @@ See below a diagram for the flow of data through the different database models i
 <li>GitHub - Connected Github repository to Heroku to allow for deployment.</li>
 <li>Amazon Web Service - used to store static files & images.</li>
 <li>Gunicorn - Used to deploy the project from Gitpod to Heroku. </li>
+<li>Postgres Database - used to hold all models and database data for the deployed project.</li>
 </ul>
 
 </ul>
@@ -356,12 +359,13 @@ See below a diagram for the flow of data through the different database models i
 <h4>Validators</h4>
 <ul>
 <li>W3C HTML Validator</li>
-All pages of HTML content have been checked by the HTML validator and have passed.
+All pages of HTML content have been checked by the HTML validator and have passed on the HTML elements however there were errors advised as the validator does not recognise the Django templating within the HTML documents.
 <li>W3C CSS Validator</li>
 The CSS has been passed through the validator & passed.
 <img src="media/readme/css-validation.JPG">
 <li>PEP8 Compliant</li>
-<img src="">
+I used Gitpod to detect an problems with the Python code such as trailing whitespace & lines of code that were over the character limit to be PEP8 compliant. I then passed the code through the PEP8 Online validator.
+<img src="media/readme/pep8.JPG">
 </ul>
 
 <h4>Manual Testing</h4>
@@ -565,7 +569,8 @@ Ensure you enter these in the above order as the subcategories & menu data requi
 <li>Date & time selectors for dining availability.</li>
 </ul>
 <li>Bootstrap classes have also been used for styling the components.</li>
-<li>Google Fonts utilized for all font styles within the project.</li></ul>
+<li>Google Fonts utilized for all font styles within the project.</li>
+<li>Font Awesome used for all icons throughout the project.</li></ul>
 
 <h3>Code</h3>
 <ul>
@@ -578,8 +583,6 @@ Ensure you enter these in the above order as the subcategories & menu data requi
 <li>Tutor Support assisted with bug fixes on elements of the project such as webhook errors & filtering issues. Please see the testing documentation for further details on the assistance received. </li>
 <li>Code Institute Tutorials were used for reference when creating functions & deploying to Heroku.</li>
 <li>Boutique Ado Mini Project was used as reference for this project as some of the functionality required for this project was similar to that created in the mini project. </li>
-
-
 </ul>
 
 <h3>Media</h3>

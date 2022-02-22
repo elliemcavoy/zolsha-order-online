@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="text-center">Add a Menu Item</h2>
+            <h2 class="text-center">Edit Menu Item</h2>
             <hr>
         </div>
     </div>
@@ -19,12 +19,12 @@
 {% block content %}
 <div class="row">
     <div class="col-12 text-center">
-        <form method="POST" action="{% url 'add_menu_item' %}" class="form m-auto">
+        <form method="POST" action="" class="form m-auto">
             {% csrf_token %}
             {{ form|crispy }}
             <div class="text-center mt-3">
                 <a class="buttons rounded shadow p-2" href="{% url 'restaurant_admin' %}">Cancel</a>
-                <button class="buttons rounded shadow p-2" type="submit">Add Item to Menu</button>
+                <button class="buttons rounded shadow p-2" type="submit">Make Changes</button>
             </div>
         </form>
     </div>

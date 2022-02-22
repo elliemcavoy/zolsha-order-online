@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Menu, SubCategory
@@ -59,6 +60,7 @@ def all_menu(request):
     return render(request, 'menu/menu.html', context)
 
 
+@login_required
 def add_menu_item(request):
     """ Add a menu item """
 
@@ -80,6 +82,59 @@ def add_menu_item(request):
     template = 'menu/add_menu_item.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def display_edit_menu(request):
+    """Displays menu items to edit"""
+    edit_menu = Menu.objects.all()
+    if 'q' in request.GET:
+        query = request.GET['q']
+        if not query:
+            messages.error(request, "You didn't enter any \
+                            search criteria!")
+            return redirect(reverse('restaurant_admin'))
+
+        queries = Q(name__icontains=query) | Q(description__icontains=query)
+        edit_menu = edit_menu.filter(queries)
+
+    template = 'menu/display_edit_menu.html'
+    context = {
+         'edit_menu': edit_menu,
+        }
+    
+    return render(request, template, context)
+
+
+@login_required
+def edit_menu_item(request, item_id):
+    """ Edit a menu item """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only the restaurant can do that.')
+        return redirect(reverse('home'))
+
+    edit_item = get_object_or_404(Menu, pk=item_id)
+    print(edit_item.price)
+    if request.method == 'POST':
+        form = MenuForm(request.POST, request.FILES, instance=edit_item)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('restaurant_admin'))
+        else:
+            messages.error(request, 'Failed to update menu item. Please\
+                           ensure the form is valid.')
+    else:
+        form = MenuForm(instance=edit_item)
+        messages.info(request, f'You are editing {edit_item.name}')
+
+    template = 'menu/edit_menu_item.html'
+    context = {
+        'form': form,
+        'edit_item': edit_item,
     }
 
     return render(request, template, context)

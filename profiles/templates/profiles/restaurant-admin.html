@@ -59,9 +59,23 @@
     </div>
     <div class="col-12 col-lg-2 text-center pt-2 pb-4">
         <h4>Menu Admin</h4>
-        <button class="buttons rounded mt-3">
-            <a href="{% url 'add_menu_item' %}">Add Menu Item</a>
+        <h6 class="mt-4">Add Item to the Menu</h6>
+        <button class="buttons rounded mb-2">
+            <a href="{% url 'add_menu_item' %}">Add Item</a>
         </button>
+        <h6 class="mt-4">Edit Menu Items</h6>
+        <form method="GET" action="{% url 'display_edit_menu' %}" class="rounded" id="edit-search">
+            <div class="input-group my-auto">
+                <input class="form-control rounded m-2" type="text" name="q" placeholder="Search">
+                <div class="input-group-append">
+                    <button class="form-control btn btn-search m-auto" type="submit">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
 
     </div>
 

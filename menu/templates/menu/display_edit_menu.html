@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">
+
+{% endblock %}
+
+
+{% block page_header %}
+<div class="container page-header-container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="text-center">Select an Item to Edit</h2>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="menu-container">
+    {% for item in edit_menu %}
+    <div class="row m-2">
+
+        <div class="col-11 col-md-10 m-auto">
+            <div class="card menu-card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-12 col-md-10 text-center text-md-left">
+                            <h5 class="mb-0">
+                                {{ item.name }}
+                            </h5>
+                        </div>
+                        <div class="col-12 col-md-2 text-center">
+                            <h5 class="mb-0">
+                                £{{ item.price }}
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9 col-md-8 pt-1">
+                            {{ item.description }}
+                        </div>
+                        <div class="col-2">
+                            <button class="buttons"><a href="{% url 'edit_menu_item' item.id %}">Edit</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

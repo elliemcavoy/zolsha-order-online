@@ -8,18 +8,16 @@
 
 {% block extra_js %}
 <script type="text/javascript">
-        $(window).scroll(function(){
-            if ($(this).scrollTop() > 100) {
-                $('.btn-up').fadeIn();
-            } else {
-                $('.btn-up').fadeOut();
-            }
-        });
-        $('.btn-up').click(function(e) {
-            window.scrollTo(0, 0)
-        });
-    
-
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.btn-up').fadeIn();
+        } else {
+            $('.btn-up').fadeOut();
+        }
+    });
+    $('.btn-up').click(function(e) {
+        window.scrollTo(0, 0)
+    });
 </script>
 {% endblock %}
 
@@ -53,7 +51,7 @@
 
         {% for c in unselected_categories %}
         <div class="col-md-4 col-lg-2 col-6 text-center m-auto">
-            <a href="{% url 'all_menu' %}?subcategory={{ c.name }}"><button class="rounded buttons category-container">{{ c.friendly_name }}</button></a>
+            <button class="rounded buttons category-container"><a href="{% url 'all_menu' %}?subcategory={{ c.name }}">{{ c.friendly_name }}</a></button>
         </div>
 
         {% endfor %}

@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from checkout.models import Order
+from menu.models import Menu
 from reservations.models import Reservation
 from .models import UserProfile
 from .forms import UserProfileForm
@@ -83,4 +84,24 @@ def restaurant_admin(request):
          'orders': orders,
          'reservations': reservations,
         }
+    return render(request, template, context)
+
+
+def display_edit_menu(request):
+    edit_menu = Menu.objects.all()
+    if 'q' in request.GET:
+        query = request.GET['q']
+        if not query:
+            messages.error(request, "You didn't enter any \
+                            search criteria!")
+            return redirect(reverse('restaurant_admin'))
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            edit_menu = edit_menu.filter(queries)
+
+    template = 'profiles/edit-menu-list.html'
+    context = {
+         'edit_menu': edit_menu,
+        }
+    
     return render(request, template, context)

@@ -25,6 +25,11 @@
 
 }
 
-.icon i{
+.icon i {
     color: rgb(245, 94, 7);
+}
+
+#edit-search {
+    border: solid 1px black;
+    width: auto !important;
 }
