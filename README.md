@@ -93,6 +93,7 @@ As a user of the website, the following actions and results would need to be ach
 <strong>As the admin/super user, I would like to be able to:</strong>
 <ol>
 <li>Add new dishes/items to the menu. </li>
+<li>Edit existing menu items.</li>
 <li>View all of the current days orders including the postcode and price.</li>
 <li>View all of the current days table reservations in details with the time and number of people shown.</li>
 </ol>

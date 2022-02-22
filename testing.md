@@ -158,6 +158,16 @@
 <img src="media/readme/us-26.JPG" class="m-auto"><br>
 </li>
 </ul>
+<li><b>Edit existing menu items.</b></li>
+<ul>
+<li>As an admin user, upon logging into the restaurant dashboard, underneath the add menu item button, there is a search bar to allow the user to search for menu items that they want to edit.<br>
+<img src="media/readme/us-edit.JPG"></li>
+<li>After searching, the user is provided with a list of items including their search criteria which shows the name, description and price. There is an 'edit' button for each item that redirects the user to the edit item page.<br>
+<img src="media/readme/us-edit1.JPG">
+</li>
+<li>Once on the edit item page, there is a prepopulated form which is the same as the 'add item' form. The fomr contains all of the exisiting details so the user doesn't have to re-type all of the item information and can just edit the section that requires modification. Clicking 'Make Changes' will update the item details and re-direct back to the Restaurant Dashboard.<br>
+<img src="media/readme/us-edit2.JPG"></li>
+</ul>
 <li><b>View all of the current days orders including the postcode and price. </b></li><br>
 <ul>
 <li>After logging in as the admin user & visiting the Restaurant Dashboard, if there are any orders that have been placed on the current date they are displayed in a table on this page.</li>
