@@ -187,10 +187,6 @@
 </ul>
 </ol>
 
-<h2>Lighthouse</h2>
-I have used Lighthouse to gain a performance score for this site. Please see below the results.<br>
-<img src=""><br>
-
 <h2>Manual Testing of key aspects of the website</h2>
 I manually tested the following to make sure they worked as designed:
 
@@ -247,8 +243,11 @@ I have tested each function and the messages are displayed correctly for each wi
 <li>I have also tested a webhook where the browser was closed before the order was completed but after the payment was processed and the webhool successfully created an order from the cached data as it couldn't find the order in the database.<br>
 <img src="media/readme/exited-webhook.JPG">
 </li>
-
 </ul>
+<h3>Order Confirmation Emails</h3>
+<li>I have tested the confirmation email functionality by placing an order & entering my own email address to ensure I received a confirmation.</li>
+<li>The email I recieved came from the correct email address (zolsha.restaurant@gmail.com) and had the correct order number in the subject line. The email bod contained the correct time the order was placed.<br>
+<img src="media/readme/emails.JPG"></li>
 
 <h2>Bugs Discovered</h2>
 Here are details of bugs that were discovered during manual testing and during the development process and how they were rectified.
