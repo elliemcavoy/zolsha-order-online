@@ -244,6 +244,9 @@ I have tested each function and the messages are displayed correctly for each wi
 <img src="media/readme/webhooks.JPG"></li>
 <li>The webhook handler is also operating correctly as you can see below it is searching the database for the order and recognising that it already exists rather than creating the order from the cached details.<br>
 <img src="media/readme/webhook-payment-success.JPG"></li>
+<li>I have also tested a webhook where the browser was closed before the order was completed but after the payment was processed and the webhool successfully created an order from the cached data as it couldn't find the order in the database.<br>
+<img src="media/readme/exited-webhook.JPG">
+</li>
 
 </ul>
 
