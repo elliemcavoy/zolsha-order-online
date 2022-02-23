@@ -4,7 +4,8 @@
 <img src="media/readme/amiresponsive.JPG"><br>
 <h4><a href="https://github.com/elliemcavoy/zolsha-order-online" target="_blank">GitHub Link</a></h4>
 <h4><a href="https://zolsha-order-online.herokuapp.com/" target="_blank">Deployed Project</a></h4><br>
-<p>This is my Milestone 4 Project which aims to create a full stack web application using Django Frameworks in combination with HTML, CSS, Javascript & Python languages. The application provides an e-commerce app in the form of a food delivery site, including a payment system provided by Stripe. The app also features account creation & login functionality using Django AllAuth & a dining reservation system. There is also a dashboard specifically for the restaurant owners to allow them to monitor the current orders & reservations.</p> 
+<p>This is my Milestone 4 Project which aims to create a full stack web application using Django Frameworks in combination with HTML, CSS, Javascript & Python languages. The application provides an e-commerce app in the form of a food delivery site, including a payment system provided by Stripe. The app also features account creation & login functionality using Django AllAuth & a dining reservation system. There is also a dashboard specifically for the restaurant owners to allow them to monitor the current orders & reservations.</p><br>
+<p>The application provides all elements of CRUD functionality for the users & admin users, allowing them to update & delete items from the databases when appropriate.</p>
 <p>As this application is set up for testing purposs only, the Stripe payment system will require a test card to be entered at checkout. Please see below the details of the card to be used:<br>
 Card Number: 4242 4242 4242 4242<br>
 Expiry Date: Any expiry date<br>
@@ -584,7 +585,7 @@ Ensure you enter these in the above order as the subcategories & menu data requi
 <li><a href="https://www.askpython.com/python/string/python-string-contains" target="_blank">Python String Contains</a> - used when adding the postcode functionality in contexts.py.</li>
 <li>Tutor Support assisted with bug fixes on elements of the project such as webhook errors & filtering issues. Please see the testing documentation for further details on the assistance received. </li>
 <li>Code Institute Tutorials were used for reference when creating functions & deploying to Heroku.</li>
-<li>Boutique Ado Mini Project was used as reference for this project as some of the functionality required for this project was similar to that created in the mini project. The code for the bag, checkout & add/edit item views was modified to make it suitable for use in this project.</li>
+<li>Boutique Ado Mini Project was used as reference for this project as some of the functionality required for this project was similar to that created in the mini project. The code for the bag, checkout & add/edit item views was modified to make it suitable for use in this project. The Javascript for the quantity inputs was also taken from the Boutique Ado project.</li>
 </ul>
 
 <h3>Media</h3>
