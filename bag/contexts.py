@@ -43,26 +43,25 @@ def bag_items(request):
         charge = DeliveryCharges.objects.all()
         postcode = request.GET['postcode']
         delivery_postcode = postcode.upper()
-        plist = []
+        list= []
         attempt = 1
         while attempt <= 4:
-            for c in charge:
+            for c in charge: 
                 if delivery_postcode.__contains__(c.area):
                     delivery_charge = c.charge
-                    dcharge = 1
+                    dcharge = 1  
                     attempt += 1
-                    request.session['delivery_charge'] = str(delivery_charge)
-                elif not delivery_postcode.__contains__(c.area):
-                    dcharge = 0
+                    request.session['delivery_charge']= str(delivery_charge)
+                elif delivery_postcode.__contains__(c.area) == False:  
+                    dcharge= 0 
                     attempt += 1
+                
+                list.append(dcharge)
 
-                    plist.append(dcharge)
-
-                    if attempt == 4:
-                        final_list = sum(plist)
-                        if final_list == 0:
-                            messages.error(request, 'Sorry\
-                            we do not deliver here')
+                if attempt == 4:
+                    final_list = sum(list)
+                    if final_list == 0:
+                        messages.error(request, 'Sorry we do not deliver here')
 
     grand_total = delivery_charge + total
 
