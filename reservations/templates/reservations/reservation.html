@@ -6,9 +6,6 @@
 
 {% endblock %}
 
-{% block extra_js %}
-
-{% endblock %}
 
 {% block page_header %}
 <div class="container page-header-container">
@@ -43,13 +40,8 @@
                             {{ reservation_form.time | as_crispy_field }}
                             {{ reservation_form.covers | as_crispy_field }}
                         </fieldset>
-
-
-
                         <button type="submit" class="buttons rounded">Book</button>
-
                     </form>
-
                 </div>
             </div>
         </div>

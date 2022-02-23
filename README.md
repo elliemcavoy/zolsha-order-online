@@ -112,7 +112,7 @@ I have kept the design of the webpages simple and easy to navigate.
 <h4>Security</h4>
 <ul>
 <li>To ensure all passwords, secure URL's and API keys remain secure, these have all been set to be retrieved using os from the environment. In Gitpod, these are set as environment variables & then when deployed with Heroku, they are set as 'Config Variables'. This means that they will never appear in Git version control.</li>
-<li>To ensure the security of user's details, I have used Django's AllAuth to handle all of the user admin. This will ensure the user passwords are hashed and stored securely. Django AllAuth will also added the added level of security when a user is creating an account by asking them to verify their email address before they can log into their account.</li>
+<li>To ensure the security of user's details, I have used Django's AllAuth to handle all of the user admin. This will ensure the user passwords are hashed and stored securely. Django AllAuth will also add an additional level of security when a user is creating an account by asking them to verify their email address before they can log into their account.</li>
 </ul>
 <h4>Defensive Design</h4>
 <p>I have added some features to ensure unauthorised users cannot access pages outside their scope.</p>
@@ -578,12 +578,13 @@ Ensure you enter these in the above order as the subcategories & menu data requi
 <li><a href="https://docs.djangoproject.com/en/4.0/" target="_blank">Django Documentation</a>- used to help implement AllAuth and also assisted with issues relating to Django such as correct settings to be applied in settings.py.</li>
 <li><a href="https://timepicker.co/" target="_blank">Timepicker.co</a> - used to implement the date & time picker elements in the correct format.</li>
 <li><a href="https://stripe.com/docs/development" target="_blank">Stripe Documentation</a> - used to implement the payment system including the javascript to submit the payment form.  </li>
-<li><a href="https://www.w3schools.com/python/python_while_loops.asp">W3Schools</a> - used to help implement the while loop for the delivery charge functionality in contexts.py.</li>
-<li><a href="https://www.etemkeskin.com/index.php/2020/12/28/creating-custom-404-page-in-python-django/">404 Page</a> - used to add a 404 error page to replace the standard error page.</li>
-<li><a href="https://stackoverflow.com/questions/14249998/jquery-back-to-top">Back to top button</a> - used to implement the back to top button on the menu items.</li>
+<li><a href="https://www.w3schools.com/python/python_while_loops.asp" target="_blank">W3Schools</a> - used to help implement the while loop for the delivery charge functionality in contexts.py.</li>
+<li><a href="https://www.etemkeskin.com/index.php/2020/12/28/creating-custom-404-page-in-python-django/" target="_blank">404 Page</a> - used to add a 404 error page to replace the standard error page.</li>
+<li><a href="https://stackoverflow.com/questions/14249998/jquery-back-to-top" target="_blank">Back to top button</a> - used to implement the back to top button on the menu items.</li>
+<li><a href="https://www.askpython.com/python/string/python-string-contains" target="_blank">Python String Contains</a> - used when adding the postcode functionality in contexts.py.</li>
 <li>Tutor Support assisted with bug fixes on elements of the project such as webhook errors & filtering issues. Please see the testing documentation for further details on the assistance received. </li>
 <li>Code Institute Tutorials were used for reference when creating functions & deploying to Heroku.</li>
-<li>Boutique Ado Mini Project was used as reference for this project as some of the functionality required for this project was similar to that created in the mini project. </li>
+<li>Boutique Ado Mini Project was used as reference for this project as some of the functionality required for this project was similar to that created in the mini project. The code for the bag, checkout & add/edit item views was modified to make it suitable for use in this project.</li>
 </ul>
 
 <h3>Media</h3>

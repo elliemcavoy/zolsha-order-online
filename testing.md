@@ -246,7 +246,7 @@ I have tested each function and the messages are displayed correctly for each wi
 </ul>
 <h3>Order Confirmation Emails</h3>
 <li>I have tested the confirmation email functionality by placing an order & entering my own email address to ensure I received a confirmation.</li>
-<li>The email I recieved came from the correct email address (zolsha.restaurant@gmail.com) and had the correct order number in the subject line. The email bod contained the correct time the order was placed.<br>
+<li>The email I recieved came from the correct email address (zolsha.restaurant@gmail.com) and had the correct order number in the subject line. The email body contained the correct time the order was placed.<br>
 <img src="media/readme/emails.JPG"></li>
 
 <h2>Bugs Discovered</h2>

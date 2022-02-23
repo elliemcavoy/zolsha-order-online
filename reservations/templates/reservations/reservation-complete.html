@@ -5,9 +5,7 @@
 <link rel="stylesheet" href="{% static 'reservations/css/reservations.css' %}">
 
 {% endblock %}
-{% block extra_js %}
-         
-{% endblock %}
+
 
 {% block page_header %}
 <div class="container page-header-container">
@@ -23,7 +21,6 @@
 <div class="img-container h-100 w-100">
     <div class="row h-100">
         <div class="col reservation-img">
-            
         </div>
     </div>
 </div>
@@ -33,20 +30,18 @@
             <div class="card res-card">
                 <div class="card-header">
                     <h3>Thank You {{ reservation.full_name }}, your booking is confirmed.</h3>
-                    </div>
-                    <div class="card-body">
-                        <h4>Reservation details:</h4>
-                        <p><strong>Date:</strong> {{ reservation.date }}<br>
-                            <strong>Time:</strong>  {{ reservation.time }}<br>
-                                <strong>Covers:</strong>  {{ reservation.covers }}
-                        </p>
-                        
-
+                </div>
+                <div class="card-body">
+                    <h4>Reservation details:</h4>
+                    <p><strong>Date:</strong> {{ reservation.date }}<br>
+                        <strong>Time:</strong> {{ reservation.time }}<br>
+                        <strong>Covers:</strong> {{ reservation.covers }}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-    </div>
-    </div>
-    </div>
+</div>
 
 
 

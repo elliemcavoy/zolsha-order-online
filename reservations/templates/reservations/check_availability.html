@@ -11,6 +11,7 @@
 {% block extra_js %}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+<!--JS taken and modified from timepicker.co - see README for link -->
 <script type="text/javascript">
     $(document).ready(function() {
         $('.datepicker').datepicker({
@@ -55,9 +56,7 @@
                             {{ availability_form.time | as_crispy_field }}
                             {{ availability_form.date | as_crispy_field }}
                         </fieldset>
-
                         <button type="submit" class="buttons rounded">Check Availability</button>
-
                     </form>
                 </div>
             </div>

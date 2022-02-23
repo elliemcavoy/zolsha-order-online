@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block extra_js %}
+<!--Taken from a Stack Overflow question - see README for link -->
 <script type="text/javascript">
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
@@ -62,6 +63,7 @@
 <div class="row">
     <div class="col-10 offset-1">
         <div class="row ">
+            <!--Modified from Boutique Ado Mini Project -->
             <div class="col-12 order-md-last d-flex justify-content-center justify-content-md-end mt-2 mb-2">
                 <div class="sort-select-wrapper w-20">
                     <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -100,8 +102,6 @@
                     <div class="row">
                         <div class="col-12 col-md-5 pt-1">
                             {{ item.description }}
-
-
                             <form class="form" action="{% url 'add_to_bag' item.id %}" method="POST">
                                 {% csrf_token %}
                                 <div class="form-row pt-2 text-md-left text-center">
@@ -127,8 +127,6 @@
                         <div class="col-12 col-md-4">
                             <p class="text-uppercase text-center pt-3 pt-md-0 "><strong>Quantity:</strong></p>
                             <div class="row">
-
-
                                 <div class="form-group m-auto w-65">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -150,21 +148,16 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-12 col-md-3 text-center">
-
                             <input type="submit" class="buttons rounded text-center mt-3" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
-
                     </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-
     {% endfor %}
 </div>
 </div>
@@ -202,12 +195,5 @@
             window.location.replace(currentUrl);
         }
     })
-</script>
-<script type="text/javascript">
-    $('option').hover(function() {
-        $('option').css("background-color", "grey");
-    }, function() {
-        $('option').css("background-color", "white");
-    });
 </script>
 {% endblock %}
